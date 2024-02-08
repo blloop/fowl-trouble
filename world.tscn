@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0y6g3oei61yt"]
+[gd_scene load_steps=6 format=3 uid="uid://d0y6g3oei61yt"]
 
+[ext_resource type="Script" path="res://bg.gd" id="1_l0oy5"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player/player.tscn" id="1_xvivn"]
+[ext_resource type="Texture2D" uid="uid://exuk5462mcwt" path="res://sprites/back.png" id="2_ij213"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6dn7"]
 size = Vector2(41, 277.5)
@@ -10,6 +12,21 @@ size = Vector2(370, 37)
 
 [node name="World" type="Node2D"]
 position = Vector2(41, 274)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-41, -274)
+format = 2
+
+[node name="BG" type="ParallaxBackground" parent="."]
+script = ExtResource("1_l0oy5")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG"]
+motion_mirroring = Vector2(768, 0)
+
+[node name="Back" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(384, 240)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ij213")
 
 [node name="Player" parent="." instance=ExtResource("1_xvivn")]
 position = Vector2(12, -15)
