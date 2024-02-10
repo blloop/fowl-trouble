@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0y6g3oei61yt"]
+[gd_scene load_steps=11 format=3 uid="uid://d0y6g3oei61yt"]
 
 [ext_resource type="Texture2D" uid="uid://cuyhbq4s7p30q" path="res://sprites/tileset.png" id="1_67wum"]
 [ext_resource type="Script" path="res://bg.gd" id="1_l0oy5"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player/player.tscn" id="1_xvivn"]
 [ext_resource type="Texture2D" uid="uid://exuk5462mcwt" path="res://sprites/back.png" id="2_ij213"]
 [ext_resource type="Script" path="res://hp.gd" id="6_463q8"]
-[ext_resource type="PackedScene" uid="uid://btn750x2xne0h" path="res://frog.tscn" id="6_w5lc5"]
+[ext_resource type="PackedScene" uid="uid://bonabxwiw8oht" path="res://item/cherry.tscn" id="6_bgosx"]
+[ext_resource type="PackedScene" uid="uid://btn750x2xne0h" path="res://enemy/frog.tscn" id="6_w5lc5"]
 [ext_resource type="Script" path="res://gold.gd" id="7_6av07"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5n7j"]
@@ -454,6 +455,11 @@ position = Vector2(692, -18)
 
 [node name="Frog4" parent="Mobs" instance=ExtResource("6_w5lc5")]
 position = Vector2(784, -18)
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Cherry" parent="Items" instance=ExtResource("6_bgosx")]
+position = Vector2(121, -76)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
