@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0y6g3oei61yt"]
+[gd_scene load_steps=9 format=3 uid="uid://d0y6g3oei61yt"]
 
 [ext_resource type="Texture2D" uid="uid://cuyhbq4s7p30q" path="res://sprites/tileset.png" id="1_67wum"]
 [ext_resource type="Script" path="res://bg.gd" id="1_l0oy5"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player/player.tscn" id="1_xvivn"]
 [ext_resource type="Texture2D" uid="uid://exuk5462mcwt" path="res://sprites/back.png" id="2_ij213"]
+[ext_resource type="Script" path="res://HP.gd" id="6_sc4ex"]
 [ext_resource type="PackedScene" uid="uid://btn750x2xne0h" path="res://frog.tscn" id="6_w5lc5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5n7j"]
@@ -428,6 +429,11 @@ position = Vector2(384, 240)
 scale = Vector2(2, 2)
 texture = ExtResource("2_ij213")
 
+[node name="Back2" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(384, 240)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ij213")
+
 [node name="Player" type="Node2D" parent="."]
 position = Vector2(12, -15)
 
@@ -438,3 +444,23 @@ position = Vector2(1, 13)
 
 [node name="Frog" parent="Mobs" instance=ExtResource("6_w5lc5")]
 position = Vector2(519, 14)
+
+[node name="Frog2" parent="Mobs" instance=ExtResource("6_w5lc5")]
+position = Vector2(411, 14)
+
+[node name="Frog3" parent="Mobs" instance=ExtResource("6_w5lc5")]
+position = Vector2(692, -18)
+
+[node name="Frog4" parent="Mobs" instance=ExtResource("6_w5lc5")]
+position = Vector2(784, -18)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HP" type="Label" parent="UI"]
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 189.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+script = ExtResource("6_sc4ex")

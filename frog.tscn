@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://btn750x2xne0h"]
+[gd_scene load_steps=23 format=3 uid="uid://btn750x2xne0h"]
 
 [ext_resource type="Texture2D" uid="uid://basj4carchysg" path="res://sprites/enemy/frog-idle.png" id="1_1ner0"]
 [ext_resource type="Script" path="res://frog.gd" id="1_wiv7f"]
@@ -135,6 +135,9 @@ radius = 176.003
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2odw"]
 size = Vector2(19, 18)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akvkj"]
+size = Vector2(29, 11)
+
 [node name="Frog" type="CharacterBody2D"]
 script = ExtResource("1_wiv7f")
 
@@ -145,7 +148,7 @@ shape = SubResource("RectangleShape2D_iuovh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -11)
 sprite_frames = SubResource("SpriteFrames_ey13i")
-animation = &"Death"
+animation = &"Idle"
 metadata/_edit_lock_ = true
 
 [node name="PlayerDetection" type="Area2D" parent="."]
@@ -157,10 +160,19 @@ shape = SubResource("CircleShape2D_4jcl0")
 
 [node name="PlayerDeath" type="Area2D" parent="."]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerDeath"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDeath"]
+visible = false
 position = Vector2(0.5, -9)
 shape = SubResource("RectangleShape2D_e2odw")
+
+[node name="PlayerCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
+visible = false
+position = Vector2(0.5, -5.5)
+shape = SubResource("RectangleShape2D_akvkj")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
 [connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_death_body_entered"]
+[connection signal="body_entered" from="PlayerCollision" to="." method="_on_player_collision_body_entered"]
