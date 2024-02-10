@@ -9,11 +9,14 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	
 	if chase:
+		get_node("AnimatedSprite2D").play("Jump")
 		player = get_node("../../Player/Player")
-		if player.position.x - self.position.x > 0:
-			velocity.x = SPEED
-		else:
-			velocity.x = -1 * SPEED
+		var to_right = player.position.x - self.position.x > 0
+		velocity.x = SPEED * (1 if to_right else -1)
+		get_node("AnimatedSprite2D").flip_h = to_right
+	else:
+		get_node("AnimatedSprite2D").play("Idle")
+		velocity.x = 0
 	
 	move_and_slide()
 	
