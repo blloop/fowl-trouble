@@ -10,21 +10,78 @@ script = ExtResource("1_1k0oa")
 scale = Vector2(2.5, 2.5)
 transform = Transform2D(2.5, 0, 0, 2.5, 0, 0)
 
-[node name="Play" type="Button" parent="."]
-offset_left = 321.0
-offset_top = 231.0
-offset_right = 427.0
-offset_bottom = 280.0
+[node name="Start" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Play" type="Button" parent="Start"]
+offset_left = 307.0
+offset_top = 251.0
+offset_right = 413.0
+offset_bottom = 300.0
 scale = Vector2(2, 2)
 text = "Play"
 
-[node name="Quit" type="Button" parent="."]
+[node name="Quit" type="Button" parent="Start"]
 offset_left = 608.0
-offset_top = 231.0
+offset_top = 251.0
 offset_right = 714.0
-offset_bottom = 280.0
+offset_bottom = 300.0
 scale = Vector2(2, 2)
 text = "Quit"
 
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[node name="Select" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Level 1" type="Button" parent="Select"]
+offset_left = 302.0
+offset_top = 253.0
+offset_right = 391.0
+offset_bottom = 343.0
+text = "Level 1"
+
+[node name="Level 2" type="Button" parent="Select"]
+offset_left = 449.0
+offset_top = 253.0
+offset_right = 536.0
+offset_bottom = 343.0
+text = "Level 2"
+
+[node name="Level 3" type="Button" parent="Select"]
+offset_left = 600.0
+offset_top = 256.0
+offset_right = 687.0
+offset_bottom = 346.0
+text = "Level 3"
+
+[node name="Level 4" type="Button" parent="Select"]
+offset_left = 730.0
+offset_top = 256.0
+offset_right = 817.0
+offset_bottom = 346.0
+text = "Level 4"
+
+[node name="Label" type="Label" parent="Select"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 108.0
+offset_right = 713.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Select a level"
+
+[node name="Return" type="Button" parent="Select"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 170.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 16
+text = "Back to Title Screen"
+
+[connection signal="pressed" from="Start/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Start/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Select/Return" to="." method="_on_return_pressed"]
