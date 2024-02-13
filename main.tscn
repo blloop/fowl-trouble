@@ -15,6 +15,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="Play" type="Button" parent="Start"]
+layout_mode = 0
 offset_left = 307.0
 offset_top = 251.0
 offset_right = 413.0
@@ -23,6 +24,7 @@ scale = Vector2(2, 2)
 text = "Play"
 
 [node name="Quit" type="Button" parent="Start"]
+layout_mode = 0
 offset_left = 608.0
 offset_top = 251.0
 offset_right = 714.0
@@ -36,6 +38,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="Level 1" type="Button" parent="Select"]
+layout_mode = 0
 offset_left = 302.0
 offset_top = 253.0
 offset_right = 391.0
@@ -43,6 +46,7 @@ offset_bottom = 343.0
 text = "Level 1"
 
 [node name="Level 2" type="Button" parent="Select"]
+layout_mode = 0
 offset_left = 449.0
 offset_top = 253.0
 offset_right = 536.0
@@ -50,6 +54,7 @@ offset_bottom = 343.0
 text = "Level 2"
 
 [node name="Level 3" type="Button" parent="Select"]
+layout_mode = 0
 offset_left = 600.0
 offset_top = 256.0
 offset_right = 687.0
@@ -57,6 +62,7 @@ offset_bottom = 346.0
 text = "Level 3"
 
 [node name="Level 4" type="Button" parent="Select"]
+layout_mode = 0
 offset_left = 730.0
 offset_top = 256.0
 offset_right = 817.0
@@ -84,4 +90,6 @@ text = "Back to Title Screen"
 
 [connection signal="pressed" from="Start/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Start/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Select/Level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Select/Level 2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Select/Return" to="." method="_on_return_pressed"]
