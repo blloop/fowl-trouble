@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dx1kkpcg1lrpn"]
+[gd_scene load_steps=17 format=3 uid="uid://dx1kkpcg1lrpn"]
 
 [ext_resource type="Texture2D" uid="uid://cuyhbq4s7p30q" path="res://sprites/tileset.png" id="1_m10ja"]
+[ext_resource type="Script" path="res://world-1/level-2.gd" id="1_rjv5k"]
 [ext_resource type="Script" path="res://bg.gd" id="2_8tc7d"]
 [ext_resource type="Texture2D" uid="uid://exuk5462mcwt" path="res://sprites/back.png" id="3_v0ki5"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="4_w7tpc"]
@@ -8,6 +9,7 @@
 [ext_resource type="Script" path="res://hp.gd" id="7_7to5m"]
 [ext_resource type="Script" path="res://gold.gd" id="8_6uw8q"]
 [ext_resource type="PackedScene" uid="uid://c2m6m35opnqeo" path="res://item/flag.tscn" id="8_tqqby"]
+[ext_resource type="PackedScene" uid="uid://1lqlbp5gk61q" path="res://pause.tscn" id="9_6vp13"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5n7j"]
 texture = ExtResource("1_m10ja")
@@ -414,8 +416,21 @@ texture = ExtResource("1_m10ja")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_x5n7j")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfuyk"]
+size = Vector2(48, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1k0xu"]
+size = Vector2(48, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0sj1"]
+size = Vector2(48, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ses8t"]
+size = Vector2(400, 32)
+
 [node name="World" type="Node2D"]
 position = Vector2(41, 274)
+script = ExtResource("1_rjv5k")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-41, -274)
@@ -479,5 +494,28 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 script = ExtResource("8_6uw8q")
 
+[node name="Pause" parent="UI" instance=ExtResource("9_6vp13")]
+
 [node name="Flag" parent="." instance=ExtResource("8_tqqby")]
 position = Vector2(1063, -2)
+
+[node name="Bounds" type="Area2D" parent="."]
+position = Vector2(-41, -274)
+
+[node name="Pit1" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(280, 464)
+shape = SubResource("RectangleShape2D_lfuyk")
+
+[node name="Pit2" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(632, 464)
+shape = SubResource("RectangleShape2D_1k0xu")
+
+[node name="Pit3" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(904, 464)
+shape = SubResource("RectangleShape2D_h0sj1")
+
+[node name="Pit4" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(1336, 464)
+shape = SubResource("RectangleShape2D_ses8t")
+
+[connection signal="body_entered" from="Bounds" to="." method="_on_bounds_body_entered"]

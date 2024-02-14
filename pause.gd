@@ -19,7 +19,9 @@ func _on_quit_pressed():
 	get_node("Options").visible = false
 
 func _on_yes_pressed():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://main.tscn")
+	Engine.time_scale = 1
+	Game.paused = false	
 
 func _on_no_pressed():
 	get_node("Confirm").visible = false

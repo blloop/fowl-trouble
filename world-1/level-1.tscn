@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0y6g3oei61yt"]
+[gd_scene load_steps=16 format=3 uid="uid://d0y6g3oei61yt"]
 
 [ext_resource type="Texture2D" uid="uid://cuyhbq4s7p30q" path="res://sprites/tileset.png" id="1_67wum"]
 [ext_resource type="Script" path="res://bg.gd" id="1_l0oy5"]
@@ -416,6 +416,15 @@ texture = ExtResource("1_67wum")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_x5n7j")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4urt7"]
+size = Vector2(64, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edqr3"]
+size = Vector2(64, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0ikg"]
+size = Vector2(224, 32)
+
 [node name="World" type="Node2D"]
 position = Vector2(41, 274)
 script = ExtResource("1_tfbds")
@@ -486,3 +495,20 @@ script = ExtResource("7_6av07")
 
 [node name="Flag" parent="." instance=ExtResource("8_abwh1")]
 position = Vector2(1191, -18)
+
+[node name="Bounds" type="Area2D" parent="."]
+position = Vector2(-41, -274)
+
+[node name="Pit1" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(656, 464)
+shape = SubResource("RectangleShape2D_4urt7")
+
+[node name="Pit2" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(912, 464)
+shape = SubResource("RectangleShape2D_edqr3")
+
+[node name="Pit3" type="CollisionShape2D" parent="Bounds"]
+position = Vector2(1424, 464)
+shape = SubResource("RectangleShape2D_c0ikg")
+
+[connection signal="body_entered" from="Bounds" to="." method="_on_bounds_body_entered"]
