@@ -1,15 +1,15 @@
 [gd_scene load_steps=16 format=3 uid="uid://d0y6g3oei61yt"]
 
 [ext_resource type="Texture2D" uid="uid://cuyhbq4s7p30q" path="res://sprites/tileset.png" id="1_67wum"]
-[ext_resource type="Script" path="res://bg.gd" id="1_l0oy5"]
+[ext_resource type="Script" path="res://background/bg-title.gd" id="1_l0oy5"]
 [ext_resource type="Script" path="res://world-1/level-1.gd" id="1_tfbds"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="1_xvivn"]
 [ext_resource type="Texture2D" uid="uid://exuk5462mcwt" path="res://sprites/back.png" id="2_ij213"]
-[ext_resource type="Script" path="res://hp.gd" id="6_463q8"]
+[ext_resource type="Script" path="res://ui/hp.gd" id="6_463q8"]
 [ext_resource type="PackedScene" uid="uid://btn750x2xne0h" path="res://enemy/frog.tscn" id="6_w5lc5"]
-[ext_resource type="Script" path="res://gold.gd" id="7_6av07"]
+[ext_resource type="Script" path="res://ui/gold.gd" id="7_6av07"]
 [ext_resource type="PackedScene" uid="uid://c2m6m35opnqeo" path="res://item/flag.tscn" id="8_abwh1"]
-[ext_resource type="PackedScene" uid="uid://1lqlbp5gk61q" path="res://pause.tscn" id="9_om80e"]
+[ext_resource type="PackedScene" uid="uid://1lqlbp5gk61q" path="res://ui/pause.tscn" id="9_om80e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5n7j"]
 texture = ExtResource("1_67wum")
@@ -442,11 +442,6 @@ script = ExtResource("1_l0oy5")
 motion_mirroring = Vector2(768, 0)
 
 [node name="Back" type="Sprite2D" parent="BG/ParallaxLayer"]
-position = Vector2(384, 240)
-scale = Vector2(2, 2)
-texture = ExtResource("2_ij213")
-
-[node name="Back2" type="Sprite2D" parent="BG/ParallaxLayer"]
 position = Vector2(384, 240)
 scale = Vector2(2, 2)
 texture = ExtResource("2_ij213")

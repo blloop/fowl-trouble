@@ -249,6 +249,3 @@ libraries = {
 "": SubResource("AnimationLibrary_a2jqt")
 }
 autoplay = "Idle"
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-root_node = NodePath("../AnimationPlayer")
