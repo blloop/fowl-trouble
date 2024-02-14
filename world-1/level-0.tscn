@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://pi6qjk1b2q3p"]
+[gd_scene load_steps=13 format=3 uid="uid://pi6qjk1b2q3p"]
 
+[ext_resource type="Script" path="res://world-1/level-0.gd" id="1_b1wd2"]
 [ext_resource type="Texture2D" uid="uid://cuyhbq4s7p30q" path="res://sprites/tileset.png" id="1_qjiln"]
 [ext_resource type="Script" path="res://bg.gd" id="2_tedy8"]
 [ext_resource type="Texture2D" uid="uid://exuk5462mcwt" path="res://sprites/back.png" id="3_vov04"]
@@ -8,6 +9,7 @@
 [ext_resource type="Script" path="res://items.gd" id="6_d3bcv"]
 [ext_resource type="Script" path="res://hp.gd" id="7_ihpmb"]
 [ext_resource type="Script" path="res://gold.gd" id="8_ytljc"]
+[ext_resource type="PackedScene" uid="uid://1lqlbp5gk61q" path="res://pause.tscn" id="10_e8l1o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5n7j"]
 texture = ExtResource("1_qjiln")
@@ -416,6 +418,7 @@ sources/0 = SubResource("TileSetAtlasSource_x5n7j")
 
 [node name="World" type="Node2D"]
 position = Vector2(41, 274)
+script = ExtResource("1_b1wd2")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-41, -274)
@@ -486,5 +489,7 @@ offset_bottom = 110.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 script = ExtResource("8_ytljc")
+
+[node name="Pause" parent="UI" instance=ExtResource("10_e8l1o")]
 
 [connection signal="timeout" from="Items/Timer" to="Items" method="_on_timer_timeout"]
