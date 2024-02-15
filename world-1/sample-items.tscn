@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://pi6qjk1b2q3p"]
 
 [ext_resource type="Script" path="res://world-1/sample-items.gd" id="1_cag4e"]
-[ext_resource type="Texture2D" uid="uid://cuyhbq4s7p30q" path="res://sprites/tileset.png" id="2_a6wj7"]
+[ext_resource type="Texture2D" path="res://sprites/tileset.png" id="2_a6wj7"]
 [ext_resource type="Script" path="res://background/bg-title.gd" id="3_svg7j"]
-[ext_resource type="Texture2D" uid="uid://exuk5462mcwt" path="res://sprites/back.png" id="4_x1bnc"]
+[ext_resource type="Texture2D" path="res://sprites/back.png" id="4_x1bnc"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="5_dsqvr"]
 [ext_resource type="Script" path="res://item/1-0-items.gd" id="6_1mvlm"]
 [ext_resource type="Script" path="res://ui/hp.gd" id="7_iigu5"]
