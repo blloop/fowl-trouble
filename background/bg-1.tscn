@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://crda7h07fpjk7"]
+[gd_scene load_steps=18 format=3 uid="uid://crda7h07fpjk7"]
 
 [ext_resource type="Texture2D" uid="uid://dda0qboidn0qk" path="res://assets/background/clouds_green.png" id="1_hnxb7"]
+[ext_resource type="Script" path="res://background/bg-1.gd" id="1_ud430"]
 [ext_resource type="Texture2D" uid="uid://d4egbludeyeaa" path="res://assets/deco/water_a_8frames.png" id="2_dx6sr"]
 [ext_resource type="Texture2D" uid="uid://b2dsvfbggrjss" path="res://assets/deco/clouds.png" id="3_bjcqx"]
 
@@ -65,7 +66,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_llrmj"]
@@ -98,6 +99,7 @@ animations = [{
 }]
 
 [node name="BG" type="ParallaxBackground"]
+script = ExtResource("1_ud430")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.4, 0.4)
@@ -114,35 +116,35 @@ position = Vector2(640, 328)
 scale = Vector2(5, 5)
 texture = ExtResource("1_hnxb7")
 
-[node name="AnimatedWater" type="AnimatedSprite2D" parent="ParallaxLayer"]
+[node name="Water1" type="AnimatedSprite2D" parent="ParallaxLayer"]
 position = Vector2(128, 552)
 scale = Vector2(8, 6)
 sprite_frames = SubResource("SpriteFrames_88gip")
 animation = &"Idle"
 frame_progress = 0.275879
 
-[node name="AnimatedWater2" type="AnimatedSprite2D" parent="ParallaxLayer"]
+[node name="Water2" type="AnimatedSprite2D" parent="ParallaxLayer"]
 position = Vector2(384, 552)
 scale = Vector2(8, 6)
 sprite_frames = SubResource("SpriteFrames_88gip")
 animation = &"Idle"
 frame_progress = 0.275879
 
-[node name="AnimatedWater3" type="AnimatedSprite2D" parent="ParallaxLayer"]
+[node name="Water3" type="AnimatedSprite2D" parent="ParallaxLayer"]
 position = Vector2(640, 552)
 scale = Vector2(8, 6)
 sprite_frames = SubResource("SpriteFrames_88gip")
 animation = &"Idle"
 frame_progress = 0.275879
 
-[node name="AnimatedWater4" type="AnimatedSprite2D" parent="ParallaxLayer"]
+[node name="Water4" type="AnimatedSprite2D" parent="ParallaxLayer"]
 position = Vector2(896, 552)
 scale = Vector2(8, 6)
 sprite_frames = SubResource("SpriteFrames_88gip")
 animation = &"Idle"
 frame_progress = 0.275879
 
-[node name="AnimatedWater5" type="AnimatedSprite2D" parent="ParallaxLayer"]
+[node name="Water5" type="AnimatedSprite2D" parent="ParallaxLayer"]
 position = Vector2(1152, 552)
 scale = Vector2(8, 6)
 sprite_frames = SubResource("SpriteFrames_88gip")
