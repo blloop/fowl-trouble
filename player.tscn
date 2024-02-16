@@ -16,8 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://d3viucri7oy5r" path="res://sprites/player/player-run-5.png" id="14_bxim6"]
 [ext_resource type="Texture2D" uid="uid://dyiv3ejs0ogt2" path="res://sprites/player/player-run-6.png" id="15_s68bg"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rol77"]
-height = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aasb3"]
+size = Vector2(6, 7)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yek88"]
 animations = [{
@@ -227,19 +227,17 @@ _data = {
 script = ExtResource("1_3smd8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -36)
+position = Vector2(-2, -10.5)
 scale = Vector2(3, 3)
-shape = SubResource("CapsuleShape2D_rol77")
+shape = SubResource("RectangleShape2D_aasb3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -48)
-scale = Vector2(3, 3)
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_yek88")
 animation = &"Idle"
-frame = 1
-metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = -1000
 limit_bottom = 648

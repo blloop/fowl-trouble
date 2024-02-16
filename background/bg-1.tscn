@@ -5,6 +5,35 @@
 [ext_resource type="Texture2D" uid="uid://d4egbludeyeaa" path="res://assets/deco/water_a_8frames.png" id="2_dx6sr"]
 [ext_resource type="Texture2D" uid="uid://b2dsvfbggrjss" path="res://assets/deco/clouds.png" id="3_bjcqx"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_llrmj"]
+atlas = ExtResource("3_bjcqx")
+region = Rect2(0, 0, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g777"]
+atlas = ExtResource("3_bjcqx")
+region = Rect2(0, 16, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dib8"]
+atlas = ExtResource("3_bjcqx")
+region = Rect2(0, 32, 64, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pc7l8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llrmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g777")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dib8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdito"]
 atlas = ExtResource("2_dx6sr")
 region = Rect2(0, 0, 32, 32)
@@ -69,114 +98,78 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_llrmj"]
-atlas = ExtResource("3_bjcqx")
-region = Rect2(0, 0, 64, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1g777"]
-atlas = ExtResource("3_bjcqx")
-region = Rect2(0, 16, 64, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1dib8"]
-atlas = ExtResource("3_bjcqx")
-region = Rect2(0, 32, 64, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pc7l8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_llrmj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1g777")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1dib8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="BG" type="ParallaxBackground"]
 script = ExtResource("1_ud430")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.4, 0.4)
-motion_mirroring = Vector2(1280, 0)
-
-[node name="ColorRect" type="ColorRect" parent="ParallaxLayer"]
+[node name="ColorRect" type="ColorRect" parent="."]
 offset_top = -1144.0
 offset_right = 1280.0
 offset_bottom = 648.0
 color = Color(0.462745, 0.807843, 0.85098, 1)
 
-[node name="CloudsGreen" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(640, 328)
-scale = Vector2(5, 5)
-texture = ExtResource("1_hnxb7")
-
-[node name="Water1" type="AnimatedSprite2D" parent="ParallaxLayer"]
-position = Vector2(128, 552)
-scale = Vector2(8, 6)
-sprite_frames = SubResource("SpriteFrames_88gip")
-animation = &"Idle"
-frame_progress = 0.275879
-
-[node name="Water2" type="AnimatedSprite2D" parent="ParallaxLayer"]
-position = Vector2(384, 552)
-scale = Vector2(8, 6)
-sprite_frames = SubResource("SpriteFrames_88gip")
-animation = &"Idle"
-frame_progress = 0.275879
-
-[node name="Water3" type="AnimatedSprite2D" parent="ParallaxLayer"]
-position = Vector2(640, 552)
-scale = Vector2(8, 6)
-sprite_frames = SubResource("SpriteFrames_88gip")
-animation = &"Idle"
-frame_progress = 0.275879
-
-[node name="Water4" type="AnimatedSprite2D" parent="ParallaxLayer"]
-position = Vector2(896, 552)
-scale = Vector2(8, 6)
-sprite_frames = SubResource("SpriteFrames_88gip")
-animation = &"Idle"
-frame_progress = 0.275879
-
-[node name="Water5" type="AnimatedSprite2D" parent="ParallaxLayer"]
-position = Vector2(1152, 552)
-scale = Vector2(8, 6)
-sprite_frames = SubResource("SpriteFrames_88gip")
-animation = &"Idle"
-frame_progress = 0.275879
-
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.2, 0.4)
-motion_mirroring = Vector2(1280, 0)
+motion_mirroring = Vector2(512, 0)
 
 [node name="Cloud" type="AnimatedSprite2D" parent="ParallaxLayer2"]
-position = Vector2(184, 144)
-scale = Vector2(5, 5)
+position = Vector2(72, 160)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pc7l8")
 
 [node name="Cloud2" type="AnimatedSprite2D" parent="ParallaxLayer2"]
-position = Vector2(480, 72)
-scale = Vector2(5, 5)
+position = Vector2(168, 104)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pc7l8")
 frame = 1
 frame_progress = 0.755398
 
 [node name="Cloud4" type="AnimatedSprite2D" parent="ParallaxLayer2"]
-position = Vector2(1072, 56)
-scale = Vector2(5, 5)
+position = Vector2(416, 120)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pc7l8")
 frame = 1
 frame_progress = 0.755398
 
 [node name="Cloud3" type="AnimatedSprite2D" parent="ParallaxLayer2"]
-position = Vector2(808, 152)
-scale = Vector2(5, 5)
+position = Vector2(296, 176)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pc7l8")
 frame = 2
 frame_progress = 0.607153
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(512, 0)
+
+[node name="CloudsGreen" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(256, 224)
+scale = Vector2(2, 2)
+texture = ExtResource("1_hnxb7")
+
+[node name="Water1" type="AnimatedSprite2D" parent="ParallaxLayer"]
+position = Vector2(64, 368)
+scale = Vector2(4, 2)
+sprite_frames = SubResource("SpriteFrames_88gip")
+animation = &"Idle"
+frame_progress = 0.275879
+
+[node name="Water2" type="AnimatedSprite2D" parent="ParallaxLayer"]
+position = Vector2(192, 368)
+scale = Vector2(4, 2)
+sprite_frames = SubResource("SpriteFrames_88gip")
+animation = &"Idle"
+frame_progress = 0.275879
+
+[node name="Water3" type="AnimatedSprite2D" parent="ParallaxLayer"]
+position = Vector2(320, 368)
+scale = Vector2(4, 2)
+sprite_frames = SubResource("SpriteFrames_88gip")
+animation = &"Idle"
+frame_progress = 0.275879
+
+[node name="Water4" type="AnimatedSprite2D" parent="ParallaxLayer"]
+position = Vector2(448, 368)
+scale = Vector2(4, 2)
+sprite_frames = SubResource("SpriteFrames_88gip")
+animation = &"Idle"
+frame_progress = 0.275879

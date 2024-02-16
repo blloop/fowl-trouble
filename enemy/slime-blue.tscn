@@ -1,10 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://sxobd1sl74rf"]
+[gd_scene load_steps=13 format=3 uid="uid://sxobd1sl74rf"]
 
 [ext_resource type="Script" path="res://enemy/slime-blue.gd" id="1_h302m"]
 [ext_resource type="Texture2D" uid="uid://cnhpowm2bpot5" path="res://assets/enemies/slime_blue.png" id="2_7sqfb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x14gn"]
-size = Vector2(48, 30)
+size = Vector2(16, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_87enh"]
 atlas = ExtResource("2_7sqfb")
@@ -13,14 +13,6 @@ region = Rect2(0, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gv31"]
 atlas = ExtResource("2_7sqfb")
 region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xwvmm"]
-atlas = ExtResource("2_7sqfb")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cxspv"]
-atlas = ExtResource("2_7sqfb")
-region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k40ww"]
 atlas = ExtResource("2_7sqfb")
@@ -50,16 +42,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5gv31")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xwvmm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cxspv")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 3.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -79,30 +65,30 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walk",
-"speed": 3.0
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0h2h"]
-size = Vector2(397.5, 84)
+size = Vector2(142, 22)
 
 [node name="SlimeBlue" type="CharacterBody2D"]
 script = ExtResource("1_h302m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -15)
+position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_x14gn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -24)
-scale = Vector2(3, 3)
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_sdovl")
 animation = &"Walk"
+frame_progress = 0.432034
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 position = Vector2(0, -15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-position = Vector2(0, -27)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_x0h2h")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]

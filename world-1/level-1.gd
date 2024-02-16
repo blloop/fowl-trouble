@@ -3,6 +3,7 @@ extends Node2D
 @onready var pause_menu = $UI/Pause
 
 func _onready():
+	pause_menu.visible = true
 	pause_menu.hide()
 
 func _process(_delta):
