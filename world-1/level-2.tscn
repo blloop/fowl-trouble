@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dx1kkpcg1lrpn"]
+[gd_scene load_steps=14 format=3 uid="uid://dx1kkpcg1lrpn"]
 
 [ext_resource type="Texture2D" uid="uid://cuyhbq4s7p30q" path="res://sprites/tileset.png" id="1_m10ja"]
 [ext_resource type="Script" path="res://world-1/level-2.gd" id="1_rjv5k"]
 [ext_resource type="PackedScene" uid="uid://crda7h07fpjk7" path="res://background/bg-1.tscn" id="2_lo3s7"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="4_w7tpc"]
-[ext_resource type="PackedScene" uid="uid://btn750x2xne0h" path="res://enemy/frog.tscn" id="5_5wwxr"]
 [ext_resource type="Script" path="res://ui/hp.gd" id="7_7to5m"]
 [ext_resource type="Script" path="res://ui/gold.gd" id="8_6uw8q"]
 [ext_resource type="PackedScene" uid="uid://1lqlbp5gk61q" path="res://ui/pause.tscn" id="9_6vp13"]
@@ -439,18 +438,6 @@ position = Vector2(12, -15)
 position = Vector2(1, 13)
 
 [node name="Mobs" type="Node2D" parent="."]
-
-[node name="Frog" parent="Mobs" instance=ExtResource("5_5wwxr")]
-position = Vector2(519, 14)
-
-[node name="Frog2" parent="Mobs" instance=ExtResource("5_5wwxr")]
-position = Vector2(411, 14)
-
-[node name="Frog3" parent="Mobs" instance=ExtResource("5_5wwxr")]
-position = Vector2(719, -18)
-
-[node name="Frog4" parent="Mobs" instance=ExtResource("5_5wwxr")]
-position = Vector2(959, 14)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-41, -274)

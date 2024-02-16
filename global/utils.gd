@@ -17,3 +17,10 @@ func load_game():
 			var current_line = JSON.parse_string(file.get_line())
 			if current_line:
 				Game.gold = current_line["gold"]
+
+func handle_bounds(body):
+	if body.name == "Player":
+		# TODO: Add player collision -> Damage and knockback
+		get_tree().change_scene_to_file("res://main.tscn")
+	if body.name == "SlimeBlue":
+		body.queue_free()

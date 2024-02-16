@@ -1,21 +1,20 @@
 extends CharacterBody2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var SPEED = 50
-var player
 var chase = false
+var SPEED = 25
+var player
 
-func _ready():
-	get_node("AnimatedSprite2D").play("Idle")
+# Called when the node enters the scene tree for the first time.
+#func _ready():
+	#pass
 
-func _physics_process(delta):
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
 	velocity.y += gravity * delta
 	
-	if get_node("AnimatedSprite2D").animation == "Death":
-		return
-	
 	if chase:
-		get_node("AnimatedSprite2D").play("Jump")
+		get_node("AnimatedSprite2D").play("Walk")
 		player = get_node("../../Player/Player")
 		var to_right = player.position.x - self.position.x > 0
 		velocity.x = SPEED * (1 if to_right else -1)
@@ -25,7 +24,7 @@ func _physics_process(delta):
 		velocity.x = 0
 	
 	move_and_slide()
-	
+
 func _on_player_detection_body_entered(body):
 	if body.name == "Player":
 		chase = true
@@ -33,20 +32,3 @@ func _on_player_detection_body_entered(body):
 func _on_player_detection_body_exited(body):
 	if body.name == "Player":
 		chase = false
-
-func _on_player_death_body_entered(body):
-	if body.name == "Player":
-		death()
-
-
-func _on_player_collision_body_entered(body):
-	if body.name == "Player":
-		Game.player_hp -= 3
-		death()
-
-func death():
-	Game.gold += 5
-	Utils.save_game()
-	get_node("AnimatedSprite2D").play("Death")
-	await get_node("AnimatedSprite2D").animation_finished
-	self.queue_free()
