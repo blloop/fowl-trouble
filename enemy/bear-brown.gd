@@ -2,23 +2,29 @@ extends CharacterBody2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var chase = false
-var SPEED = 12
+var detected = false
+var SPEED = 36
 var player
 
 # Called when the node enters the scene tree for the first time.
 #func _ready():
-	#pass
+	#pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	velocity.y += gravity * delta
 	
 	if chase:
-		get_node("AnimatedSprite2D").play("Walk")
+		get_node("AnimatedSprite2D").play("Run")
 		player = get_node("../../Player/Player")
-		var to_right = player.position.x - self.position.x > 0
-		velocity.x = SPEED * (1 if to_right else -1)
-		get_node("AnimatedSprite2D").flip_h = to_right
+		var diff = player.position.x - self.position.x
+		if diff < 5 and diff > -32:
+			get_node("AnimatedSprite2D").play("Wait")
+			velocity.x = 0
+		else:
+			var to_left = player.position.x - self.position.x < 0
+			velocity.x = SPEED * (-1 if to_left else 1)
+			get_node("AnimatedSprite2D").flip_h = to_left
 	else:
 		get_node("AnimatedSprite2D").play("Idle")
 		velocity.x = 0
@@ -27,8 +33,15 @@ func _process(delta):
 
 func _on_player_detection_body_entered(body):
 	if body.name == "Player":
-		chase = true
+		detected = true
+		get_node("Timer").start()
+		get_node("Exclamation").play("Idle")
+		
 
 func _on_player_detection_body_exited(body):
 	if body.name == "Player":
+		detected = false
 		chase = false
+
+func _on_timer_timeout():
+	chase = detected

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://world-1/level-2.gd" id="1_rjv5k"]
 [ext_resource type="PackedScene" uid="uid://crda7h07fpjk7" path="res://background/bg-1.tscn" id="2_lo3s7"]
-[ext_resource type="TileSet" uid="uid://c5r0gb6eiq8uo" path="res://global/tiles.tres" id="4_r2i82"]
+[ext_resource type="TileSet" uid="uid://c5r0gb6eiq8uo" path="res://world-1/tiles.tres" id="4_r2i82"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="4_w7tpc"]
 [ext_resource type="Script" path="res://ui/hp.gd" id="7_7to5m"]
 [ext_resource type="Script" path="res://ui/gold.gd" id="8_6uw8q"]

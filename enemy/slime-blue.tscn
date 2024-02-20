@@ -69,7 +69,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0h2h"]
-size = Vector2(142, 22)
+size = Vector2(142, 46)
 
 [node name="SlimeBlue" type="CharacterBody2D"]
 script = ExtResource("1_h302m")
@@ -82,13 +82,13 @@ shape = SubResource("RectangleShape2D_x14gn")
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_sdovl")
 animation = &"Walk"
-frame_progress = 0.432034
+frame_progress = 0.466405
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 position = Vector2(0, -15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-position = Vector2(0, 4)
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_x0h2h")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
