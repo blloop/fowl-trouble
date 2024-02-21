@@ -23,12 +23,12 @@ script = ExtResource("1_tfbds")
 position = Vector2(12, -15)
 
 [node name="Player" parent="Player" instance=ExtResource("1_xvivn")]
-position = Vector2(139, 173)
+position = Vector2(203, 269)
 
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="SlimeBlue" parent="Mobs" instance=ExtResource("8_6yqju")]
-position = Vector2(79, 246)
+position = Vector2(87, 270)
 
 [node name="BearBrown" parent="Mobs" instance=ExtResource("9_lhrnd")]
 position = Vector2(383, 270)

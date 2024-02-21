@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://sxobd1sl74rf"]
+[gd_scene load_steps=14 format=3 uid="uid://sxobd1sl74rf"]
 
 [ext_resource type="Script" path="res://enemy/slime-blue.gd" id="1_h302m"]
 [ext_resource type="Texture2D" uid="uid://cnhpowm2bpot5" path="res://assets/enemies/slime_blue.png" id="2_7sqfb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x14gn"]
-size = Vector2(16, 10)
+size = Vector2(14, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_87enh"]
 atlas = ExtResource("2_7sqfb")
@@ -69,13 +69,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0h2h"]
-size = Vector2(142, 46)
+size = Vector2(160, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vuv6"]
+size = Vector2(16, 10)
 
 [node name="SlimeBlue" type="CharacterBody2D"]
 script = ExtResource("1_h302m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_x14gn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -91,5 +94,12 @@ position = Vector2(0, -15)
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_x0h2h")
 
+[node name="PlayerCollision" type="Area2D" parent="."]
+position = Vector2(0, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
+shape = SubResource("RectangleShape2D_2vuv6")
+
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="PlayerCollision" to="." method="_on_player_collision_body_entered"]

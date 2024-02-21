@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
-const SPEED = 120.0
+const SPEED = 80.0
 const JUMP_VELOCITY = -180.0
+var hurt = false
+var tween : Tween
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -33,7 +35,9 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
+	if hurt:
+		velocity.x /= 1.1
+	elif direction:
 		get_node("AnimatedSprite2D").flip_h = true if direction == 1 else false
 		velocity.x = direction * SPEED
 		if velocity.y == 0:
@@ -47,3 +51,23 @@ func _physics_process(delta):
 		anim.play("Fly")
 		
 	move_and_slide()
+
+func knock_back(is_left):
+	if hurt: 
+		return
+	
+	if tween:
+		tween.kill()
+	
+	tween = create_tween()
+	tween.tween_property(self, "modulate", Color.RED, 0.1)
+	tween.tween_property(self, "modulate", Color.WHITE, 0.2)
+
+	hurt = true
+	anim.play("Fly")
+	self.velocity = Vector2(-180 if is_left else 180, -120)
+	get_node("Timer").start()
+	move_and_slide()
+
+func _on_timer_timeout():
+	hurt = false

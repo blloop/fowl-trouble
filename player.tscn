@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dkps1u2s1ep12" path="res://assets/chicken.png" id="4_fko5h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aasb3"]
-size = Vector2(4.66667, 6.91667)
+size = Vector2(16, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_41f6u"]
 atlas = ExtResource("4_fko5h")
@@ -91,18 +91,21 @@ animations = [{
 script = ExtResource("1_3smd8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.57628e-07, -10.375)
-scale = Vector2(3, 3)
+position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_aasb3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_yek88")
-animation = &"Fly"
-frame_progress = 0.800492
+animation = &"Idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = -1000
 limit_bottom = 648
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

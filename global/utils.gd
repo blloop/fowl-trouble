@@ -20,7 +20,6 @@ func load_game():
 
 func handle_bounds(body):
 	if body.name == "Player":
-		# TODO: Add player collision -> Damage and knockback
 		get_tree().change_scene_to_file("res://main.tscn")
 	if body.name == "SlimeBlue":
 		body.queue_free()

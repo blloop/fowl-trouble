@@ -1,11 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://c2cryihqjouuf"]
+[gd_scene load_steps=23 format=3 uid="uid://c2cryihqjouuf"]
 
 [ext_resource type="Script" path="res://enemy/bear-brown.gd" id="1_0geq2"]
 [ext_resource type="Texture2D" uid="uid://lhyqrqp7y2tu" path="res://assets/enemies/bear_brown.png" id="2_pyano"]
 [ext_resource type="Texture2D" uid="uid://be4bgb7ari74w" path="res://assets/effects/exclamation.png" id="3_wom11"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iiaa5"]
-size = Vector2(25, 13)
+size = Vector2(22, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_asu8e"]
 atlas = ExtResource("2_pyano")
@@ -75,7 +75,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wcon"]
-size = Vector2(221.5, 48)
+size = Vector2(221.5, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o26bu"]
+size = Vector2(24, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ih0ot"]
 atlas = ExtResource("3_wom11")
@@ -141,20 +144,26 @@ animations = [{
 script = ExtResource("1_0geq2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -6.5)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_iiaa5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2, -16)
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_jp6ok")
 animation = &"Wait"
+flip_h = true
 
 [node name="PlayerDetection" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-position = Vector2(0, -24)
+position = Vector2(0, -30.5)
 shape = SubResource("RectangleShape2D_5wcon")
+
+[node name="PlayerCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_o26bu")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -166,4 +175,5 @@ animation = &"Idle"
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="PlayerCollision" to="." method="_on_player_collision_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

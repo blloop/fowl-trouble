@@ -3,7 +3,7 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var chase = false
 var detected = false
-var SPEED = 36
+var SPEED = 48
 var player
 
 # Called when the node enters the scene tree for the first time.
@@ -18,7 +18,7 @@ func _process(delta):
 		get_node("AnimatedSprite2D").play("Run")
 		player = get_node("../../Player/Player")
 		var diff = player.position.x - self.position.x
-		if diff < 5 and diff > -32:
+		if diff < 5 and diff > -30:
 			get_node("AnimatedSprite2D").play("Wait")
 			velocity.x = 0
 		else:
@@ -45,3 +45,9 @@ func _on_player_detection_body_exited(body):
 
 func _on_timer_timeout():
 	chase = detected
+
+
+func _on_player_collision_body_entered(body):
+	if body.name == "Player":
+		var diff = player.position.x - self.position.x + 10
+		body.knock_back(diff < 0)
