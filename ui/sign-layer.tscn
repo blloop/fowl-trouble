@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ckiptfoim47l7"]
+
+[node name="SignLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.188235)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 128.0
+offset_right = 712.0
+offset_bottom = 264.0
+theme_override_font_sizes/font_size = 48
+text = "How to fly: "
