@@ -15,7 +15,7 @@ func _process(delta):
 	
 	if chase:
 		get_node("AnimatedSprite2D").play("Walk")
-		player = get_node("../../Player/Player")
+		player = get_node("../../Player")
 		var diff = player.position.x - self.position.x
 		if diff < 0 and diff > -25:
 			get_node("AnimatedSprite2D").play("Idle")
@@ -41,5 +41,5 @@ func _on_player_detection_body_exited(body):
 
 func _on_player_collision_body_entered(body):
 	if body.name == "Player":
-		var diff = player.position.x - self.position.x + 10
-		body.knock_back(diff < 0)
+		var diff = player.position.x - self.position.x
+		Utils.damage(player, diff < 0, 10)
