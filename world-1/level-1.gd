@@ -2,12 +2,14 @@ extends Node2D
 
 @onready var pause_menu = $UI/Pause
 @onready var sign_layer = $UI/SignLayer
+@onready var gold_layer = $UI/GoldLayer
 
 func _onready():
 	pause_menu.visible = true
 	pause_menu.hide()
 	sign_layer.visible = true
 	sign_layer.hide()
+	gold_layer.hide()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):

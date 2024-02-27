@@ -1,15 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0y6g3oei61yt"]
+[gd_scene load_steps=13 format=3 uid="uid://d0y6g3oei61yt"]
 
 [ext_resource type="Script" path="res://world-1/level-1.gd" id="1_tfbds"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="1_xvivn"]
 [ext_resource type="PackedScene" uid="uid://crda7h07fpjk7" path="res://background/bg-1.tscn" id="3_db3v5"]
 [ext_resource type="TileSet" uid="uid://c5r0gb6eiq8uo" path="res://world-1/tiles.tres" id="5_np25j"]
-[ext_resource type="Script" path="res://ui/hp.gd" id="6_463q8"]
-[ext_resource type="Script" path="res://ui/gold.gd" id="7_6av07"]
 [ext_resource type="PackedScene" uid="uid://ckiptfoim47l7" path="res://ui/sign-layer.tscn" id="7_r35mv"]
 [ext_resource type="PackedScene" uid="uid://sxobd1sl74rf" path="res://enemy/slime-blue.tscn" id="8_6yqju"]
 [ext_resource type="PackedScene" uid="uid://c2cryihqjouuf" path="res://enemy/bear-brown.tscn" id="9_lhrnd"]
 [ext_resource type="PackedScene" uid="uid://1lqlbp5gk61q" path="res://ui/pause.tscn" id="9_om80e"]
+[ext_resource type="PackedScene" uid="uid://dbewfbkrvukv4" path="res://ui/gold.tscn" id="10_d5guv"]
 [ext_resource type="PackedScene" uid="uid://lxg87svmucji" path="res://item/sign.tscn" id="11_5t04b"]
 [ext_resource type="PackedScene" uid="uid://bowhxhtedijmg" path="res://item/coin.tscn" id="12_qibih"]
 
@@ -38,13 +37,25 @@ position = Vector2(242, 272)
 [node name="Coin" parent="Items" instance=ExtResource("12_qibih")]
 position = Vector2(259, 270)
 
+[node name="Coin2" parent="Items" instance=ExtResource("12_qibih")]
+position = Vector2(323, 270)
+
+[node name="Coin3" parent="Items" instance=ExtResource("12_qibih")]
+position = Vector2(275, 270)
+
+[node name="Coin4" parent="Items" instance=ExtResource("12_qibih")]
+position = Vector2(306, 270)
+
+[node name="Coin5" parent="Items" instance=ExtResource("12_qibih")]
+position = Vector2(291, 270)
+
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="SlimeBlue" parent="Mobs" instance=ExtResource("8_6yqju")]
 position = Vector2(87, 270)
 
 [node name="BearBrown" parent="Mobs" instance=ExtResource("9_lhrnd")]
-position = Vector2(383, 270)
+position = Vector2(601, 272)
 
 [node name="Bounds" type="Area2D" parent="."]
 position = Vector2(-41, -274)
@@ -58,23 +69,8 @@ shape = SubResource("RectangleShape2D_4urt7")
 [node name="SignLayer" parent="UI" instance=ExtResource("7_r35mv")]
 visible = false
 
-[node name="HP" type="Label" parent="UI"]
-offset_left = 4.0
-offset_top = 5.0
-offset_right = 189.0
-offset_bottom = 50.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-script = ExtResource("6_463q8")
-
-[node name="Gold" type="Label" parent="UI"]
-offset_left = 8.0
-offset_top = 65.0
-offset_right = 193.0
-offset_bottom = 110.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-script = ExtResource("7_6av07")
+[node name="Gold" parent="UI" instance=ExtResource("10_d5guv")]
+position = Vector2(8, 64)
 
 [node name="Pause" parent="UI" instance=ExtResource("9_om80e")]
 visible = false
