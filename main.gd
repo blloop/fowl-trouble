@@ -18,8 +18,10 @@ func _on_return_pressed():
 
 func _on_level_1_pressed():
 	get_tree().change_scene_to_file("res://world-1/level-1.tscn")
-	Game.player_hp = 100
+	Game.player_hp = 10
+	Game.gold = 0
 
 func _on_level_2_pressed():
 	get_tree().change_scene_to_file("res://world-1/level-2.tscn")
-	Game.player_hp = 100
+	Game.player_hp = 10
+	Game.gold = 0

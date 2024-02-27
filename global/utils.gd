@@ -23,7 +23,3 @@ func handle_bounds(body):
 		get_tree().change_scene_to_file("res://main.tscn")
 	else:
 		body.queue_free()
-
-func damage(body, dir, damage):
-	body.knock_back(dir)
-	Game.player_hp -= damage

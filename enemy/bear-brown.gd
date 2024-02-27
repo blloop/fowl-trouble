@@ -49,4 +49,6 @@ func _on_timer_timeout():
 func _on_player_collision_body_entered(body):
 	if body.name == "Player":
 		var diff = player.position.x - self.position.x
-		Utils.damage(player, diff < 0, 10)
+		body.knock_back(diff < 0)
+		Game.player_hp -= 1
+		get_node("../../UI/Health").decrease()

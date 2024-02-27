@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvc57up8sd4pd"]
+[gd_scene load_steps=7 format=3 uid="uid://dvc57up8sd4pd"]
 
 [ext_resource type="Script" path="res://world-1/level-2.gd" id="1_rjv5k"]
 [ext_resource type="PackedScene" uid="uid://crda7h07fpjk7" path="res://background/bg-1.tscn" id="2_lo3s7"]
 [ext_resource type="TileSet" uid="uid://c5r0gb6eiq8uo" path="res://world-1/tiles.tres" id="4_r2i82"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="4_w7tpc"]
-[ext_resource type="Script" path="res://ui/hp.gd" id="7_7to5m"]
 [ext_resource type="PackedScene" uid="uid://1lqlbp5gk61q" path="res://ui/pause.tscn" id="9_6vp13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfuyk"]
@@ -37,15 +36,6 @@ position = Vector2(280, 464)
 shape = SubResource("RectangleShape2D_lfuyk")
 
 [node name="UI" type="CanvasLayer" parent="."]
-
-[node name="HP" type="Label" parent="UI"]
-offset_left = 4.0
-offset_top = 5.0
-offset_right = 189.0
-offset_bottom = 50.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-script = ExtResource("7_7to5m")
 
 [node name="Pause" parent="UI" instance=ExtResource("9_6vp13")]
 visible = false
