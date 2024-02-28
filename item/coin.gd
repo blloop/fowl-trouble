@@ -5,7 +5,7 @@ func _ready():
 	get_node("AnimatedSprite2D").play("Idle")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _on_body_entered(body):
