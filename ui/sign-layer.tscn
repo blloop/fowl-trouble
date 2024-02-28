@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://ckiptfoim47l7"]
+[gd_scene load_steps=3 format=3 uid="uid://ckiptfoim47l7"]
+
+[ext_resource type="Texture2D" uid="uid://ex1jpk6or3fw" path="res://assets/ui/sign.png" id="1_su6gs"]
+[ext_resource type="FontFile" uid="uid://b7u7rptev1prg" path="res://assets/ui/FutilePro.ttf" id="2_3dldm"]
 
 [node name="SignLayer" type="CanvasLayer"]
 
@@ -7,10 +10,27 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 0.188235)
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 320)
+scale = Vector2(10.6875, 10.6875)
+texture = ExtResource("1_su6gs")
+
 [node name="Label" type="Label" parent="."]
-offset_left = 448.0
-offset_top = 128.0
-offset_right = 712.0
-offset_bottom = 264.0
-theme_override_font_sizes/font_size = 48
-text = "How to fly: "
+offset_left = 192.0
+offset_top = 192.0
+offset_right = 960.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(1, 0.901961, 0.396078, 1)
+theme_override_fonts/font = ExtResource("2_3dldm")
+theme_override_font_sizes/font_size = 64
+text = "How to move: [ARROWS]"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 384.0
+offset_right = 960.0
+offset_bottom = 448.0
+theme_override_colors/font_color = Color(1, 0.901961, 0.396078, 1)
+theme_override_fonts/font = ExtResource("2_3dldm")
+theme_override_font_sizes/font_size = 64
+text = "How to fly: [SPACEBAR]"
