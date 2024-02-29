@@ -3,11 +3,14 @@ extends Node2D
 @onready var pause_menu = $UI/Pause
 @onready var sign_layer = $UI/SignLayer
 
-func _onready():
+func _ready():
 	pause_menu.visible = true
 	pause_menu.hide()
 	sign_layer.visible = true
-	sign_layer.hide()
+	sign_layer.show()
+	get_node("Controls/Control1").play("Idle")
+	get_node("Controls/Control2").play("Idle")
+	get_node("Controls/Control3").play("Idle")
 
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
@@ -27,8 +30,11 @@ func _on_bounds_body_entered(body):
 
 func _on_sign_body_entered(body):
 	if body.name == "Player":
-		sign_layer.show()
+		sign_layer.open_sign()
 
 func _on_sign_body_exited(body):
 	if body.name == "Player":
-		sign_layer.hide()
+		sign_layer.close_sign()
+
+func _on_pause_button_pressed():
+	pause()

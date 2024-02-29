@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxjdud5ybsqhx"]
+
+[ext_resource type="Texture2D" uid="uid://wecv3e2i0ghn" path="res://assets/ui/pause.png" id="1_n3dc8"]
+
+[node name="PauseButton" type="TextureButton"]
+offset_right = 28.0
+offset_bottom = 28.0
+texture_normal = ExtResource("1_n3dc8")
