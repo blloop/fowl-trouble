@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://g4pjk6hdcuv0" path="res://assets/ui/controls.png" id="12_qser4"]
 [ext_resource type="PackedScene" uid="uid://663aj70tr80x" path="res://ui/health.tscn" id="12_wwl3b"]
 [ext_resource type="Texture2D" uid="uid://b5fww5ugvwf7t" path="res://assets/ui/arrow.png" id="13_tr7ra"]
-[ext_resource type="PackedScene" uid="uid://dxjdud5ybsqhx" path="res://ui/pause-btn.tscn" id="14_v4nym"]
+[ext_resource type="PackedScene" uid="uid://dxjdud5ybsqhx" path="res://ui/control.tscn" id="14_v4nym"]
 [ext_resource type="PackedScene" uid="uid://sxobd1sl74rf" path="res://enemy/slime-blue.tscn" id="15_1d7wa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4dh8s"]
@@ -165,6 +165,9 @@ animation = &"Idle"
 [node name="Sign" parent="Items" instance=ExtResource("11_5t04b")]
 position = Vector2(351, 304)
 
+[node name="Sign2" parent="Items" instance=ExtResource("11_5t04b")]
+position = Vector2(951, 304)
+
 [node name="Coin" parent="Items" instance=ExtResource("12_qibih")]
 position = Vector2(207, 302)
 
@@ -198,7 +201,7 @@ position = Vector2(63, 278)
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="SlimeBlue" parent="Mobs" instance=ExtResource("15_1d7wa")]
-position = Vector2(983, 302)
+position = Vector2(1111, 302)
 
 [node name="BearBrown" parent="Mobs" instance=ExtResource("9_lhrnd")]
 position = Vector2(503, 142)
@@ -224,14 +227,15 @@ position = Vector2(0, 8)
 [node name="Pause" parent="UI" instance=ExtResource("9_om80e")]
 visible = false
 
-[node name="PauseButton" parent="UI" instance=ExtResource("14_v4nym")]
-offset_left = 1104.0
+[node name="Control" parent="UI" instance=ExtResource("14_v4nym")]
+offset_left = 1096.0
 offset_top = 16.0
-offset_right = 1136.0
+offset_right = 1138.0
 offset_bottom = 58.0
 
 [connection signal="body_entered" from="Items/Sign" to="." method="_on_sign_body_entered"]
 [connection signal="body_exited" from="Items/Sign" to="." method="_on_sign_body_exited"]
+[connection signal="body_entered" from="Items/Sign2" to="." method="_on_sign_body_entered"]
+[connection signal="body_exited" from="Items/Sign2" to="." method="_on_sign_body_exited"]
 [connection signal="body_entered" from="Bounds" to="." method="_on_bounds_body_entered"]
-[connection signal="focus_exited" from="UI/PauseButton" to="." method="_on_pause_button_focus_exited"]
-[connection signal="pressed" from="UI/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="UI/Control" to="." method="_on_control_pressed"]

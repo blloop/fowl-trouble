@@ -13,7 +13,7 @@ func _ready():
 	get_node("Controls/Control3").play("Idle")
 
 func _process(_delta):
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("ui_pause"):
 		pause()
 
 func pause():
@@ -22,8 +22,12 @@ func pause():
 		Engine.time_scale = 1
 	else:
 		pause_menu.show()
-		Engine.time_scale = 0
+		Engine.time_scale = 0		
+		get_node("UI/Pause/Confirm").visible = false
+		get_node("UI/Pause/Options").visible = true
+	
 	Game.paused = !Game.paused
+	get_node("UI/Control").update(Game.paused)
 
 func _on_bounds_body_entered(body):
 	Utils.handle_bounds(body)
@@ -36,5 +40,5 @@ func _on_sign_body_exited(body):
 	if body.name == "Player":
 		sign_layer.close_sign()
 
-func _on_pause_button_pressed():
+func _on_control_pressed():
 	pause()
