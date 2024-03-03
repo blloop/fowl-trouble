@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var chase = false
-var SPEED = 12
+var SPEED = 18
 var player
 
 # Called when the node enters the scene tree for the first time.
