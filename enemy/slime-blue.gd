@@ -17,7 +17,7 @@ func _process(delta):
 		get_node("AnimatedSprite2D").play("Walk")
 		player = get_node("../../Player")
 		var diff = player.position.x - self.position.x
-		if diff < 0 and diff > -25:
+		if diff < 15 and diff > -15:
 			get_node("AnimatedSprite2D").play("Idle")
 			velocity.x = 0
 		else:

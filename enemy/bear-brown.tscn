@@ -75,7 +75,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wcon"]
-size = Vector2(221.5, 61)
+size = Vector2(277.75, 82)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o26bu"]
 size = Vector2(24, 11)
@@ -156,7 +156,7 @@ flip_h = true
 [node name="PlayerDetection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-position = Vector2(0, -30.5)
+position = Vector2(0, -19)
 shape = SubResource("RectangleShape2D_5wcon")
 
 [node name="PlayerCollision" type="Area2D" parent="."]

@@ -11,6 +11,7 @@ func _ready():
 
 func _on_resume_pressed():
 	self.hide()
+	get_node("../Control").button_pressed = false
 	Engine.time_scale = 1
 	Game.paused = false
 

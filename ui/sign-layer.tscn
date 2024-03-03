@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckiptfoim47l7"]
+[gd_scene load_steps=3 format=3 uid="uid://ckiptfoim47l7"]
 
 [ext_resource type="Script" path="res://ui/sign-layer.gd" id="1_5ufaa"]
 [ext_resource type="Texture2D" uid="uid://ex1jpk6or3fw" path="res://assets/ui/sign.png" id="1_su6gs"]
-[ext_resource type="FontFile" uid="uid://b7u7rptev1prg" path="res://assets/ui/FutilePro.ttf" id="2_3dldm"]
 
 [node name="SignLayer" type="Node2D"]
 scale = Vector2(1e-05, 1e-05)
@@ -11,23 +10,3 @@ script = ExtResource("1_5ufaa")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(10.6875, 10.6875)
 texture = ExtResource("1_su6gs")
-
-[node name="Label" type="Label" parent="."]
-offset_left = -400.0
-offset_top = -160.0
-offset_right = 368.0
-offset_bottom = -96.0
-theme_override_colors/font_color = Color(1, 0.901961, 0.396078, 1)
-theme_override_fonts/font = ExtResource("2_3dldm")
-theme_override_font_sizes/font_size = 64
-text = "How to move: [ARROWS]"
-
-[node name="Label2" type="Label" parent="."]
-offset_left = -400.0
-offset_top = 80.0
-offset_right = 368.0
-offset_bottom = 144.0
-theme_override_colors/font_color = Color(1, 0.901961, 0.396078, 1)
-theme_override_fonts/font = ExtResource("2_3dldm")
-theme_override_font_sizes/font_size = 64
-text = "How to fly: [SPACEBAR]"
