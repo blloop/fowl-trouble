@@ -11,6 +11,8 @@ func _ready():
 	sign_layer.show()
 	sign_layer_2.visible = true
 	sign_layer_2.show()
+	
+	get_node("Player/Camera2D").limit_right = 2024
 	get_node("Controls/Control1").play("Idle")
 	get_node("Controls/Control2").play("Idle")
 	get_node("Controls/Control3").play("Idle")
