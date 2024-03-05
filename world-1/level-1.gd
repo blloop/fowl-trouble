@@ -55,3 +55,6 @@ func _on_sign_2_body_exited(body):
 
 func _on_control_pressed():
 	pause()
+
+func _on_flag_body_entered(body):
+	Utils.handle_bounds(body)

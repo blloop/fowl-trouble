@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://d0y6g3oei61yt"]
+[gd_scene load_steps=34 format=3 uid="uid://d0y6g3oei61yt"]
 
 [ext_resource type="Script" path="res://world-1/level-1.gd" id="1_tfbds"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="1_xvivn"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://b5fww5ugvwf7t" path="res://assets/ui/arrow.png" id="13_tr7ra"]
 [ext_resource type="PackedScene" uid="uid://dxjdud5ybsqhx" path="res://ui/control.tscn" id="14_v4nym"]
 [ext_resource type="PackedScene" uid="uid://sxobd1sl74rf" path="res://enemy/slime-blue.tscn" id="15_1d7wa"]
+[ext_resource type="PackedScene" uid="uid://d2eqm7p84trwd" path="res://item/flag.tscn" id="19_hrx3r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4dh8s"]
 atlas = ExtResource("12_qser4")
@@ -220,12 +221,6 @@ animation = &"Idle"
 
 [node name="Items" type="Node2D" parent="."]
 
-[node name="Sign" parent="Items" instance=ExtResource("11_5t04b")]
-position = Vector2(351, 302)
-
-[node name="Sign2" parent="Items" instance=ExtResource("11_5t04b")]
-position = Vector2(951, 302)
-
 [node name="Coin" parent="Items" instance=ExtResource("12_qibih")]
 position = Vector2(207, 302)
 
@@ -277,8 +272,19 @@ position = Vector2(1791, 270)
 [node name="Coin17" parent="Items" instance=ExtResource("12_qibih")]
 position = Vector2(1807, 270)
 
+[node name="Features" type="Node2D" parent="."]
+
+[node name="Sign" parent="Features" instance=ExtResource("11_5t04b")]
+position = Vector2(351, 302)
+
+[node name="Sign2" parent="Features" instance=ExtResource("11_5t04b")]
+position = Vector2(951, 302)
+
+[node name="Flag" parent="Features" instance=ExtResource("19_hrx3r")]
+position = Vector2(1959, 254)
+
 [node name="Player" parent="." instance=ExtResource("1_xvivn")]
-position = Vector2(63, 278)
+position = Vector2(1879, 174)
 
 [node name="Mobs" type="Node2D" parent="."]
 
@@ -359,9 +365,10 @@ offset_top = 16.0
 offset_right = 1138.0
 offset_bottom = 58.0
 
-[connection signal="body_entered" from="Items/Sign" to="." method="_on_sign_body_entered"]
-[connection signal="body_exited" from="Items/Sign" to="." method="_on_sign_body_exited"]
-[connection signal="body_entered" from="Items/Sign2" to="." method="_on_sign_2_body_entered"]
-[connection signal="body_exited" from="Items/Sign2" to="." method="_on_sign_2_body_exited"]
+[connection signal="body_entered" from="Features/Sign" to="." method="_on_sign_body_entered"]
+[connection signal="body_exited" from="Features/Sign" to="." method="_on_sign_body_exited"]
+[connection signal="body_entered" from="Features/Sign2" to="." method="_on_sign_2_body_entered"]
+[connection signal="body_exited" from="Features/Sign2" to="." method="_on_sign_2_body_exited"]
+[connection signal="body_entered" from="Features/Flag" to="." method="_on_flag_body_entered"]
 [connection signal="body_entered" from="Bounds" to="." method="_on_bounds_body_entered"]
 [connection signal="pressed" from="UI/Control" to="." method="_on_control_pressed"]
