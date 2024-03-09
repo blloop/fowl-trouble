@@ -15,7 +15,7 @@ func _onready():
 
 func _physics_process(delta):
 	# Skip if game is paused
-	if Game.paused:
+	if Game.paused or Game.recap:
 		return
 	
 	# If no hp remaining, return to menu

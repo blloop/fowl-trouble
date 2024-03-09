@@ -17,9 +17,3 @@ func load_game():
 			var current_line = JSON.parse_string(file.get_line())
 			if current_line:
 				Game.gold = current_line["gold"]
-
-func handle_bounds(body):
-	if body.name == "Player":
-		get_tree().change_scene_to_file("res://main.tscn")
-	elif body.name != "TileMap":
-		body.queue_free()

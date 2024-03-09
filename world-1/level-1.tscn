@@ -133,7 +133,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4urt7"]
-size = Vector2(1856, 20)
+size = Vector2(2144, 20)
 
 [node name="World" type="Node2D"]
 position = Vector2(41, 274)
@@ -304,7 +304,7 @@ metadata/_edit_lock_ = true
 position = Vector2(-41, -274)
 
 [node name="Pit1" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(928, 664)
+position = Vector2(1072, 664)
 shape = SubResource("RectangleShape2D_4urt7")
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -350,6 +350,37 @@ theme_override_fonts/font = ExtResource("12_sxrqh")
 theme_override_font_sizes/font_size = 48
 text = "They will damage you on contact"
 
+[node name="Recap" parent="UI" instance=ExtResource("7_r35mv")]
+position = Vector2(560, 320)
+
+[node name="Label1" type="Label" parent="UI/Recap"]
+offset_left = -336.0
+offset_top = -120.0
+offset_right = 360.0
+offset_bottom = -36.0
+theme_override_fonts/font = ExtResource("12_sxrqh")
+theme_override_font_sizes/font_size = 96
+text = "Level Complete!"
+
+[node name="Label2" type="Label" parent="UI/Recap"]
+offset_left = -96.0
+offset_top = 16.0
+offset_right = 90.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("12_sxrqh")
+theme_override_font_sizes/font_size = 36
+text = "Time: xx:xx
+"
+
+[node name="Exit" type="Button" parent="UI/Recap"]
+offset_left = -200.0
+offset_top = 72.0
+offset_right = 200.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("12_sxrqh")
+theme_override_font_sizes/font_size = 48
+text = "Return to menu"
+
 [node name="Gold" parent="UI" instance=ExtResource("10_d5guv")]
 position = Vector2(8, 64)
 
@@ -371,4 +402,5 @@ offset_bottom = 58.0
 [connection signal="body_exited" from="Features/Sign2" to="." method="_on_sign_2_body_exited"]
 [connection signal="body_entered" from="Features/Flag" to="." method="_on_flag_body_entered"]
 [connection signal="body_entered" from="Bounds" to="." method="_on_bounds_body_entered"]
+[connection signal="pressed" from="UI/Recap/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="UI/Control" to="." method="_on_control_pressed"]
