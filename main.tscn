@@ -12,6 +12,15 @@ script = ExtResource("1_1k0oa")
 scale = Vector2(2.5, 2.5)
 transform = Transform2D(2.5, 0, 0, 2.5, 0, 0)
 
+[node name="Back" type="Button" parent="."]
+offset_left = 1032.0
+offset_top = 8.0
+offset_right = 1144.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
 [node name="Start" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -63,6 +72,7 @@ theme_override_font_sizes/font_size = 36
 text = "Quit"
 
 [node name="Worlds" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 
@@ -70,70 +80,124 @@ anchors_preset = 0
 layout_mode = 0
 offset_left = 256.0
 offset_top = 64.0
-offset_right = 896.0
+offset_right = 910.0
 offset_bottom = 148.0
 theme_override_fonts/font = ExtResource("3_25dj1")
 theme_override_font_sizes/font_size = 96
 text = "Select a World"
 
-[node name="Label2" type="Label" parent="Worlds"]
+[node name="Colors" type="Control" parent="Worlds"]
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="Worlds/Colors"]
 layout_mode = 0
-offset_left = 104.0
-offset_top = 232.0
-offset_right = 275.0
-offset_bottom = 274.0
+offset_left = 144.0
+offset_top = 240.0
+offset_right = 368.0
+offset_bottom = 376.0
+color = Color(0.0862745, 0.847059, 0.494118, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Worlds/Colors"]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 240.0
+offset_right = 680.0
+offset_bottom = 376.0
+color = Color(0.792157, 0.894118, 0.905882, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Worlds/Colors"]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 240.0
+offset_right = 1000.0
+offset_bottom = 376.0
+color = Color(0.419608, 0.462745, 0.541176, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Worlds/Colors"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 456.0
+offset_right = 368.0
+offset_bottom = 592.0
+color = Color(0.0666667, 0.678431, 0.756863, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Worlds/Colors"]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 456.0
+offset_right = 680.0
+offset_bottom = 592.0
+color = Color(0.811765, 0.352941, 0.45098, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Worlds/Colors"]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 456.0
+offset_right = 1000.0
+offset_bottom = 592.0
+color = Color(0.368627, 0.27451, 0.380392, 1)
+
+[node name="Buttons" type="Control" parent="Worlds"]
+anchors_preset = 0
+
+[node name="Button1" type="Button" parent="Worlds/Buttons"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 264.0
+offset_right = 347.0
+offset_bottom = 352.0
 theme_override_fonts/font = ExtResource("3_25dj1")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 36
 text = "World 1"
 
-[node name="Label3" type="Label" parent="Worlds"]
+[node name="Button2" type="Button" parent="Worlds/Buttons"]
 layout_mode = 0
-offset_left = 488.0
-offset_top = 232.0
+offset_left = 480.0
+offset_top = 264.0
 offset_right = 659.0
-offset_bottom = 274.0
+offset_bottom = 352.0
 theme_override_fonts/font = ExtResource("3_25dj1")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 36
 text = "World 2"
 
-[node name="Label4" type="Label" parent="Worlds"]
+[node name="Button3" type="Button" parent="Worlds/Buttons"]
 layout_mode = 0
-offset_left = 872.0
-offset_top = 232.0
-offset_right = 1043.0
-offset_bottom = 274.0
+offset_left = 800.0
+offset_top = 264.0
+offset_right = 979.0
+offset_bottom = 352.0
 theme_override_fonts/font = ExtResource("3_25dj1")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 36
 text = "World 3"
 
-[node name="Label5" type="Label" parent="Worlds"]
+[node name="Button4" type="Button" parent="Worlds/Buttons"]
 layout_mode = 0
-offset_left = 104.0
-offset_top = 448.0
-offset_right = 275.0
-offset_bottom = 490.0
+offset_left = 168.0
+offset_top = 480.0
+offset_right = 347.0
+offset_bottom = 568.0
 theme_override_fonts/font = ExtResource("3_25dj1")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 36
 text = "World 4"
 
-[node name="Label6" type="Label" parent="Worlds"]
+[node name="Button5" type="Button" parent="Worlds/Buttons"]
 layout_mode = 0
-offset_left = 488.0
-offset_top = 448.0
+offset_left = 480.0
+offset_top = 480.0
 offset_right = 659.0
-offset_bottom = 490.0
+offset_bottom = 568.0
 theme_override_fonts/font = ExtResource("3_25dj1")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 36
 text = "World 5"
 
-[node name="Label7" type="Label" parent="Worlds"]
+[node name="Button6" type="Button" parent="Worlds/Buttons"]
 layout_mode = 0
-offset_left = 872.0
-offset_top = 448.0
-offset_right = 1043.0
-offset_bottom = 490.0
+offset_left = 800.0
+offset_top = 480.0
+offset_right = 979.0
+offset_bottom = 568.0
 theme_override_fonts/font = ExtResource("3_25dj1")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 36
 text = "World 6"
 
 [node name="Return" type="Button" parent="Worlds"]
@@ -149,31 +213,140 @@ text = "Back"
 [node name="World 1" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="World 1"]
+offset_left = 408.0
+offset_top = 64.0
+offset_right = 750.0
+offset_bottom = 148.0
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 96
+text = "World 1"
 
 [node name="Level 1" type="Button" parent="World 1"]
 layout_mode = 0
-offset_left = 48.0
+offset_left = 224.0
 offset_top = 208.0
-offset_right = 208.0
-offset_bottom = 272.0
+offset_right = 352.0
+offset_bottom = 304.0
 theme_override_fonts/font = ExtResource("3_25dj1")
 theme_override_font_sizes/font_size = 64
 text = "1"
 
 [node name="Level 2" type="Button" parent="World 1"]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 328.0
-offset_right = 208.0
-offset_bottom = 392.0
+offset_left = 424.0
+offset_top = 208.0
+offset_right = 552.0
+offset_bottom = 304.0
 theme_override_fonts/font = ExtResource("3_25dj1")
 theme_override_font_sizes/font_size = 64
 text = "2"
 
+[node name="Level 3" type="Button" parent="World 1"]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 208.0
+offset_right = 744.0
+offset_bottom = 304.0
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 64
+text = "3"
+
+[node name="Level 4" type="Button" parent="World 1"]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 208.0
+offset_right = 936.0
+offset_bottom = 304.0
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 64
+text = "4"
+
+[node name="Level 5" type="Button" parent="World 1"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 352.0
+offset_right = 352.0
+offset_bottom = 448.0
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 64
+text = "5"
+
+[node name="Level 6" type="Button" parent="World 1"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 352.0
+offset_right = 552.0
+offset_bottom = 448.0
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 64
+text = "6"
+
+[node name="Level 7" type="Button" parent="World 1"]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 360.0
+offset_right = 744.0
+offset_bottom = 456.0
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 64
+text = "7"
+
+[node name="Level 8" type="Button" parent="World 1"]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 360.0
+offset_right = 936.0
+offset_bottom = 456.0
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 64
+text = "8"
+
+[node name="Level 9" type="Button" parent="World 1"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 496.0
+offset_right = 360.0
+offset_bottom = 592.0
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 64
+text = "9"
+
+[node name="Level 10" type="Button" parent="World 1"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 496.0
+offset_right = 552.0
+offset_bottom = 592.0
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 64
+text = "10"
+
+[node name="Level 11" type="Button" parent="World 1"]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 496.0
+offset_right = 744.0
+offset_bottom = 592.0
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 64
+text = "11"
+
+[node name="Level 12" type="Button" parent="World 1"]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 496.0
+offset_right = 936.0
+offset_bottom = 592.0
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 64
+text = "12"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Start/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Start/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Worlds/Buttons/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Worlds/Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="World 1/Level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="World 1/Level 2" to="." method="_on_level_2_pressed"]
