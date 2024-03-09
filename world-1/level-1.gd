@@ -45,7 +45,7 @@ func _on_exit_pressed():
 
 func _on_bounds_body_entered(body):
 	if body.name == "Player":
-		body.get_node("AnimatedSprite2D").stop()
+		body.hide()
 		control.queue_free()
 		# TODO: Set contents of recap sign
 		recap.open_sign()

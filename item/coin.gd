@@ -10,7 +10,6 @@ func _process(_delta):
 
 func _on_body_entered(body):
 	if body.name == "Player" and get_node("AnimatedSprite2D").get_animation() == "Idle":
-		# TODO: Add temporary value as level instance
 		Game.gold += 1
 		get_node("AnimatedSprite2D").play("Collect")
 		await get_node("AnimatedSprite2D").animation_finished

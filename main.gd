@@ -3,7 +3,8 @@ extends Node2D
 func _ready():
 	Utils.save_game()
 	Utils.load_game()
-	get_node("Select").visible = false
+	get_node("Start").visible = true
+	get_node("Worlds").visible = false
 
 func _on_quit_pressed():
 	get_tree().quit()
