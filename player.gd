@@ -11,7 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = get_node("AnimatedSprite2D")
 
 func _ready():
-	anim.speed_scale = 0.5
+	anim.speed_scale = 1
 
 func _physics_process(delta):
 	# Skip if game is paused
@@ -51,6 +51,15 @@ func _physics_process(delta):
 		anim.play("Fly")
 		
 	move_and_slide()
+	for i in get_slide_collision_count():
+		var collider = get_slide_collision(i).get_collider()
+		if collider.name == "Crate":
+			var diff = self.position.x - collider.position.x
+			print(diff)
+			if diff > 15:
+				collider.apply_central_impulse(Vector2(-10, 0))
+			elif diff < -15:
+				collider.apply_central_impulse(Vector2(10, 0))
 
 func knock_back(is_left):
 	if hurt: 
