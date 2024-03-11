@@ -1,13 +1,20 @@
 extends Node2D
 
 @onready var pause_menu = $UI/Pause
+@onready var control = $UI/Control
+@onready var recap = $UI/Recap
+@onready var sign_layer = $UI/SignLayer
 
-func _onready():
+func _ready():
 	pause_menu.visible = true
 	pause_menu.hide()
+	sign_layer.visible = true
+	sign_layer.show()
+	
+	get_node("Player/Camera2D").limit_right = 2024
 
 func _process(_delta):
-	if Input.is_action_just_pressed("pause"):
+	if not Game.recap and Input.is_action_just_pressed("ui_pause"):
 		pause()
 
 func pause():
@@ -16,9 +23,42 @@ func pause():
 		Engine.time_scale = 1
 	else:
 		pause_menu.show()
-		Engine.time_scale = 0
+		Engine.time_scale = 0		
+		get_node("UI/Pause/Confirm").visible = false
+		get_node("UI/Pause/Options").visible = true
+	
 	Game.paused = !Game.paused
+	control.update(Game.paused)
+
+func _on_control_pressed():
+	pause()
+
+func _on_exit_pressed():
+	get_tree().change_scene_to_file("res://main.tscn")
+	Game.recap = false
 
 func _on_bounds_body_entered(body):
 	if body.name == "Player":
-		get_tree().change_scene_to_file("res://main.tscn")
+		body.hide()
+		control.queue_free()
+		# TODO: Set contents of recap sign
+		recap.open_sign()
+		Game.recap = true
+	elif body.name != "TileMap":
+		body.queue_free()
+
+func _on_flag_body_entered(body):
+	if body.name == "Player":
+		body.get_node("AnimatedSprite2D").stop()
+		control.queue_free()
+		# TODO: Set contents of recap sign
+		recap.open_sign()
+		Game.recap = true
+
+func _on_sign_body_entered(body):
+	if body.name == "Player":
+		sign_layer.open_sign()
+
+func _on_sign_body_exited(body):
+	if body.name == "Player":
+		sign_layer.close_sign()

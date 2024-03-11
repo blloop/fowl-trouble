@@ -10,7 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim = get_node("AnimatedSprite2D")
 
-func _onready():
+func _ready():
 	anim.speed_scale = 0.5
 
 func _physics_process(delta):

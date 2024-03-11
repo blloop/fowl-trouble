@@ -14,11 +14,7 @@ func _ready():
 	back.visible = false
 	
 	# Mute locked worlds
-	get_node("Worlds/Buttons/Button2").disabled = true
-	get_node("Worlds/Buttons/Button3").disabled = true
-	get_node("Worlds/Buttons/Button4").disabled = true
-	get_node("Worlds/Buttons/Button5").disabled = true
-	get_node("Worlds/Buttons/Button6").disabled = true
+	#get_node("Worlds/Buttons/Button2").disabled = true
 	#get_node("Worlds/Buttons/Button2").set("theme_override_colors/font_color", Color(0, 0, 0, 0.5))
 	
 func _on_quit_pressed():

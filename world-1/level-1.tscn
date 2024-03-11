@@ -284,7 +284,7 @@ position = Vector2(951, 302)
 position = Vector2(1959, 254)
 
 [node name="Player" parent="." instance=ExtResource("1_xvivn")]
-position = Vector2(1879, 174)
+position = Vector2(63, 278)
 
 [node name="Mobs" type="Node2D" parent="."]
 

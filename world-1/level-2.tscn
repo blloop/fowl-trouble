@@ -1,30 +1,47 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvc57up8sd4pd"]
+[gd_scene load_steps=14 format=3 uid="uid://dgo6gt5d58vva"]
 
-[ext_resource type="Script" path="res://world-1/level-2.gd" id="1_rjv5k"]
+[ext_resource type="Script" path="res://world-1/level-2.gd" id="1_o68oe"]
 [ext_resource type="PackedScene" uid="uid://crda7h07fpjk7" path="res://background/bg-1.tscn" id="2_lo3s7"]
 [ext_resource type="TileSet" uid="uid://c5r0gb6eiq8uo" path="res://world-1/tiles.tres" id="4_r2i82"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="4_w7tpc"]
 [ext_resource type="PackedScene" uid="uid://1lqlbp5gk61q" path="res://ui/pause.tscn" id="9_6vp13"]
+[ext_resource type="PackedScene" uid="uid://lxg87svmucji" path="res://item/sign.tscn" id="10_dwkjk"]
+[ext_resource type="PackedScene" uid="uid://d2eqm7p84trwd" path="res://item/flag.tscn" id="11_tajjp"]
+[ext_resource type="PackedScene" uid="uid://ckiptfoim47l7" path="res://ui/sign-layer.tscn" id="14_ga4pb"]
+[ext_resource type="FontFile" uid="uid://b7u7rptev1prg" path="res://assets/ui/FutilePro.ttf" id="15_br2c8"]
+[ext_resource type="PackedScene" uid="uid://dbewfbkrvukv4" path="res://ui/gold.tscn" id="16_k15q6"]
+[ext_resource type="PackedScene" uid="uid://663aj70tr80x" path="res://ui/health.tscn" id="17_gi040"]
+[ext_resource type="PackedScene" uid="uid://dxjdud5ybsqhx" path="res://ui/control.tscn" id="19_qemya"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfuyk"]
-size = Vector2(48, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4urt7"]
+size = Vector2(2144, 20)
 
 [node name="World" type="Node2D"]
 position = Vector2(41, 274)
-script = ExtResource("1_rjv5k")
+script = ExtResource("1_o68oe")
 
 [node name="BG" parent="." instance=ExtResource("2_lo3s7")]
 
 [node name="TileMap" type="TileMap" parent="."]
-scale = Vector2(3, 3)
+position = Vector2(-1, -2)
 tile_set = ExtResource("4_r2i82")
 format = 2
+layer_0/tile_data = PackedInt32Array(1310720, 65536, 2, 1376256, 65536, 3, 1441792, 65536, 3, 1245185, 131072, 1, 1310721, 131072, 2, 1376257, 262144, 3, 1441793, 262144, 3, 1245186, 262144, 1, 1310722, 262144, 3, 1376258, 131072, 3, 1507330, 262144, 3, 1245187, 196608, 1, 1310723, 262144, 3, 1376259, 262144, 3, 1507331, 131072, 3, 1245188, 262144, 1, 1310724, 262144, 2, 1376260, 262144, 3, 1507332, 262144, 3, 1245189, 196608, 1, 1310725, 262144, 3, 1376261, 196608, 3, 1507333, 262144, 3, 1245190, 262144, 1, 1310726, 262144, 3, 1376262, 262144, 3, 1507334, 131072, 3, 1245191, 196608, 1, 1310727, 262144, 3, 1441799, 262144, 3, 1507335, 262144, 3, 1245192, 196608, 1, 1310728, 327680, 3, 1376264, 262144, 3, 1441800, 262144, 3, 1507336, 196608, 2, 1245193, 262144, 1, 1310729, 262144, 3, 1376265, 262144, 3, 1441801, 262144, 3, 1507337, 262144, 3, 1245194, 262144, 1, 1310730, 262144, 3, 1376266, 262144, 3, 1441802, 131072, 3, 1507338, 262144, 3, 1245195, 196608, 1, 1310731, 327680, 3, 1376267, 262144, 3, 1441803, 262144, 3, 1507339, 196608, 2, 1245196, 262144, 1, 1310732, 262144, 3, 1376268, 196608, 3, 1441804, 262144, 3, 1507340, 262144, 3, 1245197, 262144, 1, 1310733, 196608, 3, 1376269, 262144, 3, 1441805, 262144, 2, 1507341, 262144, 3, 1245198, 196608, 1, 1310734, 262144, 3, 1376270, 262144, 3, 1441806, 262144, 3, 1507342, 262144, 3, 1245199, 196608, 1, 1310735, 262144, 3, 1376271, 262144, 3, 1441807, 196608, 3, 1507343, 262144, 3, 1245200, 262144, 1, 1310736, 262144, 2, 1376272, 262144, 3, 1441808, 262144, 3, 1507344, 262144, 3, 1245201, 262144, 1, 1310737, 262144, 3, 1376273, 262144, 3, 1441809, 196608, 2, 1507345, 262144, 3, 1245202, 262144, 1, 1310738, 262144, 3, 1376274, 262144, 3, 1441810, 262144, 3, 1507346, 262144, 3, 1245203, 196608, 1, 1310739, 196608, 3, 1376275, 262144, 3, 1441811, 262144, 3, 1507347, 262144, 3, 1245204, 262144, 1, 1310740, 262144, 3, 1376276, 262144, 3, 1441812, 262144, 2, 1507348, 262144, 3, 1245205, 196608, 1, 1310741, 262144, 3, 1376277, 131072, 3, 1441813, 262144, 3, 1507349, 262144, 3, 1507328, 65536, 3, 1507329, 196608, 3, 1441794, 262144, 3, 1441795, 262144, 3, 1441796, 262144, 3, 1441797, 262144, 3, 1441798, 262144, 3, 1376263, 196608, 2, 1179650, 131072, 0, 1179661, 327680, 0, 1179654, 327680, 0, 1179653, 196608, 0, 1179659, 196608, 0, 1179664, 196608, 0, 1245206, 262144, 1, 1245207, 196608, 1, 1245208, 196608, 1, 1245209, 262144, 1, 1245210, 327680, 1, 1310747, 393216, 2, 1310746, 327680, 2, 1376283, 393216, 3, 1441819, 393216, 3, 1507355, 393216, 3, 1310742, 196608, 2, 1310743, 262144, 3, 1310744, 262144, 3, 1310745, 131072, 3, 1376281, 262144, 3, 1376282, 262144, 2, 1441818, 262144, 3, 1441817, 262144, 3, 1441816, 262144, 3, 1376280, 196608, 3, 1376279, 262144, 3, 1376278, 262144, 3, 1441814, 262144, 3, 1441815, 196608, 3, 1507354, 262144, 3, 1507353, 262144, 3, 1507352, 196608, 2, 1507351, 262144, 3, 1507350, 262144, 3, 1179672, 196608, 0)
 
-[node name="Player" type="Node2D" parent="."]
-position = Vector2(12, -15)
+[node name="Deco" type="Node2D" parent="."]
 
-[node name="Player" parent="Player" instance=ExtResource("4_w7tpc")]
-position = Vector2(1, 13)
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Features" type="Node2D" parent="."]
+
+[node name="Sign" parent="Features" instance=ExtResource("10_dwkjk")]
+position = Vector2(167, 302)
+
+[node name="Flag" parent="Features" instance=ExtResource("11_tajjp")]
+position = Vector2(335, 302)
+
+[node name="Player" parent="." instance=ExtResource("4_w7tpc")]
+position = Vector2(87, 262)
 
 [node name="Mobs" type="Node2D" parent="."]
 
@@ -32,12 +49,80 @@ position = Vector2(1, 13)
 position = Vector2(-41, -274)
 
 [node name="Pit1" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(280, 464)
-shape = SubResource("RectangleShape2D_lfuyk")
+position = Vector2(1072, 664)
+shape = SubResource("RectangleShape2D_4urt7")
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="SignLayer" parent="UI" instance=ExtResource("14_ga4pb")]
+position = Vector2(560, 320)
+
+[node name="Label1" type="Label" parent="UI/SignLayer"]
+offset_left = -272.0
+offset_top = -80.0
+offset_right = 277.0
+offset_bottom = -38.0
+theme_override_fonts/font = ExtResource("15_br2c8")
+theme_override_font_sizes/font_size = 48
+text = "How to fly: [SPACE BAR]"
+
+[node name="Label2" type="Label" parent="UI/SignLayer"]
+offset_left = -272.0
+offset_right = 277.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("15_br2c8")
+theme_override_font_sizes/font_size = 48
+text = "How to move: [ARROWS]"
+
+[node name="Recap" parent="UI" instance=ExtResource("14_ga4pb")]
+position = Vector2(560, 320)
+
+[node name="Label1" type="Label" parent="UI/Recap"]
+offset_left = -336.0
+offset_top = -120.0
+offset_right = 360.0
+offset_bottom = -36.0
+theme_override_fonts/font = ExtResource("15_br2c8")
+theme_override_font_sizes/font_size = 96
+text = "Level Complete!"
+
+[node name="Label2" type="Label" parent="UI/Recap"]
+offset_left = -96.0
+offset_top = 16.0
+offset_right = 90.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("15_br2c8")
+theme_override_font_sizes/font_size = 36
+text = "Time: xx:xx
+"
+
+[node name="Exit" type="Button" parent="UI/Recap"]
+offset_left = -200.0
+offset_top = 72.0
+offset_right = 200.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("15_br2c8")
+theme_override_font_sizes/font_size = 48
+text = "Return to menu"
+
+[node name="Gold" parent="UI" instance=ExtResource("16_k15q6")]
+position = Vector2(8, 64)
+
+[node name="Health" parent="UI" instance=ExtResource("17_gi040")]
+position = Vector2(0, 8)
 
 [node name="Pause" parent="UI" instance=ExtResource("9_6vp13")]
 visible = false
 
+[node name="Control" parent="UI" instance=ExtResource("19_qemya")]
+offset_left = 1096.0
+offset_top = 16.0
+offset_right = 1138.0
+offset_bottom = 58.0
+
+[connection signal="body_entered" from="Features/Sign" to="." method="_on_sign_body_entered"]
+[connection signal="body_exited" from="Features/Sign" to="." method="_on_sign_body_exited"]
+[connection signal="body_entered" from="Features/Flag" to="." method="_on_flag_body_entered"]
 [connection signal="body_entered" from="Bounds" to="." method="_on_bounds_body_entered"]
+[connection signal="pressed" from="UI/Recap/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="UI/Control" to="." method="_on_control_pressed"]
