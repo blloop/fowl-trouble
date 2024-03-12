@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://d0y6g3oei61yt"]
+[gd_scene load_steps=37 format=3 uid="uid://d0y6g3oei61yt"]
 
 [ext_resource type="Script" path="res://world-1/level-1.gd" id="1_tfbds"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="1_xvivn"]
@@ -18,6 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://b5fww5ugvwf7t" path="res://assets/ui/arrow.png" id="13_tr7ra"]
 [ext_resource type="PackedScene" uid="uid://dxjdud5ybsqhx" path="res://ui/control.tscn" id="14_v4nym"]
 [ext_resource type="PackedScene" uid="uid://sxobd1sl74rf" path="res://enemy/slime-blue.tscn" id="15_1d7wa"]
+[ext_resource type="Texture2D" uid="uid://df2giwiion77v" path="res://assets/player/chicken_left.png" id="15_csvy6"]
+[ext_resource type="Texture2D" uid="uid://cvjn1klj7vc1h" path="res://assets/player/chicken_up.png" id="16_657hn"]
+[ext_resource type="Texture2D" uid="uid://cys8pyxmj0mso" path="res://assets/ui/space.png" id="17_uwupe"]
 [ext_resource type="PackedScene" uid="uid://d2eqm7p84trwd" path="res://item/flag.tscn" id="19_hrx3r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4dh8s"]
@@ -218,6 +221,7 @@ animation = &"Idle"
 position = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_th6cb")
 animation = &"Idle"
+frame = 3
 
 [node name="Items" type="Node2D" parent="."]
 
@@ -312,22 +316,73 @@ shape = SubResource("RectangleShape2D_4urt7")
 [node name="SignLayer" parent="UI" instance=ExtResource("7_r35mv")]
 position = Vector2(560, 320)
 
-[node name="Label1" type="Label" parent="UI/SignLayer"]
-offset_left = -272.0
-offset_top = -80.0
-offset_right = 277.0
-offset_bottom = -38.0
-theme_override_fonts/font = ExtResource("12_sxrqh")
-theme_override_font_sizes/font_size = 48
-text = "How to fly: [SPACE BAR]"
+[node name="Dividers" type="Label" parent="UI/SignLayer"]
+offset_left = -240.0
+offset_top = -136.0
+offset_right = 396.0
+offset_bottom = -4.0
+theme_override_font_sizes/font_size = 96
+text = "/       /       /"
 
-[node name="Label2" type="Label" parent="UI/SignLayer"]
-offset_left = -272.0
-offset_right = 277.0
-offset_bottom = 42.0
-theme_override_fonts/font = ExtResource("12_sxrqh")
-theme_override_font_sizes/font_size = 48
-text = "How to move: [ARROWS]"
+[node name="Chicken1" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(-224, 56)
+scale = Vector2(4, 4)
+texture = ExtResource("15_csvy6")
+
+[node name="Chicken2" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(1.52588e-05, 56)
+scale = Vector2(4, 4)
+texture = ExtResource("15_csvy6")
+flip_h = true
+
+[node name="Chicken3" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(224, 56)
+scale = Vector2(4, 4)
+texture = ExtResource("16_657hn")
+
+[node name="Move1" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(-272, -104)
+scale = Vector2(3, 3)
+texture = ExtResource("12_qser4")
+hframes = 3
+vframes = 8
+frame = 3
+
+[node name="Move2" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(-168, -56)
+scale = Vector2(3, 3)
+texture = ExtResource("12_qser4")
+hframes = 3
+vframes = 8
+frame = 15
+
+[node name="Move3" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(-56, -104)
+scale = Vector2(3, 3)
+texture = ExtResource("12_qser4")
+hframes = 3
+vframes = 8
+frame = 9
+
+[node name="Move4" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(48, -56)
+scale = Vector2(3, 3)
+texture = ExtResource("12_qser4")
+hframes = 3
+vframes = 8
+frame = 21
+
+[node name="Move5" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(160, -104)
+scale = Vector2(3, 3)
+texture = ExtResource("12_qser4")
+hframes = 3
+vframes = 8
+
+[node name="Move6" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(280, -48)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_uwupe")
 
 [node name="SignLayer2" parent="UI" instance=ExtResource("7_r35mv")]
 position = Vector2(560, 320)
