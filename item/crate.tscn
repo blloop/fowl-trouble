@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://csy8pvqgqkq4t" path="res://assets/objects/crate.png" id="1_w2g2w"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ypada"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wwb1d"]
 radius = 8.0
 height = 16.0
 
@@ -14,4 +14,4 @@ position = Vector2(0, -1)
 texture = ExtResource("1_w2g2w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_ypada")
+shape = SubResource("CapsuleShape2D_wwb1d")

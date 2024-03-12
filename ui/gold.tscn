@@ -88,4 +88,4 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.223529, 0.203922, 0.341176, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_hbg31")
-text = "99"
+text = "0"

@@ -57,9 +57,9 @@ func _physics_process(delta):
 			var diff = self.position.x - collider.position.x
 			print(diff)
 			if diff > 15:
-				collider.apply_central_impulse(Vector2(-10, 0))
+				collider.set_axis_velocity(Vector2(-50, 0))
 			elif diff < -15:
-				collider.apply_central_impulse(Vector2(10, 0))
+				collider.set_axis_velocity(Vector2(50, 0))
 
 func knock_back(is_left):
 	if hurt: 
