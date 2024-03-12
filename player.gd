@@ -20,6 +20,7 @@ func _physics_process(delta):
 	
 	# If no hp remaining, return to menu
 	if Game.player_hp <= 0:
+		# TODO: Add death splash upon 0 hp
 		get_tree().change_scene_to_file("res://main.tscn")
 		return
 	

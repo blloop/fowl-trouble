@@ -1,58 +1,58 @@
 [gd_scene load_steps=14 format=3 uid="uid://840netei5g67"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3smd8"]
-[ext_resource type="Texture2D" uid="uid://dkps1u2s1ep12" path="res://assets/chicken.png" id="4_fko5h"]
+[ext_resource type="Texture2D" uid="uid://c0b8rpxhk3qu7" path="res://assets/player/chicken.png" id="2_67ah1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aasb3"]
 size = Vector2(14, 13)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_41f6u"]
-atlas = ExtResource("4_fko5h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fof8"]
+atlas = ExtResource("2_67ah1")
 region = Rect2(64, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wb7k0"]
-atlas = ExtResource("4_fko5h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhn8j"]
+atlas = ExtResource("2_67ah1")
 region = Rect2(0, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a3er7"]
-atlas = ExtResource("4_fko5h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrlsj"]
+atlas = ExtResource("2_67ah1")
 region = Rect2(32, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s3ro8"]
-atlas = ExtResource("4_fko5h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_841kv"]
+atlas = ExtResource("2_67ah1")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_shmrf"]
-atlas = ExtResource("4_fko5h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gmts"]
+atlas = ExtResource("2_67ah1")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ctfvs"]
-atlas = ExtResource("4_fko5h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwtb6"]
+atlas = ExtResource("2_67ah1")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vypbe"]
-atlas = ExtResource("4_fko5h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wixdk"]
+atlas = ExtResource("2_67ah1")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpcva"]
+atlas = ExtResource("2_67ah1")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b5ah"]
+atlas = ExtResource("2_67ah1")
 region = Rect2(96, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5woeb"]
-atlas = ExtResource("4_fko5h")
-region = Rect2(128, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ds3y2"]
-atlas = ExtResource("4_fko5h")
-region = Rect2(160, 32, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yek88"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3dvr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_41f6u")
+"texture": SubResource("AtlasTexture_7fof8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wb7k0")
+"texture": SubResource("AtlasTexture_lhn8j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a3er7")
+"texture": SubResource("AtlasTexture_qrlsj")
 }],
 "loop": true,
 "name": &"Fly",
@@ -60,10 +60,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s3ro8")
+"texture": SubResource("AtlasTexture_841kv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_shmrf")
+"texture": SubResource("AtlasTexture_1gmts")
 }],
 "loop": true,
 "name": &"Idle",
@@ -71,16 +71,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ctfvs")
+"texture": SubResource("AtlasTexture_iwtb6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vypbe")
+"texture": SubResource("AtlasTexture_wixdk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5woeb")
+"texture": SubResource("AtlasTexture_gpcva")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ds3y2")
+"texture": SubResource("AtlasTexture_6b5ah")
 }],
 "loop": true,
 "name": &"Run",
@@ -96,8 +96,8 @@ shape = SubResource("RectangleShape2D_aasb3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -14)
-sprite_frames = SubResource("SpriteFrames_yek88")
-animation = &"Idle"
+sprite_frames = SubResource("SpriteFrames_v3dvr")
+animation = &"Run"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
