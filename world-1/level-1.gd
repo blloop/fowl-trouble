@@ -3,6 +3,7 @@ extends Node2D
 @onready var pause_menu = $UI/Pause
 @onready var control = $UI/Control
 @onready var recap = $UI/Recap
+@onready var death = $UI/Death
 @onready var sign_layer = $UI/SignLayer
 @onready var sign_layer_2 = $UI/SignLayer2
 
@@ -43,12 +44,16 @@ func _on_exit_pressed():
 	get_tree().change_scene_to_file("res://main.tscn")
 	Game.recap = false
 
+func _on_restart_pressed():
+	get_tree().change_scene_to_file("res://world-1/level-1.tscn")
+	Game.recap = false
+
 func _on_bounds_body_entered(body):
 	if body.name == "Player":
 		body.hide()
 		control.queue_free()
-		# TODO: Set contents of recap sign
-		recap.open_sign()
+		death.get_node("Label1").text = Game.splashes.pick_random()
+		death.open_sign()
 		Game.recap = true
 	elif body.name != "TileMap":
 		body.queue_free()
@@ -57,7 +62,7 @@ func _on_flag_body_entered(body):
 	if body.name == "Player":
 		body.get_node("AnimatedSprite2D").stop()
 		control.queue_free()
-		# TODO: Set contents of recap sign
+		# TODO: Set completion time in recap sign
 		recap.open_sign()
 		Game.recap = true
 

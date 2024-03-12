@@ -133,7 +133,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4urt7"]
-size = Vector2(2144, 20)
+size = Vector2(2224, 20)
 
 [node name="World" type="Node2D"]
 position = Vector2(41, 274)
@@ -304,7 +304,7 @@ metadata/_edit_lock_ = true
 position = Vector2(-41, -274)
 
 [node name="Pit1" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(1072, 664)
+position = Vector2(1032, 664)
 shape = SubResource("RectangleShape2D_4urt7")
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -333,50 +333,92 @@ text = "How to move: [ARROWS]"
 position = Vector2(560, 320)
 
 [node name="Label1" type="Label" parent="UI/SignLayer2"]
-offset_left = -272.0
+offset_left = -344.0
 offset_top = -80.0
-offset_right = 277.0
-offset_bottom = -38.0
+offset_right = 344.0
+offset_bottom = -24.0
 theme_override_colors/font_color = Color(0.756863, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_sxrqh")
 theme_override_font_sizes/font_size = 48
 text = "Watch out for slimes!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="UI/SignLayer2"]
-offset_left = -352.0
-offset_right = 383.0
-offset_bottom = 42.0
+offset_left = -344.0
+offset_right = 344.0
+offset_bottom = 104.0
 theme_override_fonts/font = ExtResource("12_sxrqh")
 theme_override_font_sizes/font_size = 48
 text = "They will damage you on contact"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Recap" parent="UI" instance=ExtResource("7_r35mv")]
 position = Vector2(560, 320)
 
 [node name="Label1" type="Label" parent="UI/Recap"]
 offset_left = -336.0
-offset_top = -120.0
-offset_right = 360.0
-offset_bottom = -36.0
+offset_top = -112.0
+offset_right = 336.0
+offset_bottom = -28.0
 theme_override_fonts/font = ExtResource("12_sxrqh")
-theme_override_font_sizes/font_size = 96
+theme_override_font_sizes/font_size = 84
 text = "Level Complete!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="UI/Recap"]
-offset_left = -96.0
+offset_left = -112.0
 offset_top = 16.0
-offset_right = 90.0
+offset_right = 112.0
 offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("12_sxrqh")
 theme_override_font_sizes/font_size = 36
 text = "Time: xx:xx
 "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Exit" type="Button" parent="UI/Recap"]
-offset_left = -200.0
-offset_top = 72.0
-offset_right = 200.0
-offset_bottom = 144.0
+offset_left = -184.0
+offset_top = 64.0
+offset_right = 184.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("12_sxrqh")
+theme_override_font_sizes/font_size = 48
+text = "Return to menu"
+
+[node name="Death" parent="UI" instance=ExtResource("7_r35mv")]
+position = Vector2(560, 320)
+
+[node name="Label1" type="Label" parent="UI/Death"]
+offset_left = -336.0
+offset_top = -96.0
+offset_right = 344.0
+offset_bottom = -24.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_sxrqh")
+theme_override_font_sizes/font_size = 70
+text = "Looks like trouble!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Restart" type="Button" parent="UI/Death"]
+offset_left = -128.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("12_sxrqh")
+theme_override_font_sizes/font_size = 36
+text = "Restart (R)"
+
+[node name="Exit" type="Button" parent="UI/Death"]
+offset_left = -184.0
+offset_top = 64.0
+offset_right = 184.0
+offset_bottom = 120.0
 theme_override_fonts/font = ExtResource("12_sxrqh")
 theme_override_font_sizes/font_size = 48
 text = "Return to menu"
@@ -403,4 +445,6 @@ offset_bottom = 58.0
 [connection signal="body_entered" from="Features/Flag" to="." method="_on_flag_body_entered"]
 [connection signal="body_entered" from="Bounds" to="." method="_on_bounds_body_entered"]
 [connection signal="pressed" from="UI/Recap/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="UI/Death/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="UI/Death/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="UI/Control" to="." method="_on_control_pressed"]
