@@ -25,8 +25,11 @@ func _physics_process(delta):
 	
 	# If no hp remaining, return to menu
 	if Game.player_hp <= 0:
-		# TODO: Add death splash upon 0 hp
-		get_tree().change_scene_to_file("res://main.tscn")
+		Game.recap = true
+		var tween_a = get_tree().create_tween()
+		tween_a.tween_property(self, "position", position - Vector2(0, 20), 0.4)
+		tween_a.tween_property(self, "modulate:a", 0, 0.4)
+		tween_a.tween_callback(call_menu)
 		return
 	
 	# Add the gravity.
@@ -61,16 +64,17 @@ func _physics_process(delta):
 		var collider = get_slide_collision(i).get_collider()
 		if collider.name == "Crate":
 			var diff = self.position.x - collider.position.x
-			print(diff)
 			if diff > 15:
 				collider.set_axis_velocity(Vector2(-50, 0))
 			elif diff < -15:
 				collider.set_axis_velocity(Vector2(50, 0))
 
+func call_menu():
+	get_node("../../World")._on_bounds_body_entered(self)
+
 func knock_back(diff):
 	if hurt: 
 		return
-	
 	if tween:
 		tween.kill()
 	

@@ -28,7 +28,6 @@ func _process(_delta):
 		pause()
 	if !Game.paused and !Game.recap:
 		time_elapsed += _delta
-		print(time_elapsed)
 
 func pause():
 	if Game.paused:
@@ -52,15 +51,17 @@ func _on_exit_pressed():
 
 func _on_restart_pressed():
 	get_tree().change_scene_to_file("res://world-1/level-1.tscn")
+	Game.player_hp = 10
+	Game.gold = 0
 	Game.recap = false
 
 func _on_bounds_body_entered(body):
 	if body.name == "Player":
+		Game.recap = true
 		body.hide()
 		control.queue_free()
 		death.get_node("Label1").text = Game.splashes.pick_random()
 		death.open_sign()
-		Game.recap = true
 	elif body.name != "TileMap":
 		body.queue_free()
 
