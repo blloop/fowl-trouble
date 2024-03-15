@@ -15,7 +15,12 @@ func _ready():
 
 func _physics_process(delta):
 	# Skip if game is paused
-	if Game.paused or Game.recap:
+	if Game.paused:
+		return
+	if Game.recap:
+		# TODO: Add auto-restart variable + function
+		if Input.is_action_just_pressed("ui_restart"):
+			get_node("../../World")._on_restart_pressed()
 		return
 	
 	# If no hp remaining, return to menu
@@ -62,7 +67,7 @@ func _physics_process(delta):
 			elif diff < -15:
 				collider.set_axis_velocity(Vector2(50, 0))
 
-func knock_back(is_left):
+func knock_back(diff):
 	if hurt: 
 		return
 	
@@ -75,7 +80,7 @@ func knock_back(is_left):
 
 	hurt = true
 	anim.play("Fly")
-	self.velocity = Vector2(-180 if is_left else 180, -120)
+	self.velocity = Vector2(diff * 10, -120)
 	get_node("Timer").start()
 	move_and_slide()
 

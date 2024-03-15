@@ -288,7 +288,7 @@ position = Vector2(951, 302)
 position = Vector2(1959, 254)
 
 [node name="Player" parent="." instance=ExtResource("1_xvivn")]
-position = Vector2(63, 278)
+position = Vector2(1919, 206)
 
 [node name="Mobs" type="Node2D" parent="."]
 
@@ -317,31 +317,32 @@ shape = SubResource("RectangleShape2D_4urt7")
 position = Vector2(560, 320)
 
 [node name="Dividers" type="Label" parent="UI/SignLayer"]
-offset_left = -240.0
-offset_top = -136.0
-offset_right = 396.0
-offset_bottom = -4.0
-theme_override_font_sizes/font_size = 96
-text = "/       /       /"
+offset_left = -242.0
+offset_top = -72.0
+offset_right = 394.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("12_sxrqh")
+theme_override_font_sizes/font_size = 20
+text = "or                               or                                or"
 
 [node name="Chicken1" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(-224, 56)
+position = Vector2(-240, 48)
 scale = Vector2(4, 4)
 texture = ExtResource("15_csvy6")
 
 [node name="Chicken2" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(1.52588e-05, 56)
+position = Vector2(-24, 48)
 scale = Vector2(4, 4)
 texture = ExtResource("15_csvy6")
 flip_h = true
 
 [node name="Chicken3" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(224, 56)
+position = Vector2(208, 48)
 scale = Vector2(4, 4)
 texture = ExtResource("16_657hn")
 
 [node name="Move1" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(-272, -104)
+position = Vector2(-280, -64)
 scale = Vector2(3, 3)
 texture = ExtResource("12_qser4")
 hframes = 3
@@ -349,7 +350,7 @@ vframes = 8
 frame = 3
 
 [node name="Move2" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(-168, -56)
+position = Vector2(-184, -64)
 scale = Vector2(3, 3)
 texture = ExtResource("12_qser4")
 hframes = 3
@@ -357,7 +358,7 @@ vframes = 8
 frame = 15
 
 [node name="Move3" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(-56, -104)
+position = Vector2(-64, -64)
 scale = Vector2(3, 3)
 texture = ExtResource("12_qser4")
 hframes = 3
@@ -365,7 +366,7 @@ vframes = 8
 frame = 9
 
 [node name="Move4" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(48, -56)
+position = Vector2(32, -64)
 scale = Vector2(3, 3)
 texture = ExtResource("12_qser4")
 hframes = 3
@@ -373,14 +374,14 @@ vframes = 8
 frame = 21
 
 [node name="Move5" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(160, -104)
+position = Vector2(160, -64)
 scale = Vector2(3, 3)
 texture = ExtResource("12_qser4")
 hframes = 3
 vframes = 8
 
 [node name="Move6" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(280, -48)
+position = Vector2(280, -64)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("17_uwupe")
 
@@ -425,13 +426,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="UI/Recap"]
-offset_left = -112.0
+offset_left = -336.0
 offset_top = 16.0
-offset_right = 112.0
+offset_right = 336.0
 offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("12_sxrqh")
 theme_override_font_sizes/font_size = 36
-text = "Time: xx:xx
+text = "Time: XX:XX.XX
 "
 horizontal_alignment = 1
 vertical_alignment = 1

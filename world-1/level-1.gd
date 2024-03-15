@@ -1,5 +1,8 @@
 extends Node2D
 
+var time_elapsed := 0.0
+var format_string = "Time: %02d:%1d%.2f"
+
 @onready var pause_menu = $UI/Pause
 @onready var control = $UI/Control
 @onready var recap = $UI/Recap
@@ -23,6 +26,9 @@ func _ready():
 func _process(_delta):
 	if not Game.recap and Input.is_action_just_pressed("ui_pause"):
 		pause()
+	if !Game.paused and !Game.recap:
+		time_elapsed += _delta
+		print(time_elapsed)
 
 func pause():
 	if Game.paused:
@@ -62,7 +68,7 @@ func _on_flag_body_entered(body):
 	if body.name == "Player":
 		body.get_node("AnimatedSprite2D").stop()
 		control.queue_free()
-		# TODO: Set completion time in recap sign
+		recap.get_node("Label2").text = format_string % [time_elapsed / 60, floor(time_elapsed) / 10, fmod(time_elapsed, 10)]
 		recap.open_sign()
 		Game.recap = true
 
