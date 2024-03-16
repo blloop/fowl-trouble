@@ -215,11 +215,11 @@ theme_override_fonts/font = ExtResource("3_25dj1")
 theme_override_font_sizes/font_size = 36
 text = "Back"
 
-[node name="World 1" type="Control" parent="."]
+[node name="World1" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Label" type="Label" parent="World 1"]
+[node name="Label" type="Label" parent="World1"]
 layout_mode = 0
 offset_left = 408.0
 offset_top = 64.0
@@ -229,7 +229,7 @@ theme_override_fonts/font = ExtResource("3_25dj1")
 theme_override_font_sizes/font_size = 96
 text = "World 1"
 
-[node name="Level 1" type="Button" parent="World 1"]
+[node name="Level1" type="Button" parent="World1"]
 layout_mode = 0
 offset_left = 224.0
 offset_top = 208.0
@@ -239,7 +239,7 @@ theme_override_fonts/font = ExtResource("3_25dj1")
 theme_override_font_sizes/font_size = 64
 text = "1"
 
-[node name="Level 2" type="Button" parent="World 1"]
+[node name="Level2" type="Button" parent="World1"]
 layout_mode = 0
 offset_left = 424.0
 offset_top = 208.0
@@ -247,9 +247,10 @@ offset_right = 552.0
 offset_bottom = 304.0
 theme_override_fonts/font = ExtResource("3_25dj1")
 theme_override_font_sizes/font_size = 64
+disabled = true
 text = "2"
 
-[node name="Level 3" type="Button" parent="World 1"]
+[node name="Level3" type="Button" parent="World1"]
 layout_mode = 0
 offset_left = 616.0
 offset_top = 208.0
@@ -260,7 +261,7 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "3"
 
-[node name="Level 4" type="Button" parent="World 1"]
+[node name="Level4" type="Button" parent="World1"]
 layout_mode = 0
 offset_left = 808.0
 offset_top = 208.0
@@ -271,7 +272,7 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "4"
 
-[node name="Level 5" type="Button" parent="World 1"]
+[node name="Level5" type="Button" parent="World1"]
 layout_mode = 0
 offset_left = 224.0
 offset_top = 352.0
@@ -282,7 +283,7 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "5"
 
-[node name="Level 6" type="Button" parent="World 1"]
+[node name="Level6" type="Button" parent="World1"]
 layout_mode = 0
 offset_left = 424.0
 offset_top = 352.0
@@ -293,7 +294,7 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "6"
 
-[node name="Level 7" type="Button" parent="World 1"]
+[node name="Level7" type="Button" parent="World1"]
 layout_mode = 0
 offset_left = 616.0
 offset_top = 360.0
@@ -304,7 +305,7 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "7"
 
-[node name="Level 8" type="Button" parent="World 1"]
+[node name="Level8" type="Button" parent="World1"]
 layout_mode = 0
 offset_left = 808.0
 offset_top = 360.0
@@ -315,7 +316,7 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "8"
 
-[node name="Level 9" type="Button" parent="World 1"]
+[node name="Level9" type="Button" parent="World1"]
 layout_mode = 0
 offset_left = 232.0
 offset_top = 496.0
@@ -326,7 +327,7 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "9"
 
-[node name="Level 10" type="Button" parent="World 1"]
+[node name="Level10" type="Button" parent="World1"]
 layout_mode = 0
 offset_left = 424.0
 offset_top = 496.0
@@ -337,7 +338,7 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "10"
 
-[node name="Level 11" type="Button" parent="World 1"]
+[node name="Level11" type="Button" parent="World1"]
 layout_mode = 0
 offset_left = 616.0
 offset_top = 496.0
@@ -348,7 +349,7 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "11"
 
-[node name="Level 12" type="Button" parent="World 1"]
+[node name="Level12" type="Button" parent="World1"]
 layout_mode = 0
 offset_left = 808.0
 offset_top = 496.0
@@ -364,5 +365,5 @@ text = "12"
 [connection signal="pressed" from="Start/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Worlds/Buttons/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Worlds/Return" to="." method="_on_return_pressed"]
-[connection signal="pressed" from="World 1/Level 1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="World 1/Level 2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="World1/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="World1/Level2" to="." method="_on_level_2_pressed"]

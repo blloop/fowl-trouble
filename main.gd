@@ -1,17 +1,19 @@
 extends Node2D
 
-@onready var start = $Start
-@onready var worlds = $Worlds
-@onready var world_1 = get_node("World 1")
-@onready var back = $Back
 
 func _ready():
 	# Utils.save_game()
 	# Utils.load_game()
-	start.visible = !Game.visited
-	worlds.visible = Game.visited
-	world_1.visible = false
-	back.visible = false
+	$Start.visible = !Game.visited
+	$Worlds.visible = Game.visited
+	$World1.visible = false
+	$Back.visible = false
+	
+	# Enable completed levels
+	if Game.w1_unlocked[1]:
+		$World1/Level2.disabled = false
+	if Game.w1_unlocked[2]:
+		$World1/Level3.disabled = false
 	
 	# Mute locked worlds
 	#get_node("Worlds/Buttons/Button2").disabled = true
@@ -21,25 +23,25 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 func _on_play_pressed():
-	worlds.visible = true
-	start.visible = false
+	$Start.visible = false
+	$Worlds.visible = true
 	Game.visited = true
 
 func _on_return_pressed():
-	start.visible = true
-	worlds.visible = false
+	$Start.visible = true
+	$Worlds.visible = false
 
 func _on_back_pressed():
-	worlds.visible = true
-	world_1.visible = false
-	back.visible = false
+	$Worlds.visible = true
+	$World1.visible = false
+	$Back.visible = false
 
 # World Buttons
 
 func _on_button_1_pressed():
-	world_1.visible = true
-	worlds.visible = false
-	back.visible = true
+	$World1.visible = true
+	$Worlds.visible = false
+	$Back.visible = true
 
 # Level Buttons
 

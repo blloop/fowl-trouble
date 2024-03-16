@@ -73,7 +73,7 @@ func call_menu():
 	get_node("../../World")._on_bounds_body_entered(self)
 
 func knock_back(diff):
-	if hurt: 
+	if hurt or Game.player_hp == 0: 
 		return
 	if tween:
 		tween.kill()
