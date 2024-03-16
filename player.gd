@@ -1,17 +1,13 @@
 extends CharacterBody2D
 
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 const SPEED = 80.0
 const JUMP_VELOCITY = -180.0
 var hurt = false
 var tween : Tween
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
-@onready var anim = get_node("AnimatedSprite2D")
-
 func _ready():
-	anim.speed_scale = 1
+	$AnimatedSprite2D.speed_scale = 1
 
 func _physics_process(delta):
 	# Skip if game is paused
@@ -20,7 +16,7 @@ func _physics_process(delta):
 	if Game.recap:
 		# TODO: Add auto-restart variable + function
 		if Input.is_action_just_pressed("ui_restart"):
-			get_node("../../World")._on_restart_pressed()
+			$"../../World"._on_restart_pressed()
 		return
 	
 	# If no hp remaining, return to menu
@@ -39,7 +35,7 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		anim.play("Fly")
+		$AnimatedSprite2D.play("Fly")
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -47,17 +43,17 @@ func _physics_process(delta):
 	if hurt:
 		velocity.x /= 1.1
 	elif direction:
-		get_node("AnimatedSprite2D").flip_h = true if direction == 1 else false
+		$AnimatedSprite2D.flip_h = true if direction == 1 else false
 		velocity.x = direction * SPEED
 		if velocity.y == 0:
-			anim.play("Run")
+			$AnimatedSprite2D.play("Run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if velocity.y == 0:
-			anim.play("Idle")
+			$AnimatedSprite2D.play("Idle")
 	
 	if velocity.y > 0:
-		anim.play("Fly")
+		$AnimatedSprite2D.play("Fly")
 		
 	move_and_slide()
 	for i in get_slide_collision_count():
@@ -70,7 +66,7 @@ func _physics_process(delta):
 				collider.set_axis_velocity(Vector2(50, 0))
 
 func call_menu():
-	get_node("../../World")._on_bounds_body_entered(self)
+	$"../../World"._on_bounds_body_entered(self)
 
 func knock_back(diff):
 	if hurt or Game.player_hp == 0: 
@@ -83,9 +79,9 @@ func knock_back(diff):
 	tween.tween_property(self, "modulate", Color.WHITE, 0.2)
 
 	hurt = true
-	anim.play("Fly")
+	$AnimatedSprite2D.play("Fly")
 	self.velocity = Vector2(diff * 10, -120)
-	get_node("Timer").start()
+	$Timer.start()
 	move_and_slide()
 
 func _on_timer_timeout():

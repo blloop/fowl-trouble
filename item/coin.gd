@@ -1,16 +1,11 @@
 extends Area2D
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("AnimatedSprite2D").play("Idle")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+	$AnimatedSprite2D.play("Idle")
 
 func _on_body_entered(body):
-	if body.name == "Player" and get_node("AnimatedSprite2D").get_animation() == "Idle":
+	if body.name == "Player" and $AnimatedSprite2D.get_animation() == "Idle":
 		Game.gold += 1
-		get_node("AnimatedSprite2D").play("Collect")
-		await get_node("AnimatedSprite2D").animation_finished
+		$AnimatedSprite2D.play("Collect")
+		await $AnimatedSprite2D.animation_finished
 		queue_free()

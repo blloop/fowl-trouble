@@ -16,8 +16,8 @@ func _ready():
 		$World1/Level3.disabled = false
 	
 	# Mute locked worlds
-	#get_node("Worlds/Buttons/Button2").disabled = true
-	#get_node("Worlds/Buttons/Button2").set("theme_override_colors/font_color", Color(0, 0, 0, 0.5))
+	#$Worlds/Buttons/Button2.disabled = true
+	#$Worlds/Buttons/Button2.set("theme_override_colors/font_color", Color(0, 0, 0, 0.5))
 	
 func _on_quit_pressed():
 	get_tree().quit()

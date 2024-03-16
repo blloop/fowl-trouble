@@ -5,28 +5,22 @@ var chase = false
 var SPEED = 18
 var player
 
-# Called when the node enters the scene tree for the first time.
-#func _ready():
-	#pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	velocity.y += gravity * delta
 	
 	if chase:
-		get_node("AnimatedSprite2D").play("Walk")
-		player = get_node("../../Player")
+		$AnimatedSprite2D.play("Walk")
+		player = $"../../Player"
 		var diff = player.position.x - self.position.x
 		if diff < 15 and diff > -15:
-			get_node("AnimatedSprite2D").play("Idle")
+			$AnimatedSprite2D.play("Idle")
 			velocity.x = 0
 		else:
 			var to_right = player.position.x - self.position.x > 0
 			velocity.x = SPEED * (1 if to_right else -1)
-			get_node("AnimatedSprite2D").flip_h = to_right
-			
+			$AnimatedSprite2D.flip_h = to_right
 	else:
-		get_node("AnimatedSprite2D").play("Idle")
+		$AnimatedSprite2D.play("Idle")
 		velocity.x = 0
 	
 	move_and_slide()
@@ -44,4 +38,4 @@ func _on_player_collision_body_entered(body):
 		var diff = player.position.x - self.position.x
 		Game.player_hp -= 1
 		body.knock_back(diff)
-		get_node("../../UI/Health").decrease()
+		$"../../UI/Health".decrease()
