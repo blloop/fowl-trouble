@@ -46,7 +46,7 @@ func _on_exit_pressed():
 
 func _on_restart_pressed():
 	get_tree().change_scene_to_file("res://world-1/level-1.tscn")
-	Game.player_hp = 10
+	Game.player_hp = Game.max_hp
 	Game.gold = 0
 	Game.recap = false
 
@@ -64,7 +64,7 @@ func _on_flag_body_entered(body):
 	if body.name == "Player":
 		body.get_node("AnimatedSprite2D").stop()
 		$UI/Control.queue_free()
-		$UI/Recap/Label2.text = format_string % [time_elapsed / 60, floor(time_elapsed / 60) / 10, fmod(time_elapsed, 10)]
+		$UI/Recap/Label2.text = format_string % [time_elapsed / 60, floor(time_elapsed) / 10, fmod(time_elapsed, 10)]
 		#$UI/Recap/Label2.text = format_string % [time_elapsed / 60, int(floor(time_elapsed)) % 60]
 		$UI/Recap.open_sign()
 		Game.recap = true

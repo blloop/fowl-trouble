@@ -1,7 +1,7 @@
 extends Node2D
 
 # Same as game.gd
-var health = 10
+var health = Game.max_hp
 
 func decrease():
 	health -= 1

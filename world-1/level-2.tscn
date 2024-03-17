@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://d4dks5smuek1u"]
+[gd_scene load_steps=37 format=3 uid="uid://dbehakemogwjw"]
 
 [ext_resource type="Script" path="res://world-1/level-2.gd" id="1_o68oe"]
 [ext_resource type="PackedScene" uid="uid://crda7h07fpjk7" path="res://background/bg-1.tscn" id="2_lo3s7"]
@@ -17,9 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://ckiptfoim47l7" path="res://ui/sign-layer.tscn" id="14_ga4pb"]
 [ext_resource type="FontFile" uid="uid://b7u7rptev1prg" path="res://assets/ui/FutilePro.ttf" id="15_br2c8"]
 [ext_resource type="PackedScene" uid="uid://dbewfbkrvukv4" path="res://ui/gold.tscn" id="16_k15q6"]
+[ext_resource type="Texture2D" uid="uid://df2giwiion77v" path="res://assets/player/chicken_left.png" id="16_r18p2"]
 [ext_resource type="PackedScene" uid="uid://663aj70tr80x" path="res://ui/health.tscn" id="17_gi040"]
+[ext_resource type="Texture2D" uid="uid://cvjn1klj7vc1h" path="res://assets/player/chicken_up.png" id="17_qmwvx"]
+[ext_resource type="Texture2D" uid="uid://cys8pyxmj0mso" path="res://assets/ui/space.png" id="18_jme8e"]
 [ext_resource type="PackedScene" uid="uid://dxjdud5ybsqhx" path="res://ui/control.tscn" id="19_qemya"]
-[ext_resource type="PackedScene" uid="uid://b0rd8vp7jrwo4" path="res://item/crate.tscn" id="20_ovv1u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4dh8s"]
 atlas = ExtResource("7_4ckn4")
@@ -134,7 +136,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4urt7"]
-size = Vector2(2144, 20)
+size = Vector2(2224, 20)
 
 [node name="World" type="Node2D"]
 position = Vector2(41, 274)
@@ -219,6 +221,7 @@ animation = &"Idle"
 position = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_th6cb")
 animation = &"Idle"
+frame = 3
 
 [node name="Items" type="Node2D" parent="."]
 
@@ -284,11 +287,8 @@ position = Vector2(951, 302)
 [node name="Flag" parent="Features" instance=ExtResource("11_tajjp")]
 position = Vector2(1959, 254)
 
-[node name="Crate" parent="Features" instance=ExtResource("20_ovv1u")]
-position = Vector2(31, 294)
-
 [node name="Player" parent="." instance=ExtResource("4_w7tpc")]
-position = Vector2(63, 278)
+position = Vector2(63, 286)
 
 [node name="Mobs" type="Node2D" parent="."]
 
@@ -308,7 +308,7 @@ metadata/_edit_lock_ = true
 position = Vector2(-41, -274)
 
 [node name="Pit1" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(1072, 664)
+position = Vector2(1032, 680)
 shape = SubResource("RectangleShape2D_4urt7")
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -316,71 +316,165 @@ shape = SubResource("RectangleShape2D_4urt7")
 [node name="SignLayer" parent="UI" instance=ExtResource("14_ga4pb")]
 position = Vector2(560, 320)
 
-[node name="Label1" type="Label" parent="UI/SignLayer"]
-offset_left = -272.0
-offset_top = -80.0
-offset_right = 277.0
-offset_bottom = -38.0
+[node name="Dividers" type="Label" parent="UI/SignLayer"]
+offset_left = -242.0
+offset_top = -72.0
+offset_right = 394.0
+offset_bottom = 60.0
 theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 48
-text = "How to fly: [SPACE BAR]"
+theme_override_font_sizes/font_size = 20
+text = "or                               or                                or"
 
-[node name="Label2" type="Label" parent="UI/SignLayer"]
-offset_left = -272.0
-offset_right = 277.0
-offset_bottom = 42.0
-theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 48
-text = "How to move: [ARROWS]"
+[node name="Chicken1" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(-240, 48)
+scale = Vector2(4, 4)
+texture = ExtResource("16_r18p2")
+
+[node name="Chicken2" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(-24, 48)
+scale = Vector2(4, 4)
+texture = ExtResource("16_r18p2")
+flip_h = true
+
+[node name="Chicken3" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(208, 48)
+scale = Vector2(4, 4)
+texture = ExtResource("17_qmwvx")
+
+[node name="Move1" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(-280, -64)
+scale = Vector2(3, 3)
+texture = ExtResource("7_4ckn4")
+hframes = 3
+vframes = 8
+frame = 3
+
+[node name="Move2" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(-184, -64)
+scale = Vector2(3, 3)
+texture = ExtResource("7_4ckn4")
+hframes = 3
+vframes = 8
+frame = 15
+
+[node name="Move3" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(-64, -64)
+scale = Vector2(3, 3)
+texture = ExtResource("7_4ckn4")
+hframes = 3
+vframes = 8
+frame = 9
+
+[node name="Move4" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(32, -64)
+scale = Vector2(3, 3)
+texture = ExtResource("7_4ckn4")
+hframes = 3
+vframes = 8
+frame = 21
+
+[node name="Move5" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(160, -64)
+scale = Vector2(3, 3)
+texture = ExtResource("7_4ckn4")
+hframes = 3
+vframes = 8
+
+[node name="Move6" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(280, -64)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("18_jme8e")
 
 [node name="SignLayer2" parent="UI" instance=ExtResource("14_ga4pb")]
 position = Vector2(560, 320)
 
 [node name="Label1" type="Label" parent="UI/SignLayer2"]
-offset_left = -272.0
+offset_left = -344.0
 offset_top = -80.0
-offset_right = 277.0
-offset_bottom = -38.0
+offset_right = 344.0
+offset_bottom = -24.0
 theme_override_colors/font_color = Color(0.756863, 0, 0, 1)
 theme_override_fonts/font = ExtResource("15_br2c8")
 theme_override_font_sizes/font_size = 48
 text = "Watch out for slimes!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="UI/SignLayer2"]
-offset_left = -352.0
-offset_right = 383.0
-offset_bottom = 42.0
+offset_left = -344.0
+offset_right = 344.0
+offset_bottom = 104.0
 theme_override_fonts/font = ExtResource("15_br2c8")
 theme_override_font_sizes/font_size = 48
 text = "They will damage you on contact"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Recap" parent="UI" instance=ExtResource("14_ga4pb")]
 position = Vector2(560, 320)
 
 [node name="Label1" type="Label" parent="UI/Recap"]
 offset_left = -336.0
-offset_top = -120.0
-offset_right = 360.0
-offset_bottom = -36.0
+offset_top = -112.0
+offset_right = 336.0
+offset_bottom = -28.0
 theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 96
+theme_override_font_sizes/font_size = 84
 text = "Level Complete!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="UI/Recap"]
-offset_left = -96.0
+offset_left = -336.0
 offset_top = 16.0
-offset_right = 90.0
+offset_right = 336.0
 offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("15_br2c8")
 theme_override_font_sizes/font_size = 36
-text = "Time: xx:xx
+text = "Time: XX:XX.XX
 "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Exit" type="Button" parent="UI/Recap"]
-offset_left = -200.0
-offset_top = 72.0
-offset_right = 200.0
-offset_bottom = 144.0
+offset_left = -184.0
+offset_top = 64.0
+offset_right = 184.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("15_br2c8")
+theme_override_font_sizes/font_size = 48
+text = "Return to menu"
+
+[node name="Death" parent="UI" instance=ExtResource("14_ga4pb")]
+position = Vector2(560, 320)
+
+[node name="Label1" type="Label" parent="UI/Death"]
+offset_left = -336.0
+offset_top = -96.0
+offset_right = 344.0
+offset_bottom = -24.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_br2c8")
+theme_override_font_sizes/font_size = 70
+text = "Looks like trouble!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Restart" type="Button" parent="UI/Death"]
+offset_left = -128.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("15_br2c8")
+theme_override_font_sizes/font_size = 36
+text = "Restart (R)"
+
+[node name="Exit" type="Button" parent="UI/Death"]
+offset_left = -184.0
+offset_top = 64.0
+offset_right = 184.0
+offset_bottom = 120.0
 theme_override_fonts/font = ExtResource("15_br2c8")
 theme_override_font_sizes/font_size = 48
 text = "Return to menu"
@@ -407,4 +501,6 @@ offset_bottom = 58.0
 [connection signal="body_entered" from="Features/Flag" to="." method="_on_flag_body_entered"]
 [connection signal="body_entered" from="Bounds" to="." method="_on_bounds_body_entered"]
 [connection signal="pressed" from="UI/Recap/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="UI/Death/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="UI/Death/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="UI/Control" to="." method="_on_control_pressed"]

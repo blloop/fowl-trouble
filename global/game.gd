@@ -1,6 +1,7 @@
 extends Node
 
 # Dynamic game values
+var max_hp = 10
 var player_hp = 10
 var gold = 0
 var visited = false
