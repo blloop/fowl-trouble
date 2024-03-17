@@ -7,7 +7,7 @@ var gold = 0
 var visited = false
 var paused = false
 var recap = false
-var w1_unlocked = [1, 0, 0]
+var w1_unlocked = [1, 1, 0]
 
 # Static values
 var splashes = [

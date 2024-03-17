@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dbehakemogwjw"]
+[gd_scene load_steps=34 format=3 uid="uid://dbehakemogwjw"]
 
 [ext_resource type="Script" path="res://world-1/level-2.gd" id="1_o68oe"]
 [ext_resource type="PackedScene" uid="uid://crda7h07fpjk7" path="res://background/bg-1.tscn" id="2_lo3s7"]
@@ -17,10 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://ckiptfoim47l7" path="res://ui/sign-layer.tscn" id="14_ga4pb"]
 [ext_resource type="FontFile" uid="uid://b7u7rptev1prg" path="res://assets/ui/FutilePro.ttf" id="15_br2c8"]
 [ext_resource type="PackedScene" uid="uid://dbewfbkrvukv4" path="res://ui/gold.tscn" id="16_k15q6"]
-[ext_resource type="Texture2D" uid="uid://df2giwiion77v" path="res://assets/player/chicken_left.png" id="16_r18p2"]
 [ext_resource type="PackedScene" uid="uid://663aj70tr80x" path="res://ui/health.tscn" id="17_gi040"]
-[ext_resource type="Texture2D" uid="uid://cvjn1klj7vc1h" path="res://assets/player/chicken_up.png" id="17_qmwvx"]
-[ext_resource type="Texture2D" uid="uid://cys8pyxmj0mso" path="res://assets/ui/space.png" id="18_jme8e"]
 [ext_resource type="PackedScene" uid="uid://dxjdud5ybsqhx" path="res://ui/control.tscn" id="19_qemya"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4dh8s"]
@@ -177,11 +174,11 @@ position = Vector2(1607, 270)
 texture = ExtResource("5_88h74")
 
 [node name="Bush" type="Sprite2D" parent="Deco"]
-position = Vector2(327, 294)
+position = Vector2(279, 294)
 texture = ExtResource("6_d7acl")
 
 [node name="Bush2" type="Sprite2D" parent="Deco"]
-position = Vector2(303, 294)
+position = Vector2(255, 294)
 texture = ExtResource("6_d7acl")
 
 [node name="Bush3" type="Sprite2D" parent="Deco"]
@@ -226,22 +223,16 @@ frame = 3
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Coin" parent="Items" instance=ExtResource("9_v56l7")]
-position = Vector2(207, 302)
+position = Vector2(199, 302)
 
 [node name="Coin2" parent="Items" instance=ExtResource("9_v56l7")]
-position = Vector2(271, 302)
+position = Vector2(215, 302)
 
 [node name="Coin3" parent="Items" instance=ExtResource("9_v56l7")]
-position = Vector2(223, 302)
-
-[node name="Coin4" parent="Items" instance=ExtResource("9_v56l7")]
-position = Vector2(255, 302)
-
-[node name="Coin5" parent="Items" instance=ExtResource("9_v56l7")]
-position = Vector2(239, 302)
+position = Vector2(359, 302)
 
 [node name="Coin6" parent="Items" instance=ExtResource("9_v56l7")]
-position = Vector2(615, 270)
+position = Vector2(375, 302)
 
 [node name="Coin7" parent="Items" instance=ExtResource("9_v56l7")]
 position = Vector2(663, 270)
@@ -279,10 +270,7 @@ position = Vector2(1807, 270)
 [node name="Features" type="Node2D" parent="."]
 
 [node name="Sign" parent="Features" instance=ExtResource("10_dwkjk")]
-position = Vector2(351, 302)
-
-[node name="Sign2" parent="Features" instance=ExtResource("10_dwkjk")]
-position = Vector2(951, 302)
+position = Vector2(167, 302)
 
 [node name="Flag" parent="Features" instance=ExtResource("11_tajjp")]
 position = Vector2(1959, 254)
@@ -293,16 +281,13 @@ position = Vector2(63, 286)
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="SlimeBlue" parent="Mobs" instance=ExtResource("13_mw5io")]
-position = Vector2(1087, 302)
-metadata/_edit_lock_ = true
+position = Vector2(311, 302)
 
 [node name="SlimeBlue2" parent="Mobs" instance=ExtResource("13_mw5io")]
 position = Vector2(1311, 302)
-metadata/_edit_lock_ = true
 
 [node name="SlimeBlue3" parent="Mobs" instance=ExtResource("13_mw5io")]
 position = Vector2(1767, 270)
-metadata/_edit_lock_ = true
 
 [node name="Bounds" type="Area2D" parent="."]
 position = Vector2(-41, -274)
@@ -316,79 +301,7 @@ shape = SubResource("RectangleShape2D_4urt7")
 [node name="SignLayer" parent="UI" instance=ExtResource("14_ga4pb")]
 position = Vector2(560, 320)
 
-[node name="Dividers" type="Label" parent="UI/SignLayer"]
-offset_left = -242.0
-offset_top = -72.0
-offset_right = 394.0
-offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 20
-text = "or                               or                                or"
-
-[node name="Chicken1" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(-240, 48)
-scale = Vector2(4, 4)
-texture = ExtResource("16_r18p2")
-
-[node name="Chicken2" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(-24, 48)
-scale = Vector2(4, 4)
-texture = ExtResource("16_r18p2")
-flip_h = true
-
-[node name="Chicken3" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(208, 48)
-scale = Vector2(4, 4)
-texture = ExtResource("17_qmwvx")
-
-[node name="Move1" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(-280, -64)
-scale = Vector2(3, 3)
-texture = ExtResource("7_4ckn4")
-hframes = 3
-vframes = 8
-frame = 3
-
-[node name="Move2" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(-184, -64)
-scale = Vector2(3, 3)
-texture = ExtResource("7_4ckn4")
-hframes = 3
-vframes = 8
-frame = 15
-
-[node name="Move3" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(-64, -64)
-scale = Vector2(3, 3)
-texture = ExtResource("7_4ckn4")
-hframes = 3
-vframes = 8
-frame = 9
-
-[node name="Move4" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(32, -64)
-scale = Vector2(3, 3)
-texture = ExtResource("7_4ckn4")
-hframes = 3
-vframes = 8
-frame = 21
-
-[node name="Move5" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(160, -64)
-scale = Vector2(3, 3)
-texture = ExtResource("7_4ckn4")
-hframes = 3
-vframes = 8
-
-[node name="Move6" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(280, -64)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("18_jme8e")
-
-[node name="SignLayer2" parent="UI" instance=ExtResource("14_ga4pb")]
-position = Vector2(560, 320)
-
-[node name="Label1" type="Label" parent="UI/SignLayer2"]
+[node name="Label1" type="Label" parent="UI/SignLayer"]
 offset_left = -344.0
 offset_top = -80.0
 offset_right = 344.0
@@ -400,7 +313,7 @@ text = "Watch out for slimes!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="UI/SignLayer2"]
+[node name="Label2" type="Label" parent="UI/SignLayer"]
 offset_left = -344.0
 offset_right = 344.0
 offset_bottom = 104.0
@@ -496,8 +409,6 @@ offset_bottom = 58.0
 
 [connection signal="body_entered" from="Features/Sign" to="." method="_on_sign_body_entered"]
 [connection signal="body_exited" from="Features/Sign" to="." method="_on_sign_body_exited"]
-[connection signal="body_entered" from="Features/Sign2" to="." method="_on_sign_2_body_entered"]
-[connection signal="body_exited" from="Features/Sign2" to="." method="_on_sign_2_body_exited"]
 [connection signal="body_entered" from="Features/Flag" to="." method="_on_flag_body_entered"]
 [connection signal="body_entered" from="Bounds" to="." method="_on_bounds_body_entered"]
 [connection signal="pressed" from="UI/Recap/Exit" to="." method="_on_exit_pressed"]

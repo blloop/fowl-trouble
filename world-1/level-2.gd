@@ -13,8 +13,6 @@ func _ready():
 	$UI/Pause.hide()
 	$UI/SignLayer.visible = true
 	$UI/SignLayer.show()
-	$UI/SignLayer2.visible = true
-	$UI/SignLayer2.show()
 	
 	$Controls/Control1.play("Idle")
 	$Controls/Control2.play("Idle")
@@ -79,11 +77,3 @@ func _on_sign_body_entered(body):
 func _on_sign_body_exited(body):
 	if body.name == "Player":
 		$UI/SignLayer.close_sign()
-
-func _on_sign_2_body_entered(body):
-	if body.name == "Player":
-		$UI/SignLayer2.open_sign()
-
-func _on_sign_2_body_exited(body):
-	if body.name == "Player":
-		$UI/SignLayer2.close_sign()
