@@ -5,7 +5,9 @@ var format_string = "Time: %02d:%1d%.2f"
 # var format_string = "Time: %02d:%02d"
 
 func _ready():
-	$Player/Camera2D.limit_right = 2024
+	Game.player_hp = Game.max_hp
+	Game.gold = 0
+	$Player/Camera2D.limit_right = 2168
 	
 	$UI/Pause.visible = true
 	$UI/Pause.hide()

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-const SPEED = 280.0
+const SPEED = 80.0
 const JUMP_VELOCITY = -180.0
 var hurt = false
 var tween : Tween
@@ -58,7 +58,7 @@ func _physics_process(delta):
 	move_and_slide()
 	for i in get_slide_collision_count():
 		var collider = get_slide_collision(i).get_collider()
-		if collider.name == "Crate":
+		if "Crate" in collider.name:
 			var diff = self.position.x - collider.position.x
 			if diff > 15:
 				collider.set_axis_velocity(Vector2(-50, 0))
