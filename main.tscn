@@ -13,6 +13,7 @@ scale = Vector2(2.5, 2.5)
 transform = Transform2D(2.5, 0, 0, 2.5, 0, 0)
 
 [node name="Back" type="Button" parent="."]
+visible = false
 offset_left = 1032.0
 offset_top = 8.0
 offset_right = 1144.0
@@ -216,6 +217,7 @@ theme_override_font_sizes/font_size = 36
 text = "Back"
 
 [node name="World1" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 

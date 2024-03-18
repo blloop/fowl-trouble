@@ -14,10 +14,6 @@ func _ready():
 	$UI/SignLayer.visible = true
 	$UI/SignLayer.show()
 	
-	$Controls/Control1.play("Idle")
-	$Controls/Control2.play("Idle")
-	$Controls/Control3.play("Idle")
-
 func _process(_delta):
 	if not Game.recap and Input.is_action_just_pressed("ui_pause"):
 		pause()
