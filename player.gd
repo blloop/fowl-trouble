@@ -22,6 +22,7 @@ func _physics_process(delta):
 	# If no hp remaining, return to menu
 	if Game.player_hp <= 0:
 		Game.recap = true
+		$AnimatedSprite2D.play("Fly")
 		var tween_a = get_tree().create_tween()
 		tween_a.tween_property(self, "position", position - Vector2(0, 20), 0.4)
 		tween_a.tween_property(self, "modulate:a", 0, 0.4)

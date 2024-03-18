@@ -12,7 +12,7 @@ func _process(delta):
 		$AnimatedSprite2D.play("Walk")
 		player = $"../../Player"
 		var diff = player.position.x - self.position.x
-		if diff < 15 and diff > -15:
+		if diff < 5 and diff > -5:
 			$AnimatedSprite2D.play("Idle")
 			velocity.x = 0
 		else:
@@ -36,6 +36,9 @@ func _on_player_detection_body_exited(body):
 func _on_player_collision_body_entered(body):
 	if body.name == "Player":
 		var diff = player.position.x - self.position.x
+		if body.hurt:
+			self.position.x += -2 if diff > 0 else 2
+			return
 		Game.player_hp -= 1
 		body.knock_back(diff)
 		$"../../UI/Health".decrease()

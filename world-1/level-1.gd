@@ -19,6 +19,8 @@ func _ready():
 	$Controls/Control1.play("Idle")
 	$Controls/Control2.play("Idle")
 	$Controls/Control3.play("Idle")
+	$Features/Note.play("Idle")
+	$Features/Note2.play("Idle")
 
 func _process(_delta):
 	if not Game.recap and Input.is_action_just_pressed("ui_pause"):
@@ -75,6 +77,7 @@ func _on_flag_body_entered(body):
 func _on_sign_body_entered(body):
 	if body.name == "Player":
 		$UI/SignLayer.open_sign()
+		$Features/Note.visible = false
 
 func _on_sign_body_exited(body):
 	if body.name == "Player":
@@ -83,6 +86,7 @@ func _on_sign_body_exited(body):
 func _on_sign_2_body_entered(body):
 	if body.name == "Player":
 		$UI/SignLayer2.open_sign()
+		$Features/Note2.visible = false
 
 func _on_sign_2_body_exited(body):
 	if body.name == "Player":

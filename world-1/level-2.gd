@@ -7,12 +7,14 @@ var format_string = "Time: %02d:%1d%.2f"
 func _ready():
 	Game.player_hp = Game.max_hp
 	Game.gold = 0
-	$Player/Camera2D.limit_right = 2168
+	$Player/Camera2D.limit_right = 2392
 	
 	$UI/Pause.visible = true
 	$UI/Pause.hide()
 	$UI/SignLayer.visible = true
 	$UI/SignLayer.show()
+	
+	$Features/Note.play("Idle")
 	
 func _process(_delta):
 	if not Game.recap and Input.is_action_just_pressed("ui_pause"):
@@ -41,7 +43,7 @@ func _on_exit_pressed():
 	Game.recap = false
 
 func _on_restart_pressed():
-	get_tree().change_scene_to_file("res://world-1/level-1.tscn")
+	get_tree().change_scene_to_file("res://world-1/level-2.tscn")
 	Game.player_hp = Game.max_hp
 	Game.gold = 0
 	Game.recap = false
@@ -69,6 +71,7 @@ func _on_flag_body_entered(body):
 func _on_sign_body_entered(body):
 	if body.name == "Player":
 		$UI/SignLayer.open_sign()
+		$Features/Note.visible = false
 
 func _on_sign_body_exited(body):
 	if body.name == "Player":
