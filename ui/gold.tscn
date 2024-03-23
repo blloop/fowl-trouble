@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bhscy56dm774q" path="res://assets/ui/coin.png" id="1_hl6ms"]
 [ext_resource type="Script" path="res://ui/gold.gd" id="2_43axx"]
-[ext_resource type="FontFile" uid="uid://b7u7rptev1prg" path="res://assets/ui/FutilePro.ttf" id="3_hbg31"]
+[ext_resource type="Texture2D" uid="uid://bvq0u2x8dnvyr" path="res://assets/ui/text_crop.png" id="4_7qjxo"]
 [ext_resource type="Texture2D" uid="uid://dox24q3anw134" path="res://assets/ui/gem.png" id="4_nu6hm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ut5p2"]
@@ -144,21 +144,21 @@ scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_7osqm")
 animation = &"Idle"
 
-[node name="Label" type="Label" parent="."]
-offset_left = 22.4
-offset_top = 3.0
-offset_right = 51.4
-offset_bottom = 17.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0.223529, 0.203922, 0.341176, 1)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("3_hbg31")
-text = "0"
-metadata/_edit_use_anchors_ = true
-
 [node name="Gem" type="AnimatedSprite2D" parent="."]
 position = Vector2(9.6, 28.8)
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_ffaab")
 animation = &"Idle"
-frame_progress = 0.182681
+frame_progress = 0.181439
+
+[node name="Digit1" type="Sprite2D" parent="."]
+position = Vector2(25.6, 9.6)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("4_7qjxo")
+hframes = 10
+
+[node name="Digit2" type="Sprite2D" parent="."]
+position = Vector2(36.8, 9.6)
+scale = Vector2(1.14, 1.14)
+texture = ExtResource("4_7qjxo")
+hframes = 10

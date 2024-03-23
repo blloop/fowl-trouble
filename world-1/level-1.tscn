@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://d0y6g3oei61yt"]
+[gd_scene load_steps=52 format=3 uid="uid://d0y6g3oei61yt"]
 
 [ext_resource type="Script" path="res://world-1/level-1.gd" id="1_tfbds"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="1_xvivn"]
@@ -23,7 +23,11 @@
 [ext_resource type="PackedScene" uid="uid://d2eqm7p84trwd" path="res://item/flag.tscn" id="19_hrx3r"]
 [ext_resource type="Texture2D" uid="uid://c0b8rpxhk3qu7" path="res://assets/player/chicken.png" id="20_1e7am"]
 [ext_resource type="Texture2D" uid="uid://csy8pvqgqkq4t" path="res://assets/objects/crate.png" id="20_n3p82"]
+[ext_resource type="Texture2D" uid="uid://bmylpaxvcbcn8" path="res://assets/ui/egg.png" id="21_7g5hb"]
+[ext_resource type="Texture2D" uid="uid://cgy2qb2i2anql" path="res://assets/ui/clock.png" id="22_4n4tp"]
 [ext_resource type="PackedScene" uid="uid://dd1sgsyolkkct" path="res://item/gem.tscn" id="23_ofu3q"]
+[ext_resource type="Texture2D" uid="uid://bhscy56dm774q" path="res://assets/ui/coin.png" id="23_uo00j"]
+[ext_resource type="Texture2D" uid="uid://bpdy8576brn0x" path="res://assets/objects/gem.png" id="24_m2feo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4dh8s"]
 atlas = ExtResource("12_qser4")
@@ -166,8 +170,69 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4urt7"]
-size = Vector2(2224, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6iig"]
+atlas = ExtResource("21_7g5hb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phca0"]
+atlas = ExtResource("21_7g5hb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fcap"]
+atlas = ExtResource("21_7g5hb")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chy2i"]
+atlas = ExtResource("21_7g5hb")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0wqk"]
+atlas = ExtResource("21_7g5hb")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v0p5a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phca0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fcap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chy2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0wqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="World" type="Node2D"]
 position = Vector2(41, 274)
@@ -379,13 +444,6 @@ position = Vector2(2055, 214)
 [node name="Player" parent="." instance=ExtResource("1_xvivn")]
 position = Vector2(63, 286)
 
-[node name="Bounds" type="Area2D" parent="."]
-position = Vector2(-41, -274)
-
-[node name="Pit1" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(1032, 680)
-shape = SubResource("RectangleShape2D_4urt7")
-
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="SignLayer" parent="UI" instance=ExtResource("7_r35mv")]
@@ -528,38 +586,121 @@ hframes = 4
 
 [node name="Recap" parent="UI" instance=ExtResource("7_r35mv")]
 position = Vector2(560, 320)
+scale = Vector2(1, 1)
 
 [node name="Label1" type="Label" parent="UI/Recap"]
-offset_left = -336.0
-offset_top = -112.0
-offset_right = 336.0
-offset_bottom = -28.0
+offset_left = -304.0
+offset_top = -136.0
+offset_right = 304.0
+offset_bottom = -62.0
 theme_override_fonts/font = ExtResource("12_sxrqh")
-theme_override_font_sizes/font_size = 84
+theme_override_font_sizes/font_size = 64
 text = "Level Complete!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="UI/Recap"]
-offset_left = -336.0
-offset_top = 16.0
-offset_right = 336.0
-offset_bottom = 48.0
+offset_left = -232.0
+offset_top = -56.0
+offset_right = 232.0
+offset_bottom = -24.0
 theme_override_fonts/font = ExtResource("12_sxrqh")
 theme_override_font_sizes/font_size = 36
-text = "Time: XX:XX.XX
+text = "...in XX:XX.XX
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Exit" type="Button" parent="UI/Recap"]
-offset_left = -184.0
-offset_top = 64.0
-offset_right = 184.0
-offset_bottom = 120.0
+[node name="Label3" type="Label" parent="UI/Recap"]
+offset_left = -216.0
+offset_top = 8.0
+offset_right = 216.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.67451, 1, 0.666667, 1)
 theme_override_fonts/font = ExtResource("12_sxrqh")
 theme_override_font_sizes/font_size = 48
+text = "Poultry in motion!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="UI/Recap"]
+offset_left = 184.0
+offset_top = -40.0
+offset_right = 286.0
+offset_bottom = -8.0
+theme_override_fonts/font = ExtResource("12_sxrqh")
+theme_override_font_sizes/font_size = 24
+text = "<45.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="UI/Recap"]
+offset_left = 192.0
+offset_top = 24.0
+offset_right = 294.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("12_sxrqh")
+theme_override_font_sizes/font_size = 24
+text = "0/1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="UI/Recap"]
+offset_left = 184.0
+offset_top = 88.0
+offset_right = 286.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("12_sxrqh")
+theme_override_font_sizes/font_size = 24
+text = "0/20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="Button" parent="UI/Recap"]
+offset_left = -160.0
+offset_top = 64.0
+offset_right = 160.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("12_sxrqh")
+theme_override_font_sizes/font_size = 40
 text = "Return to menu"
+
+[node name="Egg1" type="AnimatedSprite2D" parent="UI/Recap"]
+self_modulate = Color(0.501961, 0.501961, 0.501961, 0.501961)
+position = Vector2(296, -48)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_v0p5a")
+
+[node name="Egg2" type="AnimatedSprite2D" parent="UI/Recap"]
+self_modulate = Color(0.501961, 0.501961, 0.501961, 0.501961)
+position = Vector2(296, 16)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_v0p5a")
+frame_progress = 0.86609
+
+[node name="Egg3" type="AnimatedSprite2D" parent="UI/Recap"]
+self_modulate = Color(0.501961, 0.501961, 0.501961, 0.501961)
+position = Vector2(296, 80)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_v0p5a")
+frame_progress = 0.86609
+
+[node name="Clock" type="Sprite2D" parent="UI/Recap"]
+position = Vector2(240, -48)
+scale = Vector2(2, 2)
+texture = ExtResource("22_4n4tp")
+
+[node name="Coin" type="Sprite2D" parent="UI/Recap"]
+position = Vector2(240, 80)
+scale = Vector2(2, 2)
+texture = ExtResource("23_uo00j")
+hframes = 6
+
+[node name="Gem" type="Sprite2D" parent="UI/Recap"]
+position = Vector2(240, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("24_m2feo")
+hframes = 5
 
 [node name="Death" parent="UI" instance=ExtResource("7_r35mv")]
 position = Vector2(560, 320)
@@ -570,6 +711,8 @@ offset_top = -96.0
 offset_right = 344.0
 offset_bottom = -24.0
 theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("12_sxrqh")
 theme_override_font_sizes/font_size = 70
 text = "Looks like trouble!"
@@ -614,7 +757,6 @@ offset_bottom = 58.0
 [connection signal="body_entered" from="Features/Sign2" to="." method="_on_sign_2_body_entered"]
 [connection signal="body_exited" from="Features/Sign2" to="." method="_on_sign_2_body_exited"]
 [connection signal="body_entered" from="Features/Flag" to="." method="_on_flag_body_entered"]
-[connection signal="body_entered" from="Bounds" to="." method="_on_bounds_body_entered"]
 [connection signal="pressed" from="UI/Recap/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="UI/Death/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="UI/Death/Exit" to="." method="_on_exit_pressed"]

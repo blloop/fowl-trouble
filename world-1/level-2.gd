@@ -1,7 +1,7 @@
 extends Node2D
 
 var time_elapsed := 0.0
-var format_string = "Time: %02d:%1d%.2f"
+var format_string = "%02d:%1d%.2f"
 # var format_string = "Time: %02d:%02d"
 
 func _ready():
@@ -53,7 +53,7 @@ func _on_bounds_body_entered(body):
 		Game.recap = true
 		body.hide()
 		$UI/Control.queue_free()
-		$UI/Death/Label1.text = Game.splashes.pick_random()
+		$UI/Death/Label1.text = Game.bad_splashes.pick_random()
 		$UI/Death.open_sign()
 	elif body.name != "TileMap":
 		body.queue_free()

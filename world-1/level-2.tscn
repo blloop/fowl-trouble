@@ -54,7 +54,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4urt7"]
-size = Vector2(2224, 20)
+size = Vector2(2624, 20)
 
 [node name="World" type="Node2D"]
 position = Vector2(41, 274)
@@ -247,7 +247,7 @@ position = Vector2(2159, 270)
 position = Vector2(-41, -274)
 
 [node name="Pit1" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(1032, 680)
+position = Vector2(1232, 680)
 shape = SubResource("RectangleShape2D_4urt7")
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -265,6 +265,14 @@ vframes = 3
 frame = 4
 
 [node name="Chicken2" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(-184, -88)
+scale = Vector2(4, 4)
+texture = ExtResource("14_vpxfg")
+flip_h = true
+hframes = 4
+vframes = 3
+
+[node name="Chicken3" type="Sprite2D" parent="UI/SignLayer"]
 modulate = Color(1, 0.294118, 0.290196, 1)
 position = Vector2(96, 0)
 scale = Vector2(4, 4)
@@ -282,6 +290,13 @@ hframes = 5
 vframes = 2
 
 [node name="Slime2" type="Sprite2D" parent="UI/SignLayer"]
+position = Vector2(-88, -64)
+scale = Vector2(4, 4)
+texture = ExtResource("15_v7mta")
+hframes = 5
+vframes = 2
+
+[node name="Slime3" type="Sprite2D" parent="UI/SignLayer"]
 position = Vector2(192, 48)
 scale = Vector2(4, 4)
 texture = ExtResource("15_v7mta")

@@ -13,8 +13,14 @@ var paused = false
 var recap = false
 
 # Static values
-var splashes = [
+var bad_splashes = [
 	"Looks like trouble!", 
 	"What a foul move!", 
 	"You're a bad egg!"
+]
+
+var good_splashes = [
+	"Poultry in motion!",
+	"You're flying high!",
+	"Not half bad!"
 ]
