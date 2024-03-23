@@ -62,8 +62,10 @@ func _on_flag_body_entered(body):
 	if body.name == "Player":
 		body.get_node("AnimatedSprite2D").stop()
 		$UI/Control.queue_free()
-		$UI/Recap/Label2.text = format_string % [time_elapsed / 60, floor(time_elapsed) / 10, fmod(time_elapsed, 10)]
+		$UI/Recap/Label2.text = format_string % [time_elapsed / 60, fmod(time_elapsed, 60) / 10, fmod(time_elapsed, 10)]
 		#$UI/Recap/Label2.text = format_string % [time_elapsed / 60, int(floor(time_elapsed)) % 60]
+		if time_elapsed >= 6000:
+			$UI/Recap/Label2.text = format_string % [99, 9, 9.99]
 		$UI/Recap.open_sign()
 		Game.recap = true
 		Game.w1_unlocked[1] = 1
