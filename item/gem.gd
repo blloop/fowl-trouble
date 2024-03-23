@@ -8,4 +8,6 @@ func _on_body_entered(body):
 		#Game.gold += 1
 		#$AnimatedSprite2D.play("Collect")
 		#await $AnimatedSprite2D.animation_finished
+		Game.gem = 1
+		$"../../UI/Gold".show_gem()
 		queue_free()

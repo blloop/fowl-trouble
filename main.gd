@@ -54,6 +54,7 @@ func prep_world(num):
 func prep_level():
 	Game.player_hp = Game.max_hp
 	Game.gold = 0
+	Game.gem = 0
 
 # World Buttons
 

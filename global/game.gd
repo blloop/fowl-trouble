@@ -8,6 +8,7 @@ var w1_unlocked = [1, 1, 0]
 var max_hp = 10
 var player_hp = 10
 var gold = 0
+var gem = 0
 var paused = false
 var recap = false
 
