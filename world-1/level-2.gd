@@ -1,12 +1,13 @@
 extends Node2D
 
 var time_elapsed := 0.0
-var format_string = "%02d:%1d%.2f"
+var format_string = "...in %02d:%1d%.2f"
 # var format_string = "Time: %02d:%02d"
 
 func _ready():
 	Game.player_hp = Game.max_hp
 	Game.gold = 0
+	$UI/Recap/Time.text = "<%2.2f" % Game.time_goal
 	$Player/Camera2D.limit_right = 2392
 	
 	$UI/Pause.visible = true
@@ -15,7 +16,7 @@ func _ready():
 	$UI/SignLayer.show()
 	
 	$Features/Note.play("Idle")
-	
+
 func _process(_delta):
 	if not Game.recap and Input.is_action_just_pressed("ui_pause"):
 		pause()
@@ -43,11 +44,11 @@ func _on_exit_pressed():
 	Game.recap = false
 
 func _on_restart_pressed():
-	get_tree().change_scene_to_file("res://world-1/level-2.tscn")
+	get_tree().change_scene_to_file("res://world-1/level-1.tscn")
 	Game.player_hp = Game.max_hp
 	Game.gold = 0
 	Game.recap = false
-
+	
 func _on_bounds_body_entered(body):
 	if body.name == "Player":
 		Game.recap = true
@@ -62,13 +63,23 @@ func _on_flag_body_entered(body):
 	if body.name == "Player":
 		body.get_node("AnimatedSprite2D").stop()
 		$UI/Control.queue_free()
-		$UI/Recap/Label2.text = format_string % [time_elapsed / 60, fmod(time_elapsed, 60) / 10, fmod(time_elapsed, 10)]
+		$UI/Recap/Label2.text = format_string % [time_elapsed / 60, floor(time_elapsed) / 10, fmod(time_elapsed, 10)]
 		#$UI/Recap/Label2.text = format_string % [time_elapsed / 60, int(floor(time_elapsed)) % 60]
-		if time_elapsed >= 6000:
-			$UI/Recap/Label2.text = format_string % [99, 9, 9.99]
-		$UI/Recap.open_sign()
+		
 		Game.recap = true
 		Game.w1_unlocked[1] = 1
+		
+		$UI/Recap.open_sign()
+		$UI/Recap/Gems.text = "%d/1" % Game.gem
+		$UI/Recap/Coins.text = "%d/20" % Game.gold
+		if time_elapsed < Game.time_goal:
+			$UI/Recap/Egg1.grow()
+			await get_tree().create_timer(0.8).timeout
+		if Game.gem == 1:
+			$UI/Recap/Egg2.grow()
+			await get_tree().create_timer(0.8).timeout
+		if Game.gold > 19:
+			$UI/Recap/Egg3.grow()
 
 func _on_sign_body_entered(body):
 	if body.name == "Player":

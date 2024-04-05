@@ -64,19 +64,18 @@ func _on_flag_body_entered(body):
 		
 		Game.recap = true
 		Game.w1_unlocked[1] = 1
-		$UI/Recap.open_sign()
 		
-		# Set game goals for recap sign
-		#if time_elapsed > Game.time_goal:
+		$UI/Recap.open_sign()
+		$UI/Recap/Gems.text = "%d/1" % Game.gem
+		$UI/Recap/Coins.text = "%d/20" % Game.gold
 		if time_elapsed < Game.time_goal:
 			$UI/Recap/Egg1.grow()
 			await get_tree().create_timer(0.8).timeout
-		if Game.gold == 0:
+		if Game.gem == 1:
 			$UI/Recap/Egg2.grow()
 			await get_tree().create_timer(0.8).timeout
-		if Game.gem == 0:
+		if Game.gold > 19:
 			$UI/Recap/Egg3.grow()
-		
 
 func _on_sign_body_entered(body):
 	if body.name == "Player":

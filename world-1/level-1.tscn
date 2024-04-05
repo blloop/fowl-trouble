@@ -378,7 +378,7 @@ position = Vector2(1847, 262)
 position = Vector2(2055, 214)
 
 [node name="Player" parent="." instance=ExtResource("1_xvivn")]
-position = Vector2(2031, 146)
+position = Vector2(63, 286)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -476,13 +476,6 @@ position = Vector2(0, -88)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("17_uwupe")
 
-[node name="ColorRect" type="ColorRect" parent="UI/SignLayer"]
-offset_left = -228.0
-offset_top = -49.0
-offset_right = 234.0
-offset_bottom = -46.0
-color = Color(0.223529, 0.203922, 0.341176, 1)
-
 [node name="SignLayer2" parent="UI" instance=ExtResource("7_r35mv")]
 position = Vector2(560, 320)
 
@@ -529,7 +522,6 @@ hframes = 4
 
 [node name="Recap" parent="UI" instance=ExtResource("7_r35mv")]
 position = Vector2(560, 320)
-scale = Vector2(1, 1)
 
 [node name="Label1" type="Label" parent="UI/Recap"]
 offset_left = -304.0
