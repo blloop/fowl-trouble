@@ -9,6 +9,7 @@ var max_hp = 10
 var player_hp = 10
 var gold = 0
 var gem = 0
+var time_goal = 0
 var paused = false
 var recap = false
 

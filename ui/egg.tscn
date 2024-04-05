@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddr3p8bb8j53h"]
+
+[ext_resource type="Texture2D" uid="uid://bmylpaxvcbcn8" path="res://assets/ui/egg.png" id="1_fede8"]
+[ext_resource type="Script" path="res://ui/egg.gd" id="2_1sb4j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6iig"]
+atlas = ExtResource("1_fede8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phca0"]
+atlas = ExtResource("1_fede8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fcap"]
+atlas = ExtResource("1_fede8")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chy2i"]
+atlas = ExtResource("1_fede8")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0wqk"]
+atlas = ExtResource("1_fede8")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pvej5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phca0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fcap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chy2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0wqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6iig")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Egg" type="AnimatedSprite2D"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_pvej5")
+animation = &"Idle"
+frame_progress = 0.393469
+script = ExtResource("2_1sb4j")

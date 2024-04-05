@@ -7,6 +7,7 @@ var format_string = "...in %02d:%1d%.2f"
 func _ready():
 	Game.player_hp = Game.max_hp
 	Game.gold = 0
+	$UI/Recap/Time.text = "<%2.2f" % Game.time_goal
 	$Player/Camera2D.limit_right = 2168
 	
 	$UI/Pause.visible = true
@@ -60,9 +61,22 @@ func _on_flag_body_entered(body):
 		$UI/Control.queue_free()
 		$UI/Recap/Label2.text = format_string % [time_elapsed / 60, floor(time_elapsed) / 10, fmod(time_elapsed, 10)]
 		#$UI/Recap/Label2.text = format_string % [time_elapsed / 60, int(floor(time_elapsed)) % 60]
-		$UI/Recap.open_sign()
+		
 		Game.recap = true
 		Game.w1_unlocked[1] = 1
+		$UI/Recap.open_sign()
+		
+		# Set game goals for recap sign
+		#if time_elapsed > Game.time_goal:
+		if time_elapsed < Game.time_goal:
+			$UI/Recap/Egg1.grow()
+			await get_tree().create_timer(0.8).timeout
+		if Game.gold == 0:
+			$UI/Recap/Egg2.grow()
+			await get_tree().create_timer(0.8).timeout
+		if Game.gem == 0:
+			$UI/Recap/Egg3.grow()
+		
 
 func _on_sign_body_entered(body):
 	if body.name == "Player":

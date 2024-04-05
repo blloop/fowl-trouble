@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://d0y6g3oei61yt"]
+[gd_scene load_steps=46 format=3 uid="uid://d0y6g3oei61yt"]
 
 [ext_resource type="Script" path="res://world-1/level-1.gd" id="1_tfbds"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="1_xvivn"]
@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://d2eqm7p84trwd" path="res://item/flag.tscn" id="19_hrx3r"]
 [ext_resource type="Texture2D" uid="uid://c0b8rpxhk3qu7" path="res://assets/player/chicken.png" id="20_1e7am"]
 [ext_resource type="Texture2D" uid="uid://csy8pvqgqkq4t" path="res://assets/objects/crate.png" id="20_n3p82"]
-[ext_resource type="Texture2D" uid="uid://bmylpaxvcbcn8" path="res://assets/ui/egg.png" id="21_7g5hb"]
+[ext_resource type="PackedScene" uid="uid://ddr3p8bb8j53h" path="res://ui/egg.tscn" id="21_coo5y"]
 [ext_resource type="Texture2D" uid="uid://cgy2qb2i2anql" path="res://assets/ui/clock.png" id="22_4n4tp"]
 [ext_resource type="PackedScene" uid="uid://dd1sgsyolkkct" path="res://item/gem.tscn" id="23_ofu3q"]
 [ext_resource type="Texture2D" uid="uid://bhscy56dm774q" path="res://assets/ui/coin.png" id="23_uo00j"]
@@ -168,70 +168,6 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 2.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n6iig"]
-atlas = ExtResource("21_7g5hb")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_phca0"]
-atlas = ExtResource("21_7g5hb")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3fcap"]
-atlas = ExtResource("21_7g5hb")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_chy2i"]
-atlas = ExtResource("21_7g5hb")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o0wqk"]
-atlas = ExtResource("21_7g5hb")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_v0p5a"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n6iig")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_phca0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3fcap")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_chy2i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o0wqk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n6iig")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n6iig")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n6iig")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n6iig")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n6iig")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n6iig")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n6iig")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
 }]
 
 [node name="World" type="Node2D"]
@@ -442,7 +378,7 @@ position = Vector2(1847, 262)
 position = Vector2(2055, 214)
 
 [node name="Player" parent="." instance=ExtResource("1_xvivn")]
-position = Vector2(63, 286)
+position = Vector2(2031, 146)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -540,6 +476,13 @@ position = Vector2(0, -88)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("17_uwupe")
 
+[node name="ColorRect" type="ColorRect" parent="UI/SignLayer"]
+offset_left = -228.0
+offset_top = -49.0
+offset_right = 234.0
+offset_bottom = -46.0
+color = Color(0.223529, 0.203922, 0.341176, 1)
+
 [node name="SignLayer2" parent="UI" instance=ExtResource("7_r35mv")]
 position = Vector2(560, 320)
 
@@ -623,18 +566,18 @@ text = "Poultry in motion!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="UI/Recap"]
+[node name="Time" type="Label" parent="UI/Recap"]
 offset_left = 184.0
 offset_top = -40.0
 offset_right = 286.0
 offset_bottom = -8.0
 theme_override_fonts/font = ExtResource("12_sxrqh")
 theme_override_font_sizes/font_size = 24
-text = "<45.00"
+text = "<xx:xx"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label5" type="Label" parent="UI/Recap"]
+[node name="Gems" type="Label" parent="UI/Recap"]
 offset_left = 192.0
 offset_top = 24.0
 offset_right = 294.0
@@ -645,7 +588,7 @@ text = "0/1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label6" type="Label" parent="UI/Recap"]
+[node name="Coins" type="Label" parent="UI/Recap"]
 offset_left = 184.0
 offset_top = 88.0
 offset_right = 286.0
@@ -665,25 +608,14 @@ theme_override_fonts/font = ExtResource("12_sxrqh")
 theme_override_font_sizes/font_size = 40
 text = "Return to menu"
 
-[node name="Egg1" type="AnimatedSprite2D" parent="UI/Recap"]
-self_modulate = Color(0.501961, 0.501961, 0.501961, 0.501961)
+[node name="Egg1" parent="UI/Recap" instance=ExtResource("21_coo5y")]
 position = Vector2(296, -48)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_v0p5a")
 
-[node name="Egg2" type="AnimatedSprite2D" parent="UI/Recap"]
-self_modulate = Color(0.501961, 0.501961, 0.501961, 0.501961)
+[node name="Egg2" parent="UI/Recap" instance=ExtResource("21_coo5y")]
 position = Vector2(296, 16)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_v0p5a")
-frame_progress = 0.86609
 
-[node name="Egg3" type="AnimatedSprite2D" parent="UI/Recap"]
-self_modulate = Color(0.501961, 0.501961, 0.501961, 0.501961)
+[node name="Egg3" parent="UI/Recap" instance=ExtResource("21_coo5y")]
 position = Vector2(296, 80)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_v0p5a")
-frame_progress = 0.86609
 
 [node name="Clock" type="Sprite2D" parent="UI/Recap"]
 position = Vector2(240, -48)

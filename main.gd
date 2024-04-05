@@ -51,10 +51,11 @@ func prep_world(num):
 	$Back.visible = true
 	Game.menu_num = num
 
-func prep_level():
+func prep_level(time):
 	Game.player_hp = Game.max_hp
 	Game.gold = 0
 	Game.gem = 0
+	Game.time_goal = time
 
 # World Buttons
 
@@ -65,9 +66,9 @@ func _on_button_1_pressed():
 # Level Buttons
 
 func _on_level_1_pressed():
-	prep_level()
+	prep_level(45)
 	get_tree().change_scene_to_file("res://world-1/level-1.tscn")
 
 func _on_level_2_pressed():
-	prep_level()
+	prep_level(45)
 	get_tree().change_scene_to_file("res://world-1/level-2.tscn")
