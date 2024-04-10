@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbvda8s0e6hb0"]
+
+[ext_resource type="Script" path="res://ui/exit.gd" id="1_opkc5"]
+[ext_resource type="FontFile" uid="uid://b7u7rptev1prg" path="res://assets/ui/FutilePro.ttf" id="1_oy28a"]
+
+[node name="Exit" type="Button"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -192.0
+offset_top = -24.0
+offset_right = 192.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_oy28a")
+theme_override_font_sizes/font_size = 48
+disabled = true
+text = "Return to menu"
+script = ExtResource("1_opkc5")
