@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dbehakemogwjw"]
+[gd_scene load_steps=34 format=3 uid="uid://dbehakemogwjw"]
 
 [ext_resource type="Script" path="res://world-1/level-2.gd" id="1_o68oe"]
 [ext_resource type="PackedScene" uid="uid://crda7h07fpjk7" path="res://background/bg-1.tscn" id="2_lo3s7"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://cgy2qb2i2anql" path="res://assets/ui/clock.png" id="21_87i4b"]
 [ext_resource type="Texture2D" uid="uid://bhscy56dm774q" path="res://assets/ui/coin.png" id="22_tlbra"]
 [ext_resource type="Texture2D" uid="uid://bpdy8576brn0x" path="res://assets/objects/gem.png" id="23_30msn"]
+[ext_resource type="PackedScene" uid="uid://dbvda8s0e6hb0" path="res://ui/exit.tscn" id="24_d4far"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0mlnu"]
 atlas = ExtResource("8_cy4hr")
@@ -247,165 +248,6 @@ position = Vector2(1663, 302)
 [node name="SlimeBlue6" parent="Mobs" instance=ExtResource("13_mw5io")]
 position = Vector2(2159, 270)
 
-[node name="Recap" parent="Mobs" instance=ExtResource("14_ga4pb")]
-position = Vector2(560, 320)
-
-[node name="Label1" type="Label" parent="Mobs/Recap"]
-offset_left = -304.0
-offset_top = -136.0
-offset_right = 304.0
-offset_bottom = -62.0
-theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 64
-text = "Level Complete!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Mobs/Recap"]
-offset_left = -232.0
-offset_top = -56.0
-offset_right = 232.0
-offset_bottom = -24.0
-theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 36
-text = "...in XX:XX.XX
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="Mobs/Recap"]
-offset_left = -216.0
-offset_top = 8.0
-offset_right = 216.0
-offset_bottom = 50.0
-theme_override_colors/font_color = Color(0.67451, 1, 0.666667, 1)
-theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 48
-text = "Poultry in motion!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Time" type="Label" parent="Mobs/Recap"]
-offset_left = 184.0
-offset_top = -40.0
-offset_right = 286.0
-offset_bottom = -8.0
-theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 24
-text = "<xx:xx"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Gems" type="Label" parent="Mobs/Recap"]
-offset_left = 192.0
-offset_top = 24.0
-offset_right = 294.0
-offset_bottom = 56.0
-theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 24
-text = "0/1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Coins" type="Label" parent="Mobs/Recap"]
-offset_left = 184.0
-offset_top = 88.0
-offset_right = 286.0
-offset_bottom = 120.0
-theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 24
-text = "0/20"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Exit" type="Button" parent="Mobs/Recap"]
-offset_left = -160.0
-offset_top = 64.0
-offset_right = 160.0
-offset_bottom = 112.0
-theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 40
-text = "Return to menu"
-
-[node name="Egg1" parent="Mobs/Recap" instance=ExtResource("20_tdxcg")]
-position = Vector2(296, -48)
-frame_progress = 0.421467
-
-[node name="Egg2" parent="Mobs/Recap" instance=ExtResource("20_tdxcg")]
-position = Vector2(296, 16)
-frame_progress = 0.421467
-
-[node name="Egg3" parent="Mobs/Recap" instance=ExtResource("20_tdxcg")]
-position = Vector2(296, 80)
-frame_progress = 0.421467
-
-[node name="Clock" type="Sprite2D" parent="Mobs/Recap"]
-position = Vector2(240, -48)
-scale = Vector2(2, 2)
-texture = ExtResource("21_87i4b")
-
-[node name="Coin" type="Sprite2D" parent="Mobs/Recap"]
-position = Vector2(240, 80)
-scale = Vector2(2, 2)
-texture = ExtResource("22_tlbra")
-hframes = 6
-
-[node name="Gem" type="Sprite2D" parent="Mobs/Recap"]
-position = Vector2(240, 16)
-scale = Vector2(2, 2)
-texture = ExtResource("23_30msn")
-hframes = 5
-
-[node name="Death" parent="Mobs" instance=ExtResource("14_ga4pb")]
-position = Vector2(560, 320)
-
-[node name="Label1" type="Label" parent="Mobs/Death"]
-offset_left = -336.0
-offset_top = -96.0
-offset_right = 344.0
-offset_bottom = -24.0
-theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 70
-text = "Looks like trouble!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Restart" type="Button" parent="Mobs/Death"]
-offset_left = -128.0
-offset_top = 8.0
-offset_right = 128.0
-offset_bottom = 48.0
-theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 36
-text = "Restart (R)"
-
-[node name="Exit" type="Button" parent="Mobs/Death"]
-offset_left = -184.0
-offset_top = 64.0
-offset_right = 184.0
-offset_bottom = 120.0
-theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 48
-text = "Return to menu"
-
-[node name="Gold" parent="Mobs" instance=ExtResource("16_k15q6")]
-position = Vector2(8, 64)
-
-[node name="Health" parent="Mobs" instance=ExtResource("17_gi040")]
-position = Vector2(0, 8)
-
-[node name="Pause" parent="Mobs" instance=ExtResource("9_6vp13")]
-visible = false
-
-[node name="Control" parent="Mobs" instance=ExtResource("19_qemya")]
-offset_left = 1096.0
-offset_top = 16.0
-offset_right = 1138.0
-offset_bottom = 58.0
-
 [node name="Bounds" type="Area2D" parent="."]
 position = Vector2(-41, -274)
 
@@ -560,14 +402,11 @@ text = "0/20"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Exit" type="Button" parent="UI/Recap"]
-offset_left = -160.0
+[node name="Exit" parent="UI/Recap" instance=ExtResource("24_d4far")]
+offset_left = -188.0
 offset_top = 64.0
-offset_right = 160.0
-offset_bottom = 112.0
-theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 40
-text = "Return to menu"
+offset_right = 196.0
+offset_bottom = 114.0
 
 [node name="Egg1" parent="UI/Recap" instance=ExtResource("20_tdxcg")]
 position = Vector2(296, -48)
@@ -625,12 +464,12 @@ theme_override_font_sizes/font_size = 36
 text = "Restart (R)"
 
 [node name="Exit" type="Button" parent="UI/Death"]
-offset_left = -184.0
+offset_left = -160.0
 offset_top = 64.0
-offset_right = 184.0
-offset_bottom = 120.0
+offset_right = 160.0
+offset_bottom = 112.0
 theme_override_fonts/font = ExtResource("15_br2c8")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 40
 text = "Return to menu"
 
 [node name="Gold" parent="UI" instance=ExtResource("16_k15q6")]
@@ -654,4 +493,5 @@ offset_bottom = 58.0
 [connection signal="body_entered" from="Bounds" to="." method="_on_bounds_body_entered"]
 [connection signal="pressed" from="UI/Recap/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="UI/Death/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="UI/Death/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="UI/Control" to="." method="_on_control_pressed"]

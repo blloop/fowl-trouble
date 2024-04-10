@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://d0y6g3oei61yt"]
+[gd_scene load_steps=47 format=3 uid="uid://d0y6g3oei61yt"]
 
 [ext_resource type="Script" path="res://world-1/level-1.gd" id="1_tfbds"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="1_xvivn"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://dd1sgsyolkkct" path="res://item/gem.tscn" id="23_ofu3q"]
 [ext_resource type="Texture2D" uid="uid://bhscy56dm774q" path="res://assets/ui/coin.png" id="23_uo00j"]
 [ext_resource type="Texture2D" uid="uid://bpdy8576brn0x" path="res://assets/objects/gem.png" id="24_m2feo"]
+[ext_resource type="PackedScene" uid="uid://dbvda8s0e6hb0" path="res://ui/exit.tscn" id="25_2cjob"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4dh8s"]
 atlas = ExtResource("12_qser4")
@@ -591,14 +592,11 @@ text = "0/20"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Exit" type="Button" parent="UI/Recap"]
-offset_left = -160.0
+[node name="Exit" parent="UI/Recap" instance=ExtResource("25_2cjob")]
+offset_left = -188.0
 offset_top = 64.0
-offset_right = 160.0
-offset_bottom = 112.0
-theme_override_fonts/font = ExtResource("12_sxrqh")
-theme_override_font_sizes/font_size = 40
-text = "Return to menu"
+offset_right = 196.0
+offset_bottom = 114.0
 
 [node name="Egg1" parent="UI/Recap" instance=ExtResource("21_coo5y")]
 position = Vector2(296, -48)
@@ -653,12 +651,12 @@ theme_override_font_sizes/font_size = 36
 text = "Restart (R)"
 
 [node name="Exit" type="Button" parent="UI/Death"]
-offset_left = -184.0
+offset_left = -160.0
 offset_top = 64.0
-offset_right = 184.0
-offset_bottom = 120.0
+offset_right = 160.0
+offset_bottom = 112.0
 theme_override_fonts/font = ExtResource("12_sxrqh")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 40
 text = "Return to menu"
 
 [node name="Gold" parent="UI" instance=ExtResource("10_d5guv")]

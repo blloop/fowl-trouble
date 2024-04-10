@@ -1,0 +1,203 @@
+[gd_scene load_steps=17 format=3 uid="uid://f0c33so4suiv"]
+
+[ext_resource type="Script" path="res://world-1/level-0.gd" id="1_3gx0y"]
+[ext_resource type="PackedScene" uid="uid://crda7h07fpjk7" path="res://background/bg-1.tscn" id="2_6a6bs"]
+[ext_resource type="TileSet" uid="uid://c5r0gb6eiq8uo" path="res://world-1/tiles.tres" id="3_hayy2"]
+[ext_resource type="PackedScene" uid="uid://dbvda8s0e6hb0" path="res://ui/exit.tscn" id="12_dphiv"]
+[ext_resource type="PackedScene" uid="uid://d2eqm7p84trwd" path="res://item/flag.tscn" id="13_y1int"]
+[ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="15_evmbp"]
+[ext_resource type="PackedScene" uid="uid://ckiptfoim47l7" path="res://ui/sign-layer.tscn" id="16_sqt03"]
+[ext_resource type="FontFile" uid="uid://b7u7rptev1prg" path="res://assets/ui/FutilePro.ttf" id="20_tly24"]
+[ext_resource type="PackedScene" uid="uid://ddr3p8bb8j53h" path="res://ui/egg.tscn" id="21_ydqab"]
+[ext_resource type="Texture2D" uid="uid://cgy2qb2i2anql" path="res://assets/ui/clock.png" id="22_w01jq"]
+[ext_resource type="Texture2D" uid="uid://bhscy56dm774q" path="res://assets/ui/coin.png" id="23_xp4du"]
+[ext_resource type="Texture2D" uid="uid://bpdy8576brn0x" path="res://assets/objects/gem.png" id="24_o5ljq"]
+[ext_resource type="PackedScene" uid="uid://dbewfbkrvukv4" path="res://ui/gold.tscn" id="25_5prti"]
+[ext_resource type="PackedScene" uid="uid://663aj70tr80x" path="res://ui/health.tscn" id="26_bwypo"]
+[ext_resource type="PackedScene" uid="uid://1lqlbp5gk61q" path="res://ui/pause.tscn" id="27_pilgf"]
+[ext_resource type="PackedScene" uid="uid://dxjdud5ybsqhx" path="res://ui/control.tscn" id="28_d6bxl"]
+
+[node name="World" type="Node2D"]
+position = Vector2(41, 274)
+script = ExtResource("1_3gx0y")
+
+[node name="BG" parent="." instance=ExtResource("2_6a6bs")]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-1, -2)
+tile_set = ExtResource("3_hayy2")
+format = 2
+layer_0/tile_data = PackedInt32Array(1245185, 196608, 1, 1245186, 262144, 1, 1245187, 196608, 1, 1245188, 262144, 1, 1245189, 196608, 1, 1245190, 262144, 1, 1245191, 196608, 1, 1245192, 196608, 1, 1245193, 262144, 1, 1245194, 262144, 1, 1245195, 327680, 1, 1179653, 196608, 0, 1179659, 196608, 0, 1245184, 196608, 1, 1310719, 196608, 1, 1310718, 131072, 1, 1179650, 131072, 0, 1245183, 327680, 0, 1179648, 196608, 0, 1376254, 65536, 3, 1441790, 65536, 3, 1507326, 65536, 3, 1572862, 65536, 3, 1376255, 262144, 3, 1441791, 262144, 3, 1507327, 196608, 3, 1572863, 262144, 3, 1310720, 262144, 3, 1376256, 196608, 3, 1441792, 262144, 3, 1507328, 196608, 2, 1310721, 131072, 3, 1376257, 262144, 3, 1441793, 262144, 3, 1507329, 262144, 3, 1310722, 262144, 3, 1376258, 131072, 3, 1441794, 262144, 3, 1507330, 262144, 3, 1310723, 262144, 3, 1376259, 262144, 3, 1441795, 262144, 3, 1507331, 131072, 3, 1310724, 262144, 2, 1376260, 262144, 3, 1441796, 262144, 3, 1507332, 262144, 3, 1310725, 262144, 3, 1376261, 196608, 3, 1441797, 262144, 3, 1507333, 262144, 3, 1310726, 262144, 3, 1376262, 262144, 3, 1441798, 262144, 3, 1507334, 131072, 3, 1310727, 262144, 3, 1376263, 196608, 2, 1441799, 262144, 3, 1507335, 262144, 3, 1310728, 327680, 3, 1376264, 262144, 3, 1441800, 262144, 3, 1507336, 196608, 2, 1310729, 262144, 3, 1376265, 262144, 3, 1441801, 262144, 3, 1507337, 262144, 3, 1310730, 262144, 3, 1376266, 262144, 3, 1441802, 131072, 3, 1507338, 262144, 3, 1310731, 393216, 3, 1376267, 393216, 3, 1441803, 393216, 3, 1507339, 393216, 3)
+
+[node name="Deco" type="Node2D" parent="."]
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Features" type="Node2D" parent="."]
+
+[node name="Flag" parent="Features" instance=ExtResource("13_y1int")]
+position = Vector2(167, 302)
+
+[node name="Player" parent="." instance=ExtResource("15_evmbp")]
+position = Vector2(63, 286)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Recap" parent="UI" instance=ExtResource("16_sqt03")]
+position = Vector2(560, 320)
+
+[node name="Label1" type="Label" parent="UI/Recap"]
+offset_left = -304.0
+offset_top = -136.0
+offset_right = 304.0
+offset_bottom = -62.0
+theme_override_fonts/font = ExtResource("20_tly24")
+theme_override_font_sizes/font_size = 64
+text = "Level Complete!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="UI/Recap"]
+offset_left = -232.0
+offset_top = -56.0
+offset_right = 232.0
+offset_bottom = -24.0
+theme_override_fonts/font = ExtResource("20_tly24")
+theme_override_font_sizes/font_size = 36
+text = "...in XX:XX.XX
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="UI/Recap"]
+offset_left = -216.0
+offset_top = 8.0
+offset_right = 216.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.67451, 1, 0.666667, 1)
+theme_override_fonts/font = ExtResource("20_tly24")
+theme_override_font_sizes/font_size = 48
+text = "Poultry in motion!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="UI/Recap"]
+offset_left = 184.0
+offset_top = -40.0
+offset_right = 286.0
+offset_bottom = -8.0
+theme_override_fonts/font = ExtResource("20_tly24")
+theme_override_font_sizes/font_size = 24
+text = "<xx:xx"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gems" type="Label" parent="UI/Recap"]
+offset_left = 192.0
+offset_top = 24.0
+offset_right = 294.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("20_tly24")
+theme_override_font_sizes/font_size = 24
+text = "0/1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coins" type="Label" parent="UI/Recap"]
+offset_left = 184.0
+offset_top = 88.0
+offset_right = 286.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("20_tly24")
+theme_override_font_sizes/font_size = 24
+text = "0/20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" parent="UI/Recap" instance=ExtResource("12_dphiv")]
+offset_left = -188.0
+offset_top = 64.0
+offset_right = 196.0
+offset_bottom = 114.0
+
+[node name="Egg1" parent="UI/Recap" instance=ExtResource("21_ydqab")]
+position = Vector2(296, -48)
+
+[node name="Egg2" parent="UI/Recap" instance=ExtResource("21_ydqab")]
+position = Vector2(296, 16)
+
+[node name="Egg3" parent="UI/Recap" instance=ExtResource("21_ydqab")]
+position = Vector2(296, 80)
+
+[node name="Clock" type="Sprite2D" parent="UI/Recap"]
+position = Vector2(240, -48)
+scale = Vector2(2, 2)
+texture = ExtResource("22_w01jq")
+
+[node name="Coin" type="Sprite2D" parent="UI/Recap"]
+position = Vector2(240, 80)
+scale = Vector2(2, 2)
+texture = ExtResource("23_xp4du")
+hframes = 6
+
+[node name="Gem" type="Sprite2D" parent="UI/Recap"]
+position = Vector2(240, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("24_o5ljq")
+hframes = 5
+
+[node name="Death" parent="UI" instance=ExtResource("16_sqt03")]
+position = Vector2(560, 320)
+
+[node name="Label1" type="Label" parent="UI/Death"]
+offset_left = -336.0
+offset_top = -96.0
+offset_right = 344.0
+offset_bottom = -24.0
+theme_override_colors/font_color = Color(0.545098, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("20_tly24")
+theme_override_font_sizes/font_size = 70
+text = "Looks like trouble!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Restart" type="Button" parent="UI/Death"]
+offset_left = -128.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("20_tly24")
+theme_override_font_sizes/font_size = 36
+text = "Restart (R)"
+
+[node name="Exit" type="Button" parent="UI/Death"]
+offset_left = -160.0
+offset_top = 64.0
+offset_right = 160.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("20_tly24")
+theme_override_font_sizes/font_size = 40
+text = "Return to menu"
+
+[node name="Gold" parent="UI" instance=ExtResource("25_5prti")]
+position = Vector2(8, 64)
+
+[node name="Health" parent="UI" instance=ExtResource("26_bwypo")]
+position = Vector2(0, 8)
+
+[node name="Pause" parent="UI" instance=ExtResource("27_pilgf")]
+visible = false
+
+[node name="Control" parent="UI" instance=ExtResource("28_d6bxl")]
+offset_left = 1096.0
+offset_top = 16.0
+offset_right = 1138.0
+offset_bottom = 58.0
+
+[connection signal="body_entered" from="Features/Flag" to="." method="_on_flag_body_entered"]
+[connection signal="pressed" from="UI/Recap/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="UI/Death/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="UI/Death/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="UI/Control" to="." method="_on_control_pressed"]

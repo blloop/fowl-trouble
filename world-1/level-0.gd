@@ -3,7 +3,7 @@ extends Node2D
 var time_elapsed := 0.0
 var format_string = "...in %02d:%1d%.2f"
 # var format_string = "Time: %02d:%02d"
-var this_scene = "res://world-1/level-1.tscn"
+var this_scene = "res://world-1/level-0.tscn"
 
 func _ready():
 	Game.player_hp = Game.max_hp
@@ -13,16 +13,6 @@ func _ready():
 	
 	$UI/Pause.visible = true
 	$UI/Pause.hide()
-	$UI/SignLayer.visible = true
-	$UI/SignLayer.show()
-	$UI/SignLayer2.visible = true
-	$UI/SignLayer2.show()
-	
-	$Controls/Control1.play("Idle")
-	$Controls/Control2.play("Idle")
-	$Controls/Control3.play("Idle")
-	$Features/Note.play("Idle")
-	$Features/Note2.play("Idle")
 
 func _process(_delta):
 	if not Game.recap and Input.is_action_just_pressed("ui_pause"):
@@ -81,21 +71,3 @@ func _on_flag_body_entered(body):
 			$UI/Recap/Egg3.grow()
 		await get_tree().create_timer(0.8).timeout
 		$UI/Recap/Exit.fade_in()
-
-func _on_sign_body_entered(body):
-	if body.name == "Player":
-		$UI/SignLayer.open_sign()
-		$Features/Note.visible = false
-
-func _on_sign_body_exited(body):
-	if body.name == "Player":
-		$UI/SignLayer.close_sign()
-
-func _on_sign_2_body_entered(body):
-	if body.name == "Player":
-		$UI/SignLayer2.open_sign()
-		$Features/Note2.visible = false
-
-func _on_sign_2_body_exited(body):
-	if body.name == "Player":
-		$UI/SignLayer2.close_sign()
