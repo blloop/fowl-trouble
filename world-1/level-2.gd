@@ -3,11 +3,8 @@ extends Node2D
 var time_elapsed := 0.0
 var format_string = "...in %02d:%1d%.2f"
 # var format_string = "Time: %02d:%02d"
-var this_scene = "res://world-1/level-2.tscn"
 
 func _ready():
-	Game.player_hp = Game.max_hp
-	Game.gold = 0
 	$UI/Recap/Time.text = "<%2.2f" % Game.time_goal
 	$Player/Camera2D.limit_right = 2392
 	
@@ -44,7 +41,7 @@ func _on_exit_pressed():
 	Game.recap = false
 
 func _on_restart_pressed():
-	get_tree().change_scene_to_file(this_scene)
+	get_tree().change_scene_to_file(Game.this_scene)
 	Game.player_hp = Game.max_hp
 	Game.gold = 0
 	Game.recap = false
