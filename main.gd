@@ -22,6 +22,8 @@ func _ready():
 		$World1/Level2.disabled = false
 	if Game.w1_unlocked[2]:
 		$World1/Level3.disabled = false
+		
+	$World1/Level3.disabled = false
 	
 	# Mute locked worlds
 	#$Worlds/Buttons/Button2.disabled = true
@@ -72,3 +74,8 @@ func _on_level_1_pressed():
 func _on_level_2_pressed():
 	prep_level(45)
 	get_tree().change_scene_to_file("res://world-1/level-2.tscn")
+
+func _on_level_3_pressed():
+	prep_level(10)
+	get_tree().change_scene_to_file("res://world-1/level-0.tscn")
+	

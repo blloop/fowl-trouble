@@ -23,14 +23,13 @@ theme_override_font_sizes/font_size = 36
 text = "Back"
 
 [node name="Start" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 
 [node name="TextureRect" type="TextureRect" parent="Start"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1152.0
+offset_bottom = 648.0
 texture = ExtResource("3_alpbo")
 
 [node name="ColorRect" type="ColorRect" parent="Start"]
@@ -50,6 +49,17 @@ offset_bottom = 204.0
 theme_override_fonts/font = ExtResource("3_25dj1")
 theme_override_font_sizes/font_size = 96
 text = "Fowl Trouble"
+
+[node name="Label2" type="Label" parent="Start"]
+layout_mode = 0
+offset_left = 833.0
+offset_top = 51.0
+offset_right = 965.0
+offset_bottom = 93.0
+rotation = 0.261799
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 48
+text = "DEMO!"
 
 [node name="Play" type="Button" parent="Start"]
 layout_mode = 0
@@ -216,6 +226,82 @@ theme_override_fonts/font = ExtResource("3_25dj1")
 theme_override_font_sizes/font_size = 36
 text = "Back"
 
+[node name="SoonWorlds" type="Control" parent="Worlds"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Worlds/SoonWorlds"]
+modulate = Color(0, 0, 0, 0.501961)
+layout_mode = 0
+offset_left = 413.0
+offset_top = 188.0
+offset_right = 1041.0
+offset_bottom = 419.0
+
+[node name="ColorRect2" type="ColorRect" parent="Worlds/SoonWorlds"]
+modulate = Color(0, 0, 0, 0.501961)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 419.0
+offset_right = 1041.0
+offset_bottom = 636.0
+
+[node name="Label" type="Label" parent="Worlds/SoonWorlds"]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 377.0
+offset_right = 689.0
+offset_bottom = 409.0
+theme_override_colors/font_color = Color(0.784314, 0.784314, 0.784314, 1)
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 36
+text = "Coming Soon..."
+
+[node name="Label2" type="Label" parent="Worlds/SoonWorlds"]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 377.0
+offset_right = 1012.0
+offset_bottom = 409.0
+theme_override_colors/font_color = Color(0.784314, 0.784314, 0.784314, 1)
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 36
+text = "Coming Soon..."
+
+[node name="Label3" type="Label" parent="Worlds/SoonWorlds"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 591.0
+offset_right = 1006.0
+offset_bottom = 623.0
+theme_override_colors/font_color = Color(0.784314, 0.784314, 0.784314, 1)
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 36
+text = "Coming Soon..."
+
+[node name="Label4" type="Label" parent="Worlds/SoonWorlds"]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 591.0
+offset_right = 689.0
+offset_bottom = 623.0
+theme_override_colors/font_color = Color(0.784314, 0.784314, 0.784314, 1)
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 36
+text = "Coming Soon..."
+
+[node name="Label5" type="Label" parent="Worlds/SoonWorlds"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 591.0
+offset_right = 375.0
+offset_bottom = 623.0
+theme_override_colors/font_color = Color(0.784314, 0.784314, 0.784314, 1)
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 36
+text = "Coming Soon..."
+
 [node name="World1" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -362,6 +448,23 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "12"
 
+[node name="ColorRect2" type="ColorRect" parent="World1"]
+modulate = Color(0, 0, 0, 0.501961)
+offset_left = 192.0
+offset_top = 324.0
+offset_right = 963.0
+offset_bottom = 620.0
+
+[node name="Label2" type="Label" parent="World1"]
+offset_left = 462.0
+offset_top = 456.0
+offset_right = 700.0
+offset_bottom = 488.0
+theme_override_colors/font_color = Color(0.784314, 0.784314, 0.784314, 1)
+theme_override_fonts/font = ExtResource("3_25dj1")
+theme_override_font_sizes/font_size = 36
+text = "Coming Soon..."
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Start/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Start/Quit" to="." method="_on_quit_pressed"]
@@ -369,3 +472,4 @@ text = "12"
 [connection signal="pressed" from="Worlds/Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="World1/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="World1/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="World1/Level3" to="." method="_on_level_3_pressed"]
