@@ -450,12 +450,14 @@ text = "12"
 
 [node name="ColorRect2" type="ColorRect" parent="World1"]
 modulate = Color(0, 0, 0, 0.501961)
+layout_mode = 0
 offset_left = 192.0
 offset_top = 324.0
 offset_right = 963.0
 offset_bottom = 620.0
 
 [node name="Label2" type="Label" parent="World1"]
+layout_mode = 0
 offset_left = 462.0
 offset_top = 456.0
 offset_right = 700.0

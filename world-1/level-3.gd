@@ -68,3 +68,12 @@ func _on_flag_body_entered(body):
 			$UI/Recap/Egg3.grow()
 		await get_tree().create_timer(0.8).timeout
 		$UI/Recap/Exit.fade_in()
+
+func _on_sign_body_entered(body):
+	if body.name == "Player":
+		$UI/SignLayer.open_sign()
+		$Features/Note.visible = false
+
+func _on_sign_body_exited(body):
+	if body.name == "Player":
+		$UI/SignLayer.close_sign()
