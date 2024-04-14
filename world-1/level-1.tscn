@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://d0y6g3oei61yt"]
+[gd_scene load_steps=48 format=3 uid="uid://d0y6g3oei61yt"]
 
 [ext_resource type="Script" path="res://world-1/level-1.gd" id="1_tfbds"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="1_xvivn"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://663aj70tr80x" path="res://ui/health.tscn" id="12_wwl3b"]
 [ext_resource type="Texture2D" uid="uid://b5fww5ugvwf7t" path="res://assets/ui/arrow.png" id="13_tr7ra"]
 [ext_resource type="PackedScene" uid="uid://dxjdud5ybsqhx" path="res://ui/control.tscn" id="14_v4nym"]
+[ext_resource type="Texture2D" uid="uid://b34xptr1d25jf" path="res://assets/ui/sign_small.png" id="17_k8qgq"]
 [ext_resource type="Texture2D" uid="uid://cys8pyxmj0mso" path="res://assets/ui/space.png" id="17_uwupe"]
 [ext_resource type="PackedScene" uid="uid://d2eqm7p84trwd" path="res://item/flag.tscn" id="19_hrx3r"]
 [ext_resource type="Texture2D" uid="uid://c0b8rpxhk3qu7" path="res://assets/player/chicken.png" id="20_1e7am"]
@@ -479,9 +480,10 @@ texture = ExtResource("17_uwupe")
 
 [node name="SignLayer2" parent="UI" instance=ExtResource("7_r35mv")]
 position = Vector2(560, 320)
+metadata/sign_image = ExtResource("17_k8qgq")
 
 [node name="Chicken2" type="Sprite2D" parent="UI/SignLayer2"]
-position = Vector2(-120, -88)
+position = Vector2(-128, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("20_1e7am")
 flip_h = true
@@ -489,7 +491,7 @@ hframes = 4
 vframes = 3
 
 [node name="Chicken3" type="Sprite2D" parent="UI/SignLayer2"]
-position = Vector2(-32, 40)
+position = Vector2(24, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("20_1e7am")
 flip_h = true
@@ -497,26 +499,20 @@ hframes = 4
 vframes = 3
 frame = 4
 
-[node name="Crate" type="Sprite2D" parent="UI/SignLayer2"]
-position = Vector2(32, -72)
-scale = Vector2(4, 4)
-texture = ExtResource("20_n3p82")
-offset = Vector2(0, 1)
-
 [node name="Crate2" type="Sprite2D" parent="UI/SignLayer2"]
-position = Vector2(32, 56)
+position = Vector2(88, 16)
 scale = Vector2(4, 4)
 texture = ExtResource("20_n3p82")
 offset = Vector2(0, 1)
 
 [node name="Arrow" type="Sprite2D" parent="UI/SignLayer2"]
-position = Vector2(-40, -64)
+position = Vector2(-56, 24)
 scale = Vector2(4, 4)
 texture = ExtResource("13_tr7ra")
 hframes = 4
 
 [node name="Arrow2" type="Sprite2D" parent="UI/SignLayer2"]
-position = Vector2(112, 64)
+position = Vector2(168, 24)
 scale = Vector2(4, 4)
 texture = ExtResource("13_tr7ra")
 hframes = 4

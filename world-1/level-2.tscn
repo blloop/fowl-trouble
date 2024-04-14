@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dbehakemogwjw"]
+[gd_scene load_steps=35 format=3 uid="uid://dbehakemogwjw"]
 
 [ext_resource type="Script" path="res://world-1/level-2.gd" id="1_o68oe"]
 [ext_resource type="PackedScene" uid="uid://crda7h07fpjk7" path="res://background/bg-1.tscn" id="2_lo3s7"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://c0b8rpxhk3qu7" path="res://assets/player/chicken.png" id="14_vpxfg"]
 [ext_resource type="FontFile" uid="uid://b7u7rptev1prg" path="res://assets/ui/FutilePro.ttf" id="15_br2c8"]
 [ext_resource type="Texture2D" uid="uid://cnhpowm2bpot5" path="res://assets/enemies/slime_blue.png" id="15_v7mta"]
+[ext_resource type="Texture2D" uid="uid://b34xptr1d25jf" path="res://assets/ui/sign_small.png" id="15_w1c53"]
 [ext_resource type="PackedScene" uid="uid://dbewfbkrvukv4" path="res://ui/gold.tscn" id="16_k15q6"]
 [ext_resource type="Texture2D" uid="uid://b5fww5ugvwf7t" path="res://assets/ui/arrow.png" id="16_xb41i"]
 [ext_resource type="PackedScene" uid="uid://663aj70tr80x" path="res://ui/health.tscn" id="17_gi040"]
@@ -259,9 +260,10 @@ shape = SubResource("RectangleShape2D_4urt7")
 
 [node name="SignLayer" parent="UI" instance=ExtResource("14_ga4pb")]
 position = Vector2(560, 320)
+metadata/sign_image = ExtResource("15_w1c53")
 
 [node name="Chicken" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(-152, 24)
+position = Vector2(-168, 8)
 scale = Vector2(4, 4)
 texture = ExtResource("14_vpxfg")
 flip_h = true
@@ -269,17 +271,9 @@ hframes = 4
 vframes = 3
 frame = 4
 
-[node name="Chicken2" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(-184, -88)
-scale = Vector2(4, 4)
-texture = ExtResource("14_vpxfg")
-flip_h = true
-hframes = 4
-vframes = 3
-
 [node name="Chicken3" type="Sprite2D" parent="UI/SignLayer"]
 modulate = Color(1, 0.294118, 0.290196, 1)
-position = Vector2(96, 0)
+position = Vector2(96, -16)
 scale = Vector2(4, 4)
 texture = ExtResource("14_vpxfg")
 flip_h = true
@@ -288,34 +282,27 @@ vframes = 3
 frame = 9
 
 [node name="Slime" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(-88, 48)
-scale = Vector2(4, 4)
-texture = ExtResource("15_v7mta")
-hframes = 5
-vframes = 2
-
-[node name="Slime2" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(-88, -64)
+position = Vector2(-104, 32)
 scale = Vector2(4, 4)
 texture = ExtResource("15_v7mta")
 hframes = 5
 vframes = 2
 
 [node name="Slime3" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(192, 48)
+position = Vector2(192, 32)
 scale = Vector2(4, 4)
 texture = ExtResource("15_v7mta")
 hframes = 5
 vframes = 2
 
 [node name="Arrow" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(0, 40)
+position = Vector2(0, 8)
 scale = Vector2(4, 4)
 texture = ExtResource("16_xb41i")
 hframes = 4
 
 [node name="Heart" type="Sprite2D" parent="UI/SignLayer"]
-position = Vector2(104, -56)
+position = Vector2(104, -64)
 scale = Vector2(4, 4)
 texture = ExtResource("17_vaf75")
 hframes = 4
@@ -323,13 +310,14 @@ frame = 2
 
 [node name="Label" type="Label" parent="UI/SignLayer"]
 offset_left = 48.0
-offset_top = -80.0
+offset_top = -88.0
 offset_right = 88.0
-offset_bottom = -24.0
+offset_bottom = -32.0
 theme_override_colors/font_color = Color(0.223529, 0.203922, 0.341176, 1)
 theme_override_fonts/font = ExtResource("15_br2c8")
 theme_override_font_sizes/font_size = 64
 text = "-"
+metadata/_edit_use_anchors_ = true
 
 [node name="Recap" parent="UI" instance=ExtResource("14_ga4pb")]
 position = Vector2(560, 320)

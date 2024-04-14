@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-const SPEED = 80.0
-const JUMP_VELOCITY = -185.0
+const SPEED = 380.0
+const JUMP_VELOCITY = -190.0
 var hurt = false
 var tween : Tween
 

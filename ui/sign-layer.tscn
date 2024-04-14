@@ -6,7 +6,8 @@
 [node name="SignLayer" type="Node2D"]
 scale = Vector2(1e-05, 1e-05)
 script = ExtResource("1_5ufaa")
+metadata/sign_image = null
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sign" type="Sprite2D" parent="."]
 scale = Vector2(8, 8)
 texture = ExtResource("1_su6gs")

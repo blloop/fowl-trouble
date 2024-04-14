@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://be4bgb7ari74w" path="res://assets/effects/exclamation.png" id="3_wom11"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iiaa5"]
-size = Vector2(22, 12)
+size = Vector2(20, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_asu8e"]
 atlas = ExtResource("2_pyano")
@@ -78,7 +78,7 @@ animations = [{
 size = Vector2(277.75, 82)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o26bu"]
-size = Vector2(24, 11)
+size = Vector2(24, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ih0ot"]
 atlas = ExtResource("3_wom11")
@@ -144,7 +144,7 @@ animations = [{
 script = ExtResource("1_0geq2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, -5.5)
 shape = SubResource("RectangleShape2D_iiaa5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -162,7 +162,7 @@ shape = SubResource("RectangleShape2D_5wcon")
 [node name="PlayerCollision" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
-position = Vector2(0, -5.5)
+position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_o26bu")
 
 [node name="Timer" type="Timer" parent="."]
