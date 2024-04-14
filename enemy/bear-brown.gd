@@ -26,6 +26,9 @@ func _process(delta):
 	
 	move_and_slide()
 
+func _stop():
+	$PlayerDetection.queue_free()
+
 func _on_player_detection_body_entered(body):
 	if body.name == "Player":
 		detected = true

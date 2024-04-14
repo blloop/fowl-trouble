@@ -10,10 +10,6 @@ func _ready():
 	
 	$UI/Pause.visible = true
 	$UI/Pause.hide()
-	$UI/SignLayer.visible = true
-	$UI/SignLayer.show()
-	$UI/SignLayer2.visible = true
-	$UI/SignLayer2.show()
 	
 	$Controls/Control1.play("Idle")
 	$Controls/Control2.play("Idle")
@@ -71,7 +67,7 @@ func _on_flag_body_entered(body):
 		#$UI/Recap/Label2.text = format_string % [time_elapsed / 60, int(floor(time_elapsed)) % 60]
 		
 		Game.recap = true
-		Game.w1_unlocked[1] = 1
+		Game.w1_unlocked[0] = 1
 		
 		# Configure recap screen
 		$UI/Recap.open_sign()

@@ -62,6 +62,8 @@ func _on_flag_body_entered(body):
 		
 		Game.recap = true
 		Game.w1_unlocked[1] = 1
+		#for mob in $Mobs.get_children():
+			#mob._stop()
 		
 		# Configure recap screen
 		$UI/Recap.open_sign()

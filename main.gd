@@ -18,12 +18,12 @@ func _ready():
 		get_node("World%d" % Game.menu_num).visible = true
 	
 	# Enable completed levels
-	if Game.w1_unlocked[1]:
+	if Game.w1_unlocked[0]:
 		$World1/Level2.disabled = false
-	if Game.w1_unlocked[2]:
+	if Game.w1_unlocked[1]:
 		$World1/Level3.disabled = false
-		
-	$World1/Level3.disabled = false
+	if Game.w1_unlocked[2]:
+		$World1/Level4.disabled = false
 	
 	# Mute locked worlds
 	#$Worlds/Buttons/Button2.disabled = true
@@ -70,10 +70,10 @@ func _on_button_1_pressed():
 # Level Buttons
 
 func _on_level_1_pressed():
-	prep_level(45, "res://world-1/level-1.tscn")
+	prep_level(40, "res://world-1/level-1.tscn")
 
 func _on_level_2_pressed():
 	prep_level(45, "res://world-1/level-2.tscn")
 
 func _on_level_3_pressed():
-	prep_level(10, "res://world-1/level-3.tscn")
+	prep_level(45, "res://world-1/level-3.tscn")

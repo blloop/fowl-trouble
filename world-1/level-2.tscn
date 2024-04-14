@@ -242,9 +242,11 @@ position = Vector2(1303, 302)
 
 [node name="SlimeBlue4" parent="Mobs" instance=ExtResource("13_mw5io")]
 position = Vector2(1551, 302)
+metadata/_edit_lock_ = true
 
 [node name="SlimeBlue5" parent="Mobs" instance=ExtResource("13_mw5io")]
 position = Vector2(1663, 302)
+metadata/_edit_lock_ = true
 
 [node name="SlimeBlue6" parent="Mobs" instance=ExtResource("13_mw5io")]
 position = Vector2(2159, 270)
