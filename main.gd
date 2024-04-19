@@ -76,7 +76,7 @@ func _on_level_2_pressed():
 	prep_level(45, "res://world-1/level-2.tscn")
 
 func _on_level_3_pressed():
-	prep_level(45, "res://world-1/level-3.tscn")
+	prep_level(55, "res://world-1/level-3.tscn")
 
 func _on_level_4_pressed():
-	prep_level(45, "res://world-1/level-4.tscn")
+	prep_level(50, "res://world-1/level-4.tscn")

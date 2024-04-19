@@ -44,7 +44,7 @@ func _on_restart_pressed():
 	Game.player_hp = Game.max_hp
 	Game.gold = 0
 	Game.recap = false
-	
+
 func _on_bounds_body_entered(body):
 	if body.name == "Player":
 		Game.recap = true

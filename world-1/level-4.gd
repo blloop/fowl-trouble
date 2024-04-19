@@ -45,16 +45,6 @@ func _on_restart_pressed():
 	Game.gold = 0
 	Game.recap = false
 
-func _on_bounds_body_entered(body):
-	if body.name == "Player":
-		Game.recap = true
-		body.hide()
-		$UI/Control.queue_free()
-		$UI/Death/Label1.text = Game.bad_splashes.pick_random()
-		$UI/Death.open_sign()
-	elif body.name != "TileMap":
-		body.queue_free()
-
 func _on_flag_body_entered(body):
 	if body.name == "Player":
 		body.get_node("AnimatedSprite2D").play("Idle")
