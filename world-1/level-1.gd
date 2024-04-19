@@ -1,5 +1,6 @@
 extends Node2D
 
+var to_unlock = 0
 var time_elapsed := 0.0
 var format_string = "...in %02d:%1d%.2f"
 # var format_string = "Time: %02d:%02d"
@@ -57,7 +58,7 @@ func _on_flag_body_entered(body):
 		#$UI/Recap/Label2.text = format_string % [time_elapsed / 60, int(floor(time_elapsed)) % 60]
 		
 		Game.recap = true
-		Game.w1_unlocked[0] = 1
+		Game.w1_unlocked[to_unlock] = 1
 		
 		# Configure recap screen
 		$UI/Recap.open_sign()

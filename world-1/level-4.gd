@@ -1,12 +1,13 @@
 extends Node2D
 
+var to_unlock = 3
 var time_elapsed := 0.0
 var format_string = "...in %02d:%1d%.2f"
 # var format_string = "Time: %02d:%02d"
 
 func _ready():
 	$UI/Recap/Time.text = "<%2.2f" % Game.time_goal
-	$Player/Camera2D.limit_right = 2584
+	$Player/Camera2D.limit_right = 2656
 	
 	$UI/Pause.visible = true
 	$UI/Pause.hide()
@@ -54,7 +55,7 @@ func _on_flag_body_entered(body):
 		#$UI/Recap/Label2.text = format_string % [time_elapsed / 60, int(floor(time_elapsed)) % 60]
 		
 		Game.recap = true
-		Game.w1_unlocked[2] = 1
+		Game.w1_unlocked[to_unlock] = 1
 		for mob in $Mobs.get_children():
 			mob._stop()
 		

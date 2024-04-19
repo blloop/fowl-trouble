@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bxiilmn075r6s"]
+[gd_scene load_steps=25 format=3 uid="uid://bxiilmn075r6s"]
 
 [ext_resource type="Script" path="res://world-1/level-3.gd" id="1_4fh2m"]
 [ext_resource type="PackedScene" uid="uid://crda7h07fpjk7" path="res://background/bg-1.tscn" id="2_m3fk7"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d2eqm7p84trwd" path="res://item/flag.tscn" id="4_yjwje"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="5_4j5nb"]
 [ext_resource type="Texture2D" uid="uid://xh2n3kd505jn" path="res://assets/deco/bush.png" id="5_8g16v"]
+[ext_resource type="Texture2D" uid="uid://dr600ubfqj6ru" path="res://assets/objects/sign_arrow.png" id="6_62ij0"]
 [ext_resource type="PackedScene" uid="uid://sxobd1sl74rf" path="res://enemy/slime-blue.tscn" id="6_cns3m"]
 [ext_resource type="PackedScene" uid="uid://ckiptfoim47l7" path="res://ui/sign-layer.tscn" id="6_lr767"]
 [ext_resource type="PackedScene" uid="uid://dd1sgsyolkkct" path="res://item/gem.tscn" id="6_skx48"]
@@ -123,6 +124,18 @@ texture = ExtResource("4_t23u4")
 [node name="Tree7" type="Sprite2D" parent="Deco"]
 position = Vector2(1831, 310)
 texture = ExtResource("4_t23u4")
+
+[node name="SignArrow" type="Sprite2D" parent="Deco"]
+position = Vector2(63, 286)
+texture = ExtResource("6_62ij0")
+
+[node name="SignArrow2" type="Sprite2D" parent="Deco"]
+position = Vector2(991, 302)
+texture = ExtResource("6_62ij0")
+
+[node name="SignArrow3" type="Sprite2D" parent="Deco"]
+position = Vector2(1871, 318)
+texture = ExtResource("6_62ij0")
 
 [node name="Items" type="Node2D" parent="."]
 
