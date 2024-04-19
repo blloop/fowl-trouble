@@ -1,8 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0rd8vp7jrwo4"]
 
-[ext_resource type="Texture2D" uid="uid://csy8pvqgqkq4t" path="res://assets/objects/crate.png" id="1_w2g2w"]
+[ext_resource type="Texture2D" uid="uid://b3kxww7v2521m" path="res://assets/objects/crate-fix.png" id="1_6levo"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wwb1d"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v0vjt"]
 radius = 8.0
 height = 16.0
 
@@ -10,8 +10,9 @@ height = 16.0
 lock_rotation = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_wwb1d")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_v0vjt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
-texture = ExtResource("1_w2g2w")
+texture = ExtResource("1_6levo")

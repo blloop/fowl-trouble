@@ -6,7 +6,7 @@ var format_string = "...in %02d:%1d%.2f"
 
 func _ready():
 	$UI/Recap/Time.text = "<%2.2f" % Game.time_goal
-	$Player/Camera2D.limit_right = 2168
+	$Player/Camera2D.limit_right = 2216
 	
 	$UI/Pause.visible = true
 	$UI/Pause.hide()
