@@ -3,6 +3,7 @@ extends Node2D
 func _ready():
 	# Utils.save_game()
 	# Utils.load_game()
+	$AudioStreamPlayer.play()
 	
 	# Display last opened menu
 	$World1.visible = false

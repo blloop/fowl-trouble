@@ -7,7 +7,8 @@ var format_string = "...in %02d:%1d%.2f"
 
 func _ready():
 	$UI/Recap/Time.text = "<%2.2f" % Game.time_goal
-	$Player/Camera2D.limit_right = 2168
+	$AudioStreamPlayer.play()
+	$Player/Camera2D.limit_right = 2168	
 	
 	$UI/Pause.visible = true
 	$UI/Pause.hide()
@@ -22,11 +23,13 @@ func pause():
 	if Game.paused:
 		Engine.time_scale = 1
 		$UI/Pause.hide()
+		$AudioStreamPlayer.play()
 	else:
 		Engine.time_scale = 0
 		$UI/Pause.show()
 		$UI/Pause/Confirm.visible = false
 		$UI/Pause/Options.visible = true
+		$AudioStreamPlayer.stop()
 	
 	Game.paused = !Game.paused
 	$UI/Control.update(Game.paused)

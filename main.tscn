@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqg0jwrtq5o7t"]
+[gd_scene load_steps=6 format=3 uid="uid://cqg0jwrtq5o7t"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1k0oa"]
 [ext_resource type="PackedScene" uid="uid://cfb3171rtydic" path="res://background/bg-title.tscn" id="2_5xn6p"]
+[ext_resource type="AudioStream" uid="uid://dimntjoy5fdhf" path="res://assets/music/title-screen.mp3" id="2_co18h"]
 [ext_resource type="FontFile" uid="uid://b7u7rptev1prg" path="res://assets/ui/FutilePro.ttf" id="3_25dj1"]
 [ext_resource type="Texture2D" uid="uid://di6r6i7ue3vcg" path="res://assets/ui/main_menu.png" id="3_alpbo"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_1k0oa")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_co18h")
 
 [node name="BG" parent="." instance=ExtResource("2_5xn6p")]
 scale = Vector2(2.5, 2.5)
@@ -75,6 +79,7 @@ theme_override_font_sizes/font_size = 32
 text = "Play"
 
 [node name="Quit" type="Button" parent="Start"]
+visible = false
 layout_mode = 0
 offset_left = 1032.0
 offset_top = 8.0

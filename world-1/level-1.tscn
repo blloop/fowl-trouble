@@ -1,7 +1,8 @@
-[gd_scene load_steps=48 format=3 uid="uid://d0y6g3oei61yt"]
+[gd_scene load_steps=49 format=3 uid="uid://d0y6g3oei61yt"]
 
 [ext_resource type="Script" path="res://world-1/level-1.gd" id="1_tfbds"]
 [ext_resource type="PackedScene" uid="uid://840netei5g67" path="res://player.tscn" id="1_xvivn"]
+[ext_resource type="AudioStream" uid="uid://caala1tif1whw" path="res://assets/music/world-1.mp3" id="2_21633"]
 [ext_resource type="PackedScene" uid="uid://crda7h07fpjk7" path="res://background/bg-1.tscn" id="3_db3v5"]
 [ext_resource type="Texture2D" uid="uid://efxq6ghxya0k" path="res://assets/deco/tree.png" id="4_q81k3"]
 [ext_resource type="Texture2D" uid="uid://dr600ubfqj6ru" path="res://assets/objects/sign_arrow.png" id="5_m51pi"]
@@ -175,6 +176,9 @@ animations = [{
 [node name="World" type="Node2D"]
 position = Vector2(41, 274)
 script = ExtResource("1_tfbds")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_21633")
 
 [node name="BG" parent="." instance=ExtResource("3_db3v5")]
 

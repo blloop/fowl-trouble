@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://f0c33so4suiv"]
+[gd_scene load_steps=18 format=3 uid="uid://f0c33so4suiv"]
 
 [ext_resource type="Script" path="res://world-1/level-0.gd" id="1_3gx0y"]
 [ext_resource type="PackedScene" uid="uid://crda7h07fpjk7" path="res://background/bg-1.tscn" id="2_6a6bs"]
+[ext_resource type="AudioStream" uid="uid://caala1tif1whw" path="res://assets/music/world-1.mp3" id="2_nv3us"]
 [ext_resource type="TileSet" uid="uid://c5r0gb6eiq8uo" path="res://world-1/tiles.tres" id="3_hayy2"]
 [ext_resource type="PackedScene" uid="uid://dbvda8s0e6hb0" path="res://ui/exit.tscn" id="12_dphiv"]
 [ext_resource type="PackedScene" uid="uid://d2eqm7p84trwd" path="res://item/flag.tscn" id="13_y1int"]
@@ -20,6 +21,9 @@
 [node name="World" type="Node2D"]
 position = Vector2(41, 274)
 script = ExtResource("1_3gx0y")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nv3us")
 
 [node name="BG" parent="." instance=ExtResource("2_6a6bs")]
 

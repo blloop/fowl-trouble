@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Fowl Trouble"
+config/version="0.0.1"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+config/icon="res://assets/ui/feather.png"
 
 [autoload]
 
@@ -26,6 +32,8 @@ gdscript/warnings/integer_division=0
 [display]
 
 window/size/resizable=false
+window/stretch/scale_mode="integer"
+window/vsync/vsync_mode=0
 
 [input]
 
