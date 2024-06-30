@@ -3,7 +3,7 @@ extends Node
 # Menu variables
 var menu_num = -1
 var w1_unlocked = [
-	   0, 0, 1, 
+	   0, 0, 0, 
 	0, 0, 0, 0, 
 	0, 0, 0, 0, 
 	0, 0, 0, 0
